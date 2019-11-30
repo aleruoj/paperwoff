@@ -325,3 +325,7 @@ input[type="checkbox"]:disabled + label:before {
   max-height: 800px;
   margin: 0 auto;
 }
+
+.main_container {
+  background: #2A3F54;
+}
