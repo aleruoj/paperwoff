@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" type="image/png" href="../images/icons/favicon.png">
+    <link rel="icon" type="image/png" href="../images/favicon.png">
     <title>Paperwoff</title>
     <!-- Empieza CSS de Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Termina CSS de Bootstrap -->
-     <!-- Font Awesome -->
-  <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/swiper.min.css">
     <link rel="stylesheet" type="text/css" href="../css/styles.css">
 
@@ -110,35 +110,70 @@
     </section>
     <section class="pre-footer">
         <div class="container">
-            <div class="content">
-                <div class="row justify-content-center">
+            <div class="row mb-3">
+                <div class="col-12 text-left">
+                    <h2>¡Descarga aquí un demo gratis!</h2>
+                </div>
+                <div class="col-12">
+                    <p>Solo debes llenar estos datos:</p>
+                </div>
+            </div>
+            <div class="row">
 
-                    <div class="col-6">
-                        <div class="title-line text-center ">
-                            <h4 class="font-weight-bold">¿Necesitas ayuda?</h4>
+                <div class="col-4">
+                    <form action="">
+                        <div class="form-group">
+                            <label for="nombre">Nombre completo:</label>
+                            <input type="text" class="form-control" id="nombre" required="" aria-describedby="emailHelp"
+                                placeholder="">
                         </div>
-                        <ul id="menu-bloque-menu-footer-2" class="links-vertical">
-                            <li id="menu-item-216"
-                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-216">
-                                <a class="nav-link" href="">Políticas de uso</a></li>
-                            <li id="menu-item-215"
-                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-215">
-                                <a class="nav-link" href="">Contacto</a>
-                            </li>
-                        </ul>
+                        <div class="form-group">
+                            <label for="area">País</label>
+                            <select class="form-control" id="area">
+                                <option>--</option>
+                                <option>Brasil</option>
+                                <option>Chile</option>
+                                <option>Colombia</option>
+                                <option>Venezuela</option>
+                            </select>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" class="form-check-input" id="politicas" required="">
+                            <label class="form-check-label check-mobile " for="politicas">Acepto las políticas de
+                                tratamiento de datos
+                                y el envío de información</label>
+                        </div>
+
+                </div>
+                <div class="col-4">
+                    <div class="form-group">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" class="form-control" id="email" required="" aria-describedby="emailHelp"
+                            placeholder="">
                     </div>
-                    <div class="col-6">
-                        <div class="title-line text-center">
-                            <h4 class="font-weight-bold">Teléfono</h4>
-                        </div>
-                        <div class="caption-contact">
-                            <a href="tel:+(57)1234567" class="nav-link">1234567</a>
-                        </div>
+                    <div class="form-group">
+                        <label for="empleados">Número de empleados</label>
+                        <select class="form-control" id="empleados">
+                            <option>--</option>
+                            <option>1 - 50</option>
+                            <option>51 - 100</option>
+                            <option>101 - 250</option>
+                            <option>251 - 500</option>
+                            <option>501 - 1000</option>
+                        </select>
                     </div>
+                    <button type="submit" class="btn btn-dark w-100 pt-2 mt-2">Suscribirme</button>
+                    </form>
+                </div>
+                <div class="col-4 text-center mt-4">
+                    <h4>¿Necesitas más información? <br> Escribenos a: <br> <span
+                            class="font-weight-bold">contacto@paperwoff.com</span></h4>
                 </div>
             </div>
         </div>
+        </div>
     </section>
+
     <footer class="footer footer-black position-static ">
 
         <div class="clear-both"></div>

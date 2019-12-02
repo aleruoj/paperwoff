@@ -117,7 +117,8 @@ footer {
 }
 
 .pre-footer h4 {
-  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
 }
 
 .pre-footer ul {
@@ -185,11 +186,11 @@ footer {
   position: relative;
   margin: 2rem 0 0;
 }
-#registerform .form-check {
+.form-check {
   color: #5e5e5e;
   display: inline-block;
 }
-#registerform .subtitle-login {
+ .subtitle-login {
   font-weight: 700;
   font-size: 1rem;
   color: #5e5e5e;
@@ -241,6 +242,21 @@ input[type="checkbox"] + label:before {
   display: inline-block;
   width: 15px;
   height: 15px;
+  padding-left: 0.2em;
+  padding-bottom: 0.3em;
+  margin-right: 0.2em;
+  vertical-align: bottom;
+  color: transparent;
+  transition: 0.1s;
+}
+
+input[type="checkbox"] + label:before {
+  content: "\2714";
+  border: 0.1em solid #aaa;
+  border-radius: 0.2em;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
   padding-left: 0.2em;
   padding-bottom: 0.3em;
   margin-right: 0.2em;
@@ -328,4 +344,17 @@ input[type="checkbox"]:disabled + label:before {
 
 .main_container {
   background: #2A3F54;
+}
+#home input[type="checkbox"] + label:before {
+  width: 20px;
+  height: 20px;
+  border: 0.1em solid white;
+}
+
+input[type="checkbox"] + label {
+  font-size: 14px;
+  color: white;
+}
+.form-group {
+  margin-bottom: 1.6rem;
 }
