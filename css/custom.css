@@ -1876,14 +1876,15 @@ table.tile_info {
 table.tile_info td {
   text-align: left;
   padding: 1px;
-  font-size: 15px; }
+  font-size: 12px; }
 
 table.tile_info td p {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   margin: 0;
-  line-height: 28px; }
+  line-height: 28px; 
+  font-size: 12px;}
 
 table.tile_info td i {
   margin-right: 8px;
@@ -2344,7 +2345,7 @@ span.right {
 
 .tile_count .tile_stats_count {
   border-bottom: 1px solid #D9DEE4;
-  padding: 0 10px 0 20px;
+  padding: 0 50px;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
