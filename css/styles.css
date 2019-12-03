@@ -21,9 +21,6 @@ header {
 
 .inicio-sesion {
   text-align: right;
-}
-
-.inicio-sesion {
   max-width: 150px;
 }
 
@@ -35,74 +32,30 @@ header {
   max-width: 150px;
 }
 
+/* ----------------------------------------  404  ---------------------------------------- */
 
 #notfound .btn-404 {
   width: 220px;
   color: #007687;
   border-color: #007687;
 }
+
 #notfound .btn-404:hover {
   color: white;
   background-color: #007687;
 }
+
+/* ----------------------------------------  404  ---------------------------------------- */
 
 .titulo {
   font-size: 30px;
   font-weight: 800;
 }
 
-.card {
-  margin: 0.5rem;
-  min-height: 11.2rem;
-  border: none;
-  color: #fff;
-}
-
-.primera-card {
-  min-height: 21rem;
-  background: #02735e;
-}
-
-.segunda-card {
-  background: #5b98a6;
-}
-
-.card-item1 {
-  background: #03a678;
-}
-
-.card-item2 {
-  background: #03738c;
-}
-
-.card-item3 {
-  background: #012e40;
-}
-
-.card h2 {
-  font-size: 1.3rem;
-  display: inline-block;
-  margin: 0;
-  color: #fff;
-  font-weight: 700;
-}
-
-.card p {
-  padding: 0;
-  margin: 0;
-  display: inline-block;
-  color: #fff;
-}
-
-.card .cifra {
-  font-size: 42px;
-  line-height: 1;
-  margin-right: 0.5rem;
-}
-
 .que-es {
   color: white;
 }
+
 .pre-footer {
   background-color: #38a5bc;
   color: #ffffff;
@@ -142,7 +95,6 @@ footer {
 .bg-copyright {
   background-color: #007687;
   padding: 0.45rem;
-  
 }
 
 .bg-copyright .caption-copyright p {
@@ -160,7 +112,7 @@ footer {
   color: rgba(0, 0, 0, 0.8);
 }
 
-/* slider */
+/* ----------------------------------------  SLIDER  ---------------------------------------- */
 
 .swiper-slide {
   height: 70vh;
@@ -169,6 +121,9 @@ footer {
 .swiper-pagination-bullet-active-main {
   background-color: #007687;
 }
+
+/* ----------------------------------------  SLIDER  ---------------------------------------- */
+
 #home h4 {
   font-weight: 100;
 }
@@ -182,20 +137,24 @@ footer {
   margin-top: 10rem;
   background: #fff;
 }
+
 .input-primary {
   position: relative;
   margin: 2rem 0 0;
 }
+
 .form-check {
   color: #5e5e5e;
   display: inline-block;
 }
- .subtitle-login {
+
+.subtitle-login {
   font-weight: 700;
   font-size: 1rem;
   color: #5e5e5e;
   letter-spacing: -0.18px;
 }
+
 .button-primary {
   font-weight: 200;
   color: #fff;
@@ -207,6 +166,7 @@ footer {
   transition: 0.1s ease-in-out;
   border-radius: 0.25rem;
 }
+
 .button-primary:hover {
   background-color: #016372;
   color: white;
@@ -217,14 +177,7 @@ input::placeholder {
   font-size: 14px;
 }
 
-.legal-form {
-  font-weight: 400;
-  font-size: 0.75rem;
-  color: #5e5e5e;
-  line-height: 1rem;
-}
-
-input[type="checkbox"] + label {
+input[type="checkbox"]+label {
   display: block;
   margin: 0.2em;
   cursor: pointer;
@@ -235,22 +188,7 @@ input[type="checkbox"] {
   display: none;
 }
 
-input[type="checkbox"] + label:before {
-  content: "\2714";
-  border: 0.1em solid #aaa;
-  border-radius: 0.2em;
-  display: inline-block;
-  width: 15px;
-  height: 15px;
-  padding-left: 0.2em;
-  padding-bottom: 0.3em;
-  margin-right: 0.2em;
-  vertical-align: bottom;
-  color: transparent;
-  transition: 0.1s;
-}
-
-input[type="checkbox"] + label:before {
+input[type="checkbox"]+label:before {
   content: "\2714";
   border: 0.1em solid #aaa;
   border-radius: 0.2em;
@@ -265,20 +203,48 @@ input[type="checkbox"] + label:before {
   transition: 0.1s;
 }
 
-input[type="checkbox"] + label:active:before {
-  transform: scale(0);
-}
-
-input[type="checkbox"]:checked + label:before {
+input[type="checkbox"]:checked+label:before {
   background-color: #0e65b2;
   border-color: #0e65b2;
   color: #fff;
 }
 
-input[type="checkbox"]:disabled + label:before {
+#home input[type="checkbox"]+label:before {
+  width: 20px;
+  height: 20px;
+  border: 0.1em solid white;
+}
+
+#home input[type="checkbox"]+label {
+  font-size: 14px;
+  color: white;
+}
+
+/* ----------------------------------------  HOME  ---------------------------------------- */
+
+/* ----------------------------------------  LOGIN  ---------------------------------------- */
+
+#login input[type="checkbox"]+label:before {
+  width: 15px;
+  height: 15px;
+}
+
+.legal-form {
+  font-weight: 400;
+  font-size: 0.75rem;
+  color: #5e5e5e;
+  line-height: 1rem;
+}
+
+/* ----------------------------------------  LOGIN  ---------------------------------------- */
+
+input[type="checkbox"]:disabled+label:before {
   transform: scale(1);
   border-color: #aaa;
 }
+
+/* ----------------------------------------  MEDIA QUERY  ---------------------------------------- */
+
 @media (max-width: 768px) {
   .swiper-slide {
     height: 50vh;
@@ -310,14 +276,21 @@ input[type="checkbox"]:disabled + label:before {
   .page-title .title_left {
     width: 100%;
   }
-  #cc  .right_col {
+  #cc .right_col {
     min-height: 900px !important;
   }
-
   #notfound .btn-404 {
     max-width: 150px;
   }
 }
+
+@media (max-width: 320px) {
+  .img-description {
+    max-width: 220px;
+  }
+}
+
+/* ----------------------------------------  MEDIA QUERY  ---------------------------------------- */
 
 .panel_toolbox {
   min-width: 0;
@@ -336,6 +309,7 @@ input[type="checkbox"]:disabled + label:before {
   max-height: 800px;
   margin: 0 auto;
 }
+
 #l-calendar .x_panel {
   max-width: 810px;
   max-height: 800px;
@@ -345,16 +319,7 @@ input[type="checkbox"]:disabled + label:before {
 .main_container {
   background: #2A3F54;
 }
-#home input[type="checkbox"] + label:before {
-  width: 20px;
-  height: 20px;
-  border: 0.1em solid white;
-}
 
-input[type="checkbox"] + label {
-  font-size: 14px;
-  color: white;
-}
 .form-group {
   margin-bottom: 1.6rem;
 }
