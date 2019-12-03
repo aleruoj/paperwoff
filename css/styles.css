@@ -279,6 +279,9 @@ input[type="checkbox"]:disabled+label:before {
   #cc .right_col {
     min-height: 900px !important;
   }
+  #rrhh .right_col {
+    min-height: 900px !important;
+  }
   #usuarios .right_col {
     min-height: 900px !important;
   }
