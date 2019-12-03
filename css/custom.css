@@ -3571,9 +3571,9 @@ ul.messages li, .tasks li {
   padding: 8px 0; }
 
 ul.messages li img.avatar, img.avatar {
-  height: 32px;
-  width: 32px;
-  float: left;
+  height: 52px;
+  width: 52px;
+  /* float: left; */
   display: inline-block;
   border-radius: 2px;
   padding: 2px;
