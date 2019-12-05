@@ -300,6 +300,9 @@ input[type="checkbox"]:disabled+label:before {
     padding: 0;
     font-size: 12px;
   }
+  .nav-sm .container.body .right_col {
+    padding-bottom: 0;
+  }
 
 }
 
@@ -307,6 +310,10 @@ input[type="checkbox"]:disabled+label:before {
   .img-description {
     max-width: 220px;
   }
+  .nav-sm .navbar-right{
+    padding: 0;
+  }
+  
 }
 @media (min-width: 1201px) and (max-width: 1280px) {
   .canvasDoughnut {
@@ -320,6 +327,12 @@ input[type="checkbox"]:disabled+label:before {
     min-height: 60px;
   }
 }
+
+@media (min-width: 768px) and (max-width: 768px) {
+  .img-description {
+    max-width: 200px;
+  }
+} 
 /* ----------------------------------------  MEDIA QUERY  ---------------------------------------- */
 
 .panel_toolbox {
@@ -373,7 +386,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td:first-child:before, table.dataT
 }
 .button-add {
   position: absolute;
-  z-index: 999;
+  z-index: 99;
   width: 100%;
   font-weight: 200;
   color: #fff;
@@ -388,4 +401,8 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td:first-child:before, table.dataT
 
 #rrhh .dataTables_wrapper {
   padding: 0;
+}
+
+.p-date{
+  color: #8f9398;
 }

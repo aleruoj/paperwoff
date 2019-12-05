@@ -8,9 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="../images/favicon.png" type="image/ico" />
-
     <title>Dashboard | Paperwoff</title>
-
     <!-- Bootstrap -->
     <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -19,7 +17,6 @@
     <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
     <!-- Custom Theme Style -->
     <link href="../css/custom.css" rel="stylesheet">
-
     <!-- Mis estilos-->
     <link href="../css/styles.css" rel="stylesheet">
 </head>
@@ -27,15 +24,15 @@
 <body class="nav-md">
     <div class="container body">
         <div class="main_container">
-            <div class="col-md-3 left_col" style="min-height: auto;">
+            <div class="col-md-3 left_col">
                 <div class="left_col scroll-view">
                     <div class="navbar nav_title" style="border: 0;">
                         <a href="home.html" class="site_title"><i class="fa fa-gear"></i> <span>Paperwoff</span></a>
                     </div>
 
                     <div class="clearfix"></div>
-                    <!-- menu profile quick info -->
-                    <div class="profile clearfix">
+                    <!-- SECCIÓN BIENVENIDO-->
+                    <div class="profile clearfix ">
                         <div class="profile_pic">
                             <img src="../images/user.png" alt="..." class="img-circle profile_img">
                         </div>
@@ -44,12 +41,12 @@
                             <h2>Administrador</h2>
                         </div>
                     </div>
-                    <!-- /menu profile quick info -->
+                    <!-- /SECCIÓN BIENVENIDO-->
 
                     <br />
 
-                    <!-- sidebar menu -->
-                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                    <!-- /MENÚ LATERAL -->
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu ">
                         <div class="menu_section">
                             <h3>General</h3>
                             <ul class="nav side-menu">
@@ -74,13 +71,11 @@
                             </ul>
                         </div>
                     </div>
-                    <!-- /sidebar menu -->
-
-
+                    <!-- /MENÚ LATERAL -->
                 </div>
             </div>
 
-            <!-- top navigation -->
+            <!-- HEADER -->
             <div class="top_nav">
                 <div class="nav_menu">
                     <div class="nav toggle">
@@ -103,12 +98,12 @@
                     </nav>
                 </div>
             </div>
-            <!-- /top navigation -->
+            <!-- /HEADER -->
 
-            <!-- page content -->
-            <div class="right_col" role="main">
-                <!-- top tiles -->
-                <div class="row ">
+            <!-- CONTENIDO DE LA COLUMNA DERECHA-->
+            <div class="right_col" role="main" style="min-height: 1000 !important;">
+                <!-- ESTADISTICAS NUMÉRICAS-->
+                <div class="row mt-5">
                     <div class="tile_count w-100 mt-0 mt-md-4">
                         <div class="col-md-3   tile_stats_count text-center">
                             <span class="count_top"><i class="fa fa-user"></i> Alumnos registrados</span>
@@ -137,9 +132,10 @@
 
                     </div>
                 </div>
-                <!-- /top tiles -->
-
+                <!-- /ESTADISTICAS NUMÉRICAS-->
+                <!-- DIAGRAMAS -->
                 <div class="row">
+                    <!-- /RANKING (COL 1) -->
                     <div class="col-md-4 col-sm-4 ">
                         <div class="x_panel tile fixed_height_320">
                             <div class="x_title">
@@ -244,7 +240,8 @@
                             </div>
                         </div>
                     </div>
-                    <!-- REPORTE DE TIPOS DE CLASE -->
+                    <!-- /RANKING (COL 1) -->
+                    <!-- DEMANDA DE CLASES (COL 2) -->
                     <div class="col-md-4 col-sm-4 ">
                         <div class="x_panel tile fixed_height_320 overflow_hidden">
                             <div class="x_title">
@@ -268,12 +265,13 @@
                                                 <p class="">Clase</p>
                                             </div>
                                             <div class="col-lg-5 col-md-5 col-sm-5 p-0">
-                                                <p class="text-right">Horas</p>
+                                                <p class="text-right">% Horas</p>
                                             </div>
                                         </th>
                                     </tr>
                                     <tr>
                                         <td>
+
                                             <canvas class="canvasDoughnut" height="120" width="120"
                                                 style="margin: 15px 10px 10px 0"></canvas>
                                         </td>
@@ -287,9 +285,9 @@
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <p><i class="fa fa-square green"></i>Clase en TyT </p>
+                                                        <p><i class="fa fa-square red"></i>Matemáticas </p>
                                                     </td>
-                                                    <td>10%</td>
+                                                    <td>30%</td>
                                                 </tr>
                                                 <tr>
                                                     <td>
@@ -306,9 +304,9 @@
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <p><i class="fa fa-square red"></i>Otras </p>
+                                                        <p><i class="fa fa-square green"></i>Otras </p>
                                                     </td>
-                                                    <td>30%</td>
+                                                    <td>5%</td>
                                                 </tr>
                                             </table>
                                         </td>
@@ -317,12 +315,12 @@
                             </div>
                         </div>
                     </div>
-
-
+                    <!-- /DEMANDA DE CLASES (COL 2) -->
+                    <!-- ACCESOS RÁPIDOS (COL 3) -->
                     <div class="col-md-4 col-sm-4 ">
                         <div class="x_panel tile fixed_height_320">
                             <div class="x_title">
-                                <h2>Configuraciones rápidas</h2>
+                                <h2>Accesos rápidos</h2>
                                 <ul class="nav navbar-right panel_toolbox">
                                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                     </li>
@@ -347,7 +345,7 @@
                                     </ul>
 
                                     <div class="sidebar-widget">
-                                        <h4>Profile Completion</h4>
+                                        <h4>Tutorías en el mes</h4>
                                         <canvas width="150" height="80" id="chart_gauge_01" class=""
                                             style="width: 160px; height: 100px;"></canvas>
                                         <div class="goal-wrapper">
@@ -360,14 +358,17 @@
                             </div>
                         </div>
                     </div>
+                    <!-- ACCESOS RÁPIDOS (COL 3) -->
 
                 </div>
-
+                <!-- /DIAGRAMAS -->
+                <!-- EVENTOS CALENDARIO -->
                 <div class="row">
+                    <!-- EVENTOS CALENDARIO (PRIMERA COLUMNA) -->
                     <div class="col-md-4">
                         <div class="x_panel">
                             <div class="x_title">
-                                <h2>Eventos pendientes<small>Sessions</small></h2>
+                                <h2>Últimas tutorías<small></small></h2>
                                 <ul class="nav navbar-right panel_toolbox">
                                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                     </li>
@@ -379,62 +380,63 @@
                             <div class="x_content">
                                 <article class="media event my-2">
                                     <a class="pull-left date">
-                                        <p class="month">April</p>
-                                        <p class="day">23</p>
+                                        <p class="month">Dic</p>
+                                        <p class="day">02</p>
                                     </a>
-                                    <div class="media-body">
-                                        <a class="title" href="#">Item One Title</a>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <div class="media-body m-auto">
+                                        <a class="title" href="#">Matemáticas</a>
+                                        <p class="p-date">Tema: Álgebra</p>
                                     </div>
                                 </article>
                                 <article class="media event my-2">
                                     <a class="pull-left date">
-                                        <p class="month">April</p>
-                                        <p class="day">23</p>
+                                        <p class="month">Dic</p>
+                                        <p class="day">03</p>
                                     </a>
-                                    <div class="media-body">
-                                        <a class="title" href="#">Item Two Title</a>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <div class="media-body m-auto">
+                                        <a class="title" href="#">Matemáticas</a>
+                                        <p class="p-date">Tema: Ecuaciones diferenciales</p>
                                     </div>
                                 </article>
                                 <article class="media event my-2">
                                     <a class="pull-left date">
-                                        <p class="month">April</p>
-                                        <p class="day">23</p>
+                                        <p class="month">Dic</p>
+                                        <p class="day">04</p>
                                     </a>
-                                    <div class="media-body">
-                                        <a class="title" href="#">Item Two Title</a>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <div class="media-body m-auto">
+                                        <a class="title" href="#">Idiomas</a>
+                                        <p class="p-date">Italiano</p>
                                     </div>
                                 </article>
                                 <article class="media event my-2">
                                     <a class="pull-left date">
-                                        <p class="month">April</p>
-                                        <p class="day">23</p>
+                                        <p class="month">Dic</p>
+                                        <p class="day">06</p>
                                     </a>
-                                    <div class="media-body">
-                                        <a class="title" href="#">Item Two Title</a>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <div class="media-body m-auto">
+                                        <a class="title" href="#">Home schooling</a>
+                                        <p class="p-date">Lorem ipsum dolor sit amet.</p>
                                     </div>
                                 </article>
                                 <article class="media event my-2">
                                     <a class="pull-left date">
-                                        <p class="month">April</p>
-                                        <p class="day">23</p>
+                                        <p class="month">Dic</p>
+                                        <p class="day">09</p>
                                     </a>
-                                    <div class="media-body">
-                                        <a class="title" href="#">Item Three Title</a>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <div class="media-body m-auto">
+                                        <a class="title" href="#">Matemáticas</a>
+                                        <p class="p-date">Polinomios</p>
                                     </div>
                                 </article>
                             </div>
                         </div>
                     </div>
-
+                    <!-- /EVENTOS CALENDARIO (PRIMERA COLUMNA) -->
+                    <!-- EVENTOS CALENDARIO (SEGUNDA COLUMNA) -->
                     <div class="col-md-4">
                         <div class="x_panel">
                             <div class="x_title">
-                                <h2>Top Profiles <small>Sessions</small></h2>
+                                <h2>Próximas tutorías </h2>
                                 <ul class="nav navbar-right panel_toolbox">
                                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                     </li>
@@ -446,62 +448,63 @@
                             <div class="x_content">
                                 <article class="media event my-2">
                                     <a class="pull-left date">
-                                        <p class="month">April</p>
-                                        <p class="day">23</p>
+                                        <p class="month">Dic</p>
+                                        <p class="day">12</p>
                                     </a>
-                                    <div class="media-body">
-                                        <a class="title" href="#">Item One Title</a>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <div class="media-body m-auto">
+                                        <a class="title" href="#">Idiomas</a>
+                                        <p class="p-date">Inglés</p>
                                     </div>
                                 </article>
                                 <article class="media event my-2">
                                     <a class="pull-left date">
-                                        <p class="month">April</p>
-                                        <p class="day">23</p>
+                                        <p class="month">Dic</p>
+                                        <p class="day">13</p>
                                     </a>
-                                    <div class="media-body">
-                                        <a class="title" href="#">Item Two Title</a>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <div class="media-body m-auto">
+                                        <a class="title" href="#">Matemáticas</a>
+                                        <p class="p-date">Derivadas</p>
                                     </div>
                                 </article>
                                 <article class="media event my-2">
                                     <a class="pull-left date">
-                                        <p class="month">April</p>
-                                        <p class="day">23</p>
+                                        <p class="month">Dic</p>
+                                        <p class="day">16</p>
                                     </a>
-                                    <div class="media-body">
-                                        <a class="title" href="#">Item Two Title</a>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <div class="media-body m-auto">
+                                        <a class="title" href="#">Home schooling</a>
+                                        <p class="p-date">Lorem ipsum dolor sit amet.</p>
                                     </div>
                                 </article>
                                 <article class="media event my-2">
                                     <a class="pull-left date">
-                                        <p class="month">April</p>
-                                        <p class="day">23</p>
+                                        <p class="month">Dic</p>
+                                        <p class="day">17</p>
                                     </a>
-                                    <div class="media-body">
-                                        <a class="title" href="#">Item Two Title</a>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <div class="media-body m-auto">
+                                        <a class="title" href="#">Idiomas</a>
+                                        <p class="p-date">Mandarín</p>
                                     </div>
                                 </article>
                                 <article class="media event my-2">
                                     <a class="pull-left date">
-                                        <p class="month">April</p>
-                                        <p class="day">23</p>
+                                        <p class="month">Dic</p>
+                                        <p class="day">18</p>
                                     </a>
-                                    <div class="media-body">
-                                        <a class="title" href="#">Item Three Title</a>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <div class="media-body m-auto">
+                                        <a class="title" href="#">Computación</a>
+                                        <p class="p-date">Tema: Introducción a algoritmos</p>
                                     </div>
                                 </article>
                             </div>
                         </div>
                     </div>
-
+                    <!-- /EVENTOS CALENDARIO (SEGUNDA COLUMNA) -->
+                    <!-- EVENTOS CALENDARIO (TERCERA COLUMNA) -->
                     <div class="col-md-4">
                         <div class="x_panel">
                             <div class="x_title">
-                                <h2>Top Profiles <small>Sessions</small></h2>
+                                <h2>Próximos festivos<small>en Colombia</small></h2>
                                 <ul class="nav navbar-right panel_toolbox">
                                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                     </li>
@@ -513,112 +516,107 @@
                             <div class="x_content">
                                 <article class="media event my-2 ">
                                     <a class="pull-left date">
-                                        <p class="month">April</p>
-                                        <p class="day">23</p>
+                                        <p class="month">Dic</p>
+                                        <p class="day">25</p>
                                     </a>
-                                    <div class="media-body">
-                                        <a class="title" href="#">Item One Title</a>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <div class="media-body m-auto">
+                                        <a class="title" href="#">Navidad </a>
+                                        <!-- <p class="p-date">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
                                     </div>
                                 </article>
                                 <article class="media event my-2">
                                     <a class="pull-left date">
-                                        <p class="month">April</p>
-                                        <p class="day">23</p>
+                                        <p class="month">Ene</p>
+                                        <p class="day">01</p>
                                     </a>
-                                    <div class="media-body">
-                                        <a class="title" href="#">Item Two Title</a>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <div class="media-body m-auto">
+                                        <a class="title" href="#">Año nuevo</a>
                                     </div>
                                 </article>
                                 <article class="media event my-2">
                                     <a class="pull-left date">
-                                        <p class="month">April</p>
-                                        <p class="day">23</p>
+                                        <p class="month">Ene</p>
+                                        <p class="day">06</p>
                                     </a>
-                                    <div class="media-body">
-                                        <a class="title" href="#">Item Two Title</a>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <div class="media-body m-auto">
+                                        <a class="title" href="#">Día de los Reyes Magos</a>
                                     </div>
                                 </article>
                                 <article class="media event my-2">
                                     <a class="pull-left date">
-                                        <p class="month">April</p>
+                                        <p class="month">Mar</p>
                                         <p class="day">23</p>
                                     </a>
-                                    <div class="media-body">
-                                        <a class="title" href="#">Item Two Title</a>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <div class="media-body m-auto">
+                                        <a class="title" href="#">Día de San José</a>
                                     </div>
                                 </article>
                                 <article class="media event my-2">
                                     <a class="pull-left date">
-                                        <p class="month">April</p>
-                                        <p class="day">23</p>
+                                        <p class="month">Abr</p>
+                                        <p class="day">09</p>
                                     </a>
-                                    <div class="media-body">
-                                        <a class="title" href="#">Item Three Title</a>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <div class="media-body m-auto">
+                                        <a class="title" href="#">Jueves Santo</a>
                                     </div>
                                 </article>
                             </div>
                         </div>
                     </div>
+                    <!-- /EVENTOS CALENDARIO (TERCERA COLUMNA) -->
+
+
+
                 </div>
+                <!-- COPYRIGHT-->
+                <footer class="section-footer bg-copyright">
+                    <div class="container">
+                        <div class="row m-0">
 
-
-
-            </div>
-            <!-- /page content -->
-
-            <!-- footer content -->
-            <footer class="section-footer bg-copyright">
-                <div class="container">
-                    <div class="row m-0">
-
-                        <div class="col-md-12 p-0">
-                            <div class="d-block">
-                                <div class="caption-copyright text-center">
-                                    <p>© 2019 PAPERWOFF S.A.S – TODOS LOS DERECHOS RESERVADOS</p>
+                            <div class="col-md-12 p-0">
+                                <div class="d-block">
+                                    <div class="caption-copyright text-center">
+                                        <p>© 2019 PAPERWOFF S.A.S – TODOS LOS DERECHOS RESERVADOS</p>
+                                    </div>
                                 </div>
                             </div>
+
                         </div>
-
                     </div>
-                </div>
-            </footer>
-            <!-- /footer content -->
+                </footer>
+                <!-- /COPYRIGHT-->
+            </div>
+            <!-- /CONTENIDO DE LA COLUMNA DERECHA-->
         </div>
-    </div>
 
-    <!-- jQuery -->
-    <script src="../vendors/jquery/dist/jquery.min.js"></script>
-    <!-- Bootstrap -->
-    <script src="../vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- jQuery -->
+        <script src="../vendors/jquery/dist/jquery.min.js"></script>
+        <!-- Bootstrap -->
+        <script src="../vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Chart.js -->
-    <script src="../vendors/Chart.js/dist/Chart.min.js"></script>
-    <!-- gauge.js -->
-    <script src="../vendors/gauge.js/dist/gauge.min.js"></script>
-    <!-- bootstrap-progressbar -->
-    <script src="../vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
-    <!-- iCheck -->
-    <script src="../vendors/iCheck/icheck.min.js"></script>
+        <!-- Chart.js -->
+        <script src="../vendors/Chart.js/dist/Chart.min.js"></script>
+        <!-- gauge.js -->
+        <script src="../vendors/gauge.js/dist/gauge.min.js"></script>
+        <!-- bootstrap-progressbar -->
+        <script src="../vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+        <!-- iCheck -->
+        <script src="../vendors/iCheck/icheck.min.js"></script>
 
-    <!-- Flot -->
-    <script src="../vendors/Flot/jquery.flot.js"></script>
-    <script src="../vendors/Flot/jquery.flot.pie.js"></script>
-    <script src="../vendors/Flot/jquery.flot.time.js"></script>
-    <script src="../vendors/Flot/jquery.flot.stack.js"></script>
-    <script src="../vendors/Flot/jquery.flot.resize.js"></script>
+        <!-- Flot -->
+        <script src="../vendors/Flot/jquery.flot.js"></script>
+        <script src="../vendors/Flot/jquery.flot.pie.js"></script>
+        <script src="../vendors/Flot/jquery.flot.time.js"></script>
+        <script src="../vendors/Flot/jquery.flot.stack.js"></script>
+        <script src="../vendors/Flot/jquery.flot.resize.js"></script>
 
-    <!-- DateJS -->
-    <script src="../vendors/DateJS/build/date.js"></script>
-
+        <!-- DateJS -->
+        <script src="../vendors/DateJS/build/date.js"></script>
 
 
-    <!-- Custom Theme Scripts -->
-    <script src="../js/custom.js"></script>
+
+        <!-- Custom Theme Scripts -->
+        <script src="../js/custom.js"></script>
 
 </body>
 
