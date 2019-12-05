@@ -407,3 +407,30 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td:first-child:before, table.dataT
 .p-date{
   color: #8f9398;
 }
+.cont-whatsapp-fixed {
+  position: fixed;
+  z-index: 99;
+  width: 75px;
+  height: 102px;
+  display: block;
+  top: 11%;
+  right: 15px;
+}
+
+.cont-whatsapp-fixed a {
+  background: url(../images/icon-whattsapp.svg) no-repeat center;
+  background-size: contain;
+  left: inherit;
+  bottom: inherit;
+  display: block;
+  width: 75px;
+  height: 102px;
+}
+
+@media screen and (max-width: 991px){
+.cont-whatsapp-fixed {
+    top: inherit;
+    bottom: 5%;
+    right: 10px;
+  }
+}
