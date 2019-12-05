@@ -1761,6 +1761,7 @@ h2 {
   margin: 5px 0 6px;
   float: left;
   display: block;
+  zoom: 100% !important;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap; 

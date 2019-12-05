@@ -334,6 +334,32 @@ input[type="checkbox"]:disabled+label:before {
     max-width: 200px;
   }
 } 
+
+@media (min-width: 1800px) and (max-width: 2000px) {
+  .main_container .top_nav {
+    width: 88%;
+  }
+}
+@media (min-width: 1600px) and (max-width: 1799px) {
+  .main_container .top_nav {
+    width: 86%;
+  }
+}
+@media (min-width: 1400px) and (max-width: 1599px) {
+  .main_container .top_nav {
+    width: 84%;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .main_container .top_nav {
+    width: 81%;
+  }
+}
+@media (min-width: 1000px) and (max-width: 1199px) {
+  .main_container .top_nav {
+    width: 79%;
+  }
+}
 /* ----------------------------------------  MEDIA QUERY  ---------------------------------------- */
 
 .panel_toolbox {
