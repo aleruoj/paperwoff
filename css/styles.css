@@ -284,6 +284,7 @@ input[type="checkbox"]:disabled+label:before {
   }
   #usuarios .right_col {
     min-height: 900px !important;
+    width: 100%;
   }
   #notfound .btn-404 {
     max-width: 150px;
