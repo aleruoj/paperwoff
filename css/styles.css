@@ -477,3 +477,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th:first-child:before {
   height: 20px;
   border: 0.1em solid #0e65b2;
 }
+
+#l-calendar .button-add{
+  max-width: 300px;
+}
