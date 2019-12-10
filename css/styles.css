@@ -56,7 +56,6 @@ header {
   color: black;
 }
 
-
 footer {
   background-color: #38a5bc;
   color: #ffffff;
@@ -150,7 +149,7 @@ input::placeholder {
   font-size: 14px;
 }
 
-input[type="checkbox"]+label {
+input[type="checkbox"] + label {
   display: block;
   margin: 0.2em;
   cursor: pointer;
@@ -161,7 +160,7 @@ input[type="checkbox"] {
   display: none;
 }
 
-input[type="checkbox"]+label:before {
+input[type="checkbox"] + label:before {
   content: "\2714";
   border: 0.1em solid #aaa;
   border-radius: 0.2em;
@@ -176,24 +175,24 @@ input[type="checkbox"]+label:before {
   transition: 0.1s;
 }
 
-input[type="checkbox"]:checked+label:before {
+input[type="checkbox"]:checked + label:before {
   background-color: #fff;
   border-color: #fff;
   color: #0e65b2;
 }
 
-#home input[type="checkbox"]+label:before {
+#home input[type="checkbox"] + label:before {
   width: 20px;
   height: 20px;
   border: 0.1em solid white;
 }
 
-#home input[type="checkbox"]+label {
+#home input[type="checkbox"] + label {
   font-size: 14px;
   color: white;
 }
 
-input[type="checkbox"]:disabled+label:before {
+input[type="checkbox"]:disabled + label:before {
   transform: scale(1);
   border-color: #aaa;
 }
@@ -202,7 +201,7 @@ input[type="checkbox"]:disabled+label:before {
 
 /* ----------------------------------------  LOGIN  ---------------------------------------- */
 
-#login input[type="checkbox"]+label:before {
+#login input[type="checkbox"] + label:before {
   width: 15px;
   height: 15px;
 }
@@ -214,7 +213,7 @@ input[type="checkbox"]:disabled+label:before {
   line-height: 1rem;
 }
 
-#login h2{
+#login h2 {
   color: black;
 }
 
@@ -281,17 +280,15 @@ input[type="checkbox"]:disabled+label:before {
   .nav-sm .container.body .right_col {
     padding-bottom: 0;
   }
-
 }
 
 @media (max-width: 320px) {
   .img-description {
     max-width: 220px;
   }
-  .nav-sm .navbar-right{
+  .nav-sm .navbar-right {
     padding: 0;
   }
-  
 }
 @media (min-width: 1201px) and (max-width: 1280px) {
   .canvasDoughnut {
@@ -310,7 +307,7 @@ input[type="checkbox"]:disabled+label:before {
   .img-description {
     max-width: 200px;
   }
-} 
+}
 
 @media (min-width: 1800px) and (max-width: 2000px) {
   .main_container .top_nav {
@@ -364,29 +361,29 @@ input[type="checkbox"]:disabled+label:before {
 }
 
 .main_container {
-  background: #2A3F54;
+  background: #2a3f54;
 }
 
 .form-group {
   margin-bottom: 1.6rem;
 }
 
-table.dataTable.dtr-inline.collapsed>tbody>tr>td:first-child:before, table.dataTable.dtr-inline.collapsed>tbody>tr>th:first-child:before {
+table.dataTable.dtr-inline.collapsed > tbody > tr > td:first-child:before,
+table.dataTable.dtr-inline.collapsed > tbody > tr > th:first-child:before {
   background-color: #6c757d;
 }
 
- #cc .btn{
+#cc .btn {
   font-size: 12px;
 }
-#usuarios .btn{
+#usuarios .btn {
   font-size: 12px;
 }
 
-#cc .last{
-  padding: 0 ;
+#cc .last {
+  padding: 0;
   vertical-align: middle;
   font-size: 12px;
-
 }
 .button-add {
   position: absolute;
@@ -407,7 +404,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td:first-child:before, table.dataT
   padding: 0;
 }
 
-.p-date{
+.p-date {
   color: #8f9398;
 }
 .cont-whatsapp-fixed {
@@ -430,40 +427,42 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td:first-child:before, table.dataT
   height: 102px;
 }
 
-@media screen and (max-width: 991px){
-.cont-whatsapp-fixed {
+@media screen and (max-width: 991px) {
+  .cont-whatsapp-fixed {
     top: inherit;
     bottom: 5%;
     right: 10px;
   }
 }
-.hero-card{
-  background-image: url('../images/s1.png') ;
+.hero-card {
+  background-image: url("../images/s1.png");
   background-size: cover;
   height: 200px;
-
 }
-.right-form{
-  box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.75);
+.right-form {
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.75);
 }
-.hero-card h5, h2,h3,h4, p{
-color: white;
+.hero h5, 
+.hero h2,
+.hero h3,
+.hero h4,
+.hero p{
+  color: white;
 }
-.hero{
-  background-image: url('../images/b-hero.png') ;
+ 
+.hero {
+  background-image: url("../images/b-hero.png");
   background-size: cover;
 }
 
-#login .hero{
+#login .hero {
   height: 100vh;
 }
-#home .fa-circle{
+#home .fa-circle {
   color: white;
 }
 
-.fondo-op{
+.fondo-op {
   margin: auto;
-    background: #000000ab;
+  background: #000000ab;
 }
-
-
