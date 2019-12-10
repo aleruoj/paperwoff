@@ -433,6 +433,9 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th:first-child:before {
     bottom: 5%;
     right: 10px;
   }
+  #tutores .x_panel{
+    min-height: 500px !important;
+  }
 }
 .hero-card {
   background-image: url("../images/s1.png");
@@ -483,4 +486,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th:first-child:before {
 }
 #tutores .table-responsive .btn {
   font-size: 12px;
+}
+#tutores .x_panel{
+  min-height: 700px ;
 }
