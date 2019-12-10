@@ -481,3 +481,6 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th:first-child:before {
 #l-calendar .button-add{
   max-width: 300px;
 }
+#tutores .table-responsive .btn {
+  font-size: 12px;
+}

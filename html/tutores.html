@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -9,29 +9,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="../images/favicon.png" type="image/ico" />
 
-    <title>Recursos humanos | Paperwoff</title>
+    <title>Tutores | Paperwoff</title>
 
     <!-- Bootstrap -->
-    <link href="cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
     <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- NProgress -->
     <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- FullCalendar -->
+    <link href="../vendors/fullcalendar/dist/fullcalendar.css" rel="stylesheet">
     <!-- iCheck -->
     <link href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
     <!-- Datatables -->
     <link href="../vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
     <link href="../vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
     <link href="../vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
-    <!-- Custom Theme Style -->
+    <!-- Custom styling plus plugins -->
     <link href="../css/custom.css" rel="stylesheet">
+
     <!-- Mis estilos-->
     <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900&display=swap" rel="stylesheet">
     <link href="../css/styles.css" rel="stylesheet">
 </head>
 
-<body class="nav-md" id="rrhh">
+<body class="nav-md" id="tutores">
     <div class="container body">
         <div class="main_container">
             <div class="col-md-3 left_col" style="min-height: auto;">
@@ -53,9 +55,7 @@
                         </div>
                     </div>
                     <!-- /SECCIÓN BIENVENIDO-->
-
                     <br />
-
                     <!-- MENÚ LATERAL -->
                     <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
                         <div class="menu_section">
@@ -115,20 +115,18 @@
                                             class="fa fa-sign-out pull-right"></i>Cerrar sesión</a>
                                 </div>
                             </li>
-
-
                         </ul>
                     </nav>
                 </div>
             </div>
-            <!-- /HEADER -->
+            <!-- HEADER -->
 
             <!-- CONTENIDO DE LA COLUMNA DERECHA-->
             <div class="right_col" role="main">
                 <!-- TÍTULO-->
                 <div class="page-title">
                     <div class="title_left">
-                        <h3>Recursos humanos</h3>
+                        <h3>Turores</h3>
                     </div>
                     <div class="title_right">
                         <div class="col-md-5 col-sm-5 col-xs-12 pull-right">
@@ -138,11 +136,11 @@
                 <!-- /TÍTULO-->
                 <div class="clearfix"></div>
                 <div class="row mt-4">
-                    <!-- TABLA DE PERSONAS -->
+                    <!-- TABLA DE TUTORES -->
                     <div class="col-md-6 col-12">
                         <div class="x_panel" style="min-height: 700px;">
                             <div class="x_title">
-                                <h2>Listado de perfiles</h2>
+                                <h2>Listado de tutores</h2>
                                 <ul class="nav navbar-right panel_toolbox">
                                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                     </li>
@@ -150,15 +148,6 @@
                                     </li>
                                 </ul>
                                 <div class="clearfix"></div>
-                            </div>
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <button type="button" class="button-add"><i
-                                                class="fa fa-plus-square pr-3"></i>Crear
-                                            perfil</button>
-                                    </div>
-                                </div>
                             </div>
                             <div class="x_content">
                                 <!-- TABLA -->
@@ -174,8 +163,6 @@
                                                             Documento </th>
                                                         <th class="column-title" style="width: 25%;">Nombre
                                                             completo </th>
-                                                        <th class="column-title" style="width: 20%;">Titulación
-                                                        </th>
                                                         <th class="column-title no-link " style="width: 10%;"><span
                                                                 class="nobr">Acción</span>
                                                         </th>
@@ -190,98 +177,98 @@
                                                     <tr class="even pointer">
                                                         <td class=" ">121000040</td>
                                                         <td class=" ">Pedro Alfonso Pérez Sánchez</td>
-                                                        <td class=" ">Licenciado en Matemáticas</td>
                                                         <td class=" "> <button type="button"
-                                                                class="btn btn-success btn-xs">Ver</button>
+                                                                class="btn btn-success btn-xs">Ver
+                                                                disponibilidad</button>
                                                         </td>
                                                     </tr>
                                                     <tr class="odd pointer">
                                                         <td class=" ">121000039</td>
                                                         <td class=" ">Pedro Alfonso Pérez Sánchez</td>
-                                                        <td class=" ">Licenciado en lenguajes</td>
                                                         <td class=" "> <button type="button"
-                                                                class="btn btn-success btn-xs">Ver</button>
+                                                                class="btn btn-success btn-xs">Ver
+                                                                disponibilidad</button>
                                                         </td>
                                                     </tr>
                                                     <tr class="even pointer">
                                                         <td class=" ">121000038</td>
                                                         <td class=" ">Pedro Alfonso Pérez Sánchez</td>
-                                                        <td class=" ">Licenciado en idiomas</td>
                                                         <td class=" "> <button type="button"
-                                                                class="btn btn-success btn-xs">Ver</button>
+                                                                class="btn btn-success btn-xs">Ver
+                                                                disponibilidad</button>
                                                         </td>
                                                     </tr>
                                                     <tr class="odd pointer">
                                                         <td class=" ">121000037</td>
                                                         <td class=" ">Pedro Alfonso Pérez Sánchez</td>
-                                                        <td class=" ">Ingeniero en sistemas</td>
                                                         <td class=" "> <button type="button"
-                                                                class="btn btn-success btn-xs">Ver</button>
+                                                                class="btn btn-success btn-xs">Ver
+                                                                disponibilidad</button>
                                                         </td>
                                                     </tr>
                                                     <tr class="even pointer">
                                                         <td class=" ">121000040</td>
                                                         <td class=" ">Pedro Alfonso Pérez Sánchez </td>
-                                                        <td class=" ">Licenciado en idiomas</td>
                                                         <td class=" "> <button type="button"
-                                                                class="btn btn-success btn-xs">Ver</button>
+                                                                class="btn btn-success btn-xs">Ver
+                                                                disponibilidad</button>
                                                         </td>
                                                     </tr>
                                                     <tr class="odd pointer">
                                                         <td class=" ">121000039</td>
                                                         <td class=" ">Pedro Alfonso Pérez Sánchez</td>
-                                                        <td class=" ">Ingeniero ambiental</td>
                                                         <td class=""> <button type="button"
-                                                                class="btn btn-success btn-xs">Ver</button>
+                                                                class="btn btn-success btn-xs">Ver
+                                                                disponibilidad</button>
                                                         </td>
                                                     </tr>
                                                     <tr class="even pointer">
                                                         <td class=" ">121000038</td>
                                                         <td class=" ">Pedro Alfonso Pérez Sánchez</td>
-                                                        <td class=" ">Ingeniero industrial</td>
                                                         <td class=""> <button type="button"
-                                                                class="btn btn-success btn-xs">Ver</button>
+                                                                class="btn btn-success btn-xs">Ver
+                                                                disponibilidad</button>
                                                         </td>
                                                     </tr>
                                                     <tr class="odd pointer">
                                                         <td class=" ">121000037</td>
                                                         <td class=" ">Pedro Alfonso Pérez Sánchez</td>
-                                                        <td class=" ">Licenciado en idiomas</td>
                                                         <td class=""> <button type="button"
-                                                                class="btn btn-success btn-xs">Ver</button>
+                                                                class="btn btn-success btn-xs">Ver
+                                                                disponibilidad</button>
                                                         </td>
                                                     </tr>
 
                                                     <tr class="even pointer">
                                                         <td class=" ">121000040</td>
                                                         <td class=" ">Pedro Alfonso Pérez Sánchez </td>
-                                                        <td class=" ">Licenciado en idiomas</td>
                                                         <td class=" "> <button type="button"
-                                                                class="btn btn-success btn-xs">Ver</button>
+                                                                class="btn btn-success btn-xs">Ver
+                                                                disponibilidad</button>
                                                         </td>
                                                     </tr>
                                                     <tr class="odd pointer">
                                                         <td class=" ">121000039</td>
                                                         <td class=" ">Pedro Alfonso Pérez Sánchez</td>
-                                                        <td class=" ">Licenciado en idiomas</td>
                                                         <td class=" "> <button type="button"
-                                                                class="btn btn-success btn-xs">Ver</button>
+                                                                class="btn btn-success btn-xs">Ver
+                                                                disponibilidad</button>
                                                         </td>
                                                     </tr>
                                                     <tr class="even pointer">
                                                         <td class=" ">121000040</td>
                                                         <td class=" ">Pedro Alfonso Pérez Sánchez </td>
-                                                        <td class=" ">Licenciado en idiomas</td>
                                                         <td class=" "> <button type="button"
-                                                                class="btn btn-success btn-xs">Ver</button>
+                                                                class="btn btn-success btn-xs">Ver
+                                                                disponibilidad</button>
                                                         </td>
                                                     </tr>
                                                     <tr class="odd pointer">
                                                         <td class=" ">121000039</td>
                                                         <td class=" ">Pedro Alfonso Pérez Sánchez</td>
-                                                        <td class=" ">Licenciado en idiomas</td>
                                                         <td class=" "> <button type="button"
-                                                                class="btn btn-success btn-xs">Ver</button>
+                                                                class="btn btn-success btn-xs">Ver
+                                                                disponibilidad</button>
                                                         </td>
                                                     </tr>
                                                 </tbody>
@@ -293,14 +280,14 @@
                             </div>
                         </div>
                     </div>
-                    <!-- /TABLA DE PERSONAS -->
+                    <!-- /TABLA DE TUTORES -->
 
-                    <!-- FORMULARIO -->
+                    <!-- CALENDARIO -->
                     <div class="col-md-6 col-12">
                         <div class="row">
                             <div class="x_panel" style="min-height: 700px;">
                                 <div class="x_title">
-                                    <h2>Información del perfil</h2>
+                                    <h2>Disponibilidad</h2>
                                     <ul class="nav navbar-right panel_toolbox">
                                         <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                         </li>
@@ -311,48 +298,14 @@
                                 </div>
                                 <div class="x_content">
                                     <div class="row">
-                                        <div class="col-12 text-center my-4">
-                                            <img src="../images/user.png" alt="">
-                                        </div>
-                                        <div class="col-12 ">
-                                            <form>
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control"
-                                                        placeholder="Nombres y apellidos">
-                                                </div>
-                                                <div class="form-group">
-                                                    <input type="email" class="form-control"
-                                                        placeholder="Correo electrónico">
-                                                </div>
-                                                <div class="form-group ">
-                                                    <input type="number" class="form-control" placeholder="Teléfono">
-
-                                                </div>
-                                                <div class="form-group ">
-                                                    <input type="text" class="form-control" placeholder="Otro">
-
-                                                </div>
-                                                <div class="row">
-                                                    <!-- BOTONES -->
-                                                    <div class="col-md-4 col-12"><button type="submit"
-                                                            class="btn btn-info w-100 b-profile">Resultados de
-                                                            pruebas</button></div>
-                                                    <div class="col-md-4 col-12"><button type="submit"
-                                                            class="btn btn-success w-100 b-profile">Enviar
-                                                            pruebas</button></div>
-                                                    <div class="col-md-4 col-12"><button type="submit"
-                                                            class="btn btn-dark w-100 b-profile">CV</button></div>
-                                                    <!-- /BOTONES -->
-                                                </div>
-                                            </form>
-                                        </div>
+                                        <div id="calendar"></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                     </div>
-                    <!-- /FORMULARIO -->
+                    <!-- /CALENDARIO -->
 
                 </div>
             </div>
@@ -362,7 +315,8 @@
             <footer class="section-footer bg-copyright">
                 <div class="container">
                     <div class="row m-0">
-                        <div class="col-md-12">
+
+                        <div class="col-md-12 p-0">
                             <div class="d-block">
                                 <div class="caption-copyright text-center">
                                     <p>© 2019 PAPERWOFF S.A.S – TODOS LOS DERECHOS RESERVADOS</p>
@@ -376,7 +330,86 @@
             <!-- /COPYRIGHT-->
         </div>
     </div>
-    <!-- LIBRERIAS JAVASCRIPT -->
+
+    <!-- MODAL NUEVA ENTRADA -->
+    <div id="CalenderModalNew" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Agendar disponibilidad</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <div id="testmodal" style="padding: 5px 20px;">
+                        <form id="antoform" class="form-horizontal calender" role="form">
+                            <div class="form-group col-md-12 px-1">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label class="control-label p-0 ">Fecha de inicio</label>
+                                        <input type="datetime-local" class="form-control" id="hora-inicio"
+                                            placeholder="Hora de inicio">
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="control-label p-0">Fecha de fin</label>
+                                        <input type="datetime-local" class="form-control" id="hora-fin"
+                                            placeholder="Hora de fin">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default antoclose" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary antosubmit" data-dismiss="modal">Guardar
+                        cambios</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /MODAL NUEVA ENTRADA -->
+    <!-- MODAL EDITAR ENTRADA -->
+    <div id="CalenderModalEdit" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel2">Editar disponibilidad</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <div id="testmodal2" style="padding: 5px 20px;">
+                        <form id="antoform2" class="form-horizontal calender" role="form">
+                            <div class="form-group col-md-12 px-1">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label class="control-label p-0 ">Fecha de inicio</label>
+                                        <input type="datetime-local" class="form-control" id="hora-inicio"
+                                            placeholder="Hora de inicio">
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="control-label p-0">Fecha de fin</label>
+                                        <input type="datetime-local" class="form-control" id="hora-fin"
+                                            placeholder="Hora de fin">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default antoclose2" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary antosubmit2">Guardar cambios</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /MODAL EDITAR ENTRADA -->
+
+    <div id="fc_create" data-toggle="modal" data-target="#CalenderModalNew"></div>
+    <div id="fc_edit" data-toggle="modal" data-target="#CalenderModalEdit"></div>
+
     <!-- jQuery -->
     <script src="../vendors/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->
@@ -385,6 +418,9 @@
     <script src="../vendors/fastclick/lib/fastclick.js"></script>
     <!-- NProgress -->
     <script src="../vendors/nprogress/nprogress.js"></script>
+    <!-- FullCalendar -->
+    <script src="../vendors/moment/min/moment.min.js"></script>
+    <script src="../vendors/fullcalendar/dist/fullcalendar.js"></script>
     <!-- iCheck -->
     <script src="../vendors/iCheck/icheck.min.js"></script>
     <!-- Datatables -->
@@ -401,7 +437,7 @@
             "pageLength": 6
         });
     </script>
-    <!-- /LIBRERIAS JAVASCRIPT -->
+    >
 </body>
 
 </html>
