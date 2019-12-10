@@ -7,7 +7,7 @@ body {
 }
 
 .colorfondo {
-  background-color: #03738c;
+  background-color: #dadada;
 }
 
 header {
@@ -53,43 +53,15 @@ header {
 }
 
 .que-es {
-  color: white;
+  color: black;
 }
 
-.pre-footer {
-  background-color: #38a5bc;
-  color: #ffffff;
-  padding: 2.8125rem 0;
-}
 
 footer {
   background-color: #38a5bc;
   color: #ffffff;
   width: 100%;
   bottom: 0;
-}
-
-.pre-footer h4 {
-  font-size: 20px;
-  line-height: 28px;
-}
-
-.pre-footer ul {
-  margin-bottom: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.pre-footer a {
-  color: white;
-}
-
-.pre-footer a:hover {
-  color: #c0c0c0;
-}
-
-.pre-footer .title-line {
-  border-bottom: 2px solid white;
 }
 
 .bg-copyright {
@@ -124,8 +96,9 @@ footer {
 
 /* ----------------------------------------  SLIDER  ---------------------------------------- */
 
-#home h4 {
+.home-description h4 {
   font-weight: 100;
+  color: black;
 }
 
 .section-form {
@@ -204,9 +177,9 @@ input[type="checkbox"]+label:before {
 }
 
 input[type="checkbox"]:checked+label:before {
-  background-color: #0e65b2;
-  border-color: #0e65b2;
-  color: #fff;
+  background-color: #fff;
+  border-color: #fff;
+  color: #0e65b2;
 }
 
 #home input[type="checkbox"]+label:before {
@@ -239,6 +212,10 @@ input[type="checkbox"]:disabled+label:before {
   font-size: 0.75rem;
   color: #5e5e5e;
   line-height: 1rem;
+}
+
+#login h2{
+  color: black;
 }
 
 /* ----------------------------------------  LOGIN  ---------------------------------------- */
@@ -439,7 +416,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td:first-child:before, table.dataT
   width: 75px;
   height: 102px;
   display: block;
-  top: 11%;
+  top: 16%;
   right: 15px;
 }
 
@@ -460,3 +437,33 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td:first-child:before, table.dataT
     right: 10px;
   }
 }
+.hero-card{
+  background-image: url('../images/s1.png') ;
+  background-size: cover;
+  height: 200px;
+
+}
+.right-form{
+  box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.75);
+}
+.hero-card h5, h2,h3,h4, p{
+color: white;
+}
+.hero{
+  background-image: url('../images/b-hero.png') ;
+  background-size: cover;
+}
+
+#login .hero{
+  height: 100vh;
+}
+#home .fa-circle{
+  color: white;
+}
+
+.fondo-op{
+  margin: auto;
+    background: #000000ab;
+}
+
+

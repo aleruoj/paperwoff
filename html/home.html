@@ -12,7 +12,6 @@
     <!-- Font Awesome -->
     <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- Mis estilos-->
-    <link rel="stylesheet" href="../css/swiper.min.css">
     <link rel="stylesheet" type="text/css" href="../css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900&display=swap" rel="stylesheet">
 </head>
@@ -62,28 +61,116 @@
     </header>
     <!-- /HEADER -->
 
-    <!-- Swiper -->
-    <div class="container-fluid p-0">
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide"
-                    style="background:url(../images/s1.png) center no-repeat; background-size:cover;"></div>
-                <div class="swiper-slide"
-                    style="background:url(../images/s2.png) center no-repeat; background-size:cover;"></div>
-                <div class="swiper-slide"
-                    style="background:url(../images/s3.png) center no-repeat; background-size:cover;"></div>
-                <div class="swiper-slide"
-                    style="background:url(../images/s4.png) center no-repeat; background-size:cover;"></div>
-                <div class="swiper-slide"
-                    style="background:url(../images/s5.jpg) center no-repeat; background-size:cover;"></div>
-                <div class="swiper-slide"
-                    style="background:url(../images/s6.jpg) center no-repeat; background-size:cover;"></div>
+    <!-- HERO -->
+    <section class="container-fluid hero mt-5">
+        <div class="row mt-5">
+            <div class="col-md-5 col-12 col-left m-auto px-3">
+                <div class="text-center">
+                    <img src="../images/logo-blanco.png" width="300" alt="" class="py-4">
+                </div>
+                <div class="text-center py-4">
+                    <h3>Conoce PAPERWOFF, la solución ideal para implementar tu Sistema de Gestión Documental</h3>
+                </div>
+                <div>
+                    <div class="row px-5">
+                        <div class="col-1 ">
+                            <i class="fa fa-circle"></i>
+                        </div>
+                        <div class="col-11">
+                            <p><b>Transfórmate</b> al movimiento cero papel con el uso del documento electrónico.</p>
+                        </div>
+                        <div class="col-1">
+                            <i class="fa fa-circle"></i>
+                        </div>
+                        <div class="col-11">
+                            <p><b>Consigue</b> experiencia a través de procesos de consultoría y asesoría.</p>
+                        </div>
+                        <div class="col-1">
+                            <i class="fa fa-circle"></i>
+                        </div>
+                        <div class="col-11">
+                            <p> <b>Escoge</b> tu solución en gestión documental y empieza tu digitalización.</p>
+                        </div>
+
+                    </div>
+                    <div class="row my-5 text-center">
+                        <div class="col-12">
+                            <h4>¿Necesitas más información? <br> Escribenos a: <br> <span
+                                    class="font-weight-bold">contacto@paperwoff.com</span></h4>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <!-- Add Pagination -->
-            <div class="swiper-pagination"></div>
+
+            <div class="col-md-4 col-12 col-right mx-auto my-5">
+                <div class="right-form mx-auto p-3">
+                    <div class="hero-card d-flex">
+                        <div class="fondo-op">
+                            <h5 class="text-center m-auto p-3">
+                                ¿Tu empresa tiene más de + de 100 empleados?<br>
+                                <br>
+                                Solicita <b>GRATIS</b> una asesoría de 20 minutos con un experto en gestión documental.</h5>
+                        </div>
+                    </div>
+                    <div class="card-body px-0">
+                        <form action="">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="nombre" required=""
+                                    aria-describedby="emailHelp" placeholder="Nombre completo">
+                            </div>
+                            <div class="form-group">
+                                <input type="number" class="form-control" id="tlf" required="" placeholder="Teléfono">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="email" required=""
+                                    aria-describedby="emailHelp" placeholder="Correo electrónico">
+                            </div>
+                            <div class="form-group">
+                                <select class="form-control" id="area">
+                                    <option>País</option>
+                                    <option>Brasil</option>
+                                    <option>Chile</option>
+                                    <option>Colombia</option>
+                                    <option>Venezuela</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="nombre" required=""
+                                    aria-describedby="emailHelp" placeholder="Nombre de tu empresa">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="nombre" required=""
+                                    aria-describedby="emailHelp" placeholder="Área de tu empresa">
+                            </div>
+
+                            <div class="form-group">
+                                <select class="form-control" id="empleados">
+                                    <option>Número de empleados</option>
+                                    <option>1 - 50</option>
+                                    <option>51 - 100</option>
+                                    <option>101 - 250</option>
+                                    <option>251 - 500</option>
+                                    <option>501 - 1000</option>
+                                </select>
+                            </div>
+                            <div class="form-check form-check-inline ">
+                                <input type="checkbox" class="form-check-input" id="politicas" required="">
+                                <label class="form-check-label check-mobile " for="politicas">Acepto las políticas de
+                                    tratamiento de datos
+                                    y el envío de información</label>
+                            </div>
+                            <button type="submit" class="btn btn-light w-100 pt-2 mt-2">Suscribirme</button>
+                        </form>
+
+                    </div>
+
+                </div>
+            </div>
         </div>
-    </div>
-    <!-- /Swiper -->
+
+    </section>
+    <!-- /HERO -->
 
     <!-- /QUE ES -->
     <section class="section p-4 colorfondo que-es" id="que-es">
@@ -119,76 +206,6 @@
     </section>
     <!-- /QUE ES -->
 
-    <!-- CONTACTO -->
-    <section class="pre-footer">
-        <div class="container">
-            <div class="row mb-3">
-                <div class="col-12 text-md-left text-center">
-                    <h2>¡Descarga aquí un demo gratis!</h2>
-                </div>
-                <div class="col-12">
-                    <p>Solicita <b>GRATIS</b> una tutoría de 20 minutos con un experto en el tema que desees.</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12 col-md-4">
-                    <form action="">
-                        <div class="form-group">
-                            <label for="nombre">Nombre completo:</label>
-                            <input type="text" class="form-control" id="nombre" required="" aria-describedby="emailHelp"
-                                placeholder="">
-                        </div>
-                        <div class="form-group">
-                            <label for="area">País</label>
-                            <select class="form-control" id="area">
-                                <option>--</option>
-                                <option>Brasil</option>
-                                <option>Chile</option>
-                                <option>Colombia</option>
-                                <option>Venezuela</option>
-                            </select>
-                        </div>
-                        <div class="form-check form-check-inline d-md-block d-none">
-                            <input type="checkbox" class="form-check-input" id="politicas" required="">
-                            <label class="form-check-label check-mobile " for="politicas">Acepto las políticas de
-                                tratamiento de datos
-                                y el envío de información</label>
-                        </div>
-                </div>
-                <div class="col-12 col-md-4">
-                    <div class="form-group">
-                        <label for="email">Correo electrónico</label>
-                        <input type="email" class="form-control" id="email" required="" aria-describedby="emailHelp"
-                            placeholder="">
-                    </div>
-                    <div class="form-group">
-                        <label for="empleados">Número de empleados</label>
-                        <select class="form-control" id="empleados">
-                            <option>--</option>
-                            <option>1 - 50</option>
-                            <option>51 - 100</option>
-                            <option>101 - 250</option>
-                            <option>251 - 500</option>
-                            <option>501 - 1000</option>
-                        </select>
-                    </div>
-                    <div class="form-check form-check-inline d-md-none d-block">
-                        <input type="checkbox" class="form-check-input" id="politicas" required="">
-                        <label class="form-check-label check-mobile " for="politicas">Acepto las políticas de
-                            tratamiento de datos
-                            y el envío de información</label>
-                    </div>
-                    <button type="submit" class="btn btn-dark w-100 pt-2 mt-2">Suscribirme</button>
-                    </form>
-                </div>
-                <div class="col-12 col-md-4 text-center mt-md-4 mt-5">
-                    <h4>¿Necesitas más información? <br> Escribenos a: <br> <span
-                            class="font-weight-bold">contacto@paperwoff.com</span></h4>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- CONTACTO -->
     <!-- COPYRIGHT -->
     <footer class="footer footer-black position-static ">
         <div class="clear-both"></div>
@@ -219,21 +236,6 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <!-- Termina JS de bootstrap -->
-
-    <script src="../js/swiper.min.js"></script>
-    <script>
-        var swiper = new Swiper('.swiper-container', {
-            loop: true,
-            autoplay: {
-                delay: 4500,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                dynamicBullets: true,
-            },
-        });
-    </script>
 </body>
 
 </html>
