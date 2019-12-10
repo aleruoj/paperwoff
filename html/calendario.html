@@ -39,7 +39,7 @@
 
                     <div class="clearfix"></div>
 
-                     <!-- SECCIÓN BIENVENIDO-->
+                    <!-- SECCIÓN BIENVENIDO-->
                     <div class="profile clearfix">
                         <div class="profile_pic">
                             <img src="../images/user.png" alt="..." class="img-circle profile_img">
@@ -49,7 +49,7 @@
                             <h2>Administrador</h2>
                         </div>
                     </div>
-                     <!-- /SECCIÓN BIENVENIDO-->
+                    <!-- /SECCIÓN BIENVENIDO-->
                     <br />
                     <!-- MENÚ LATERAL -->
                     <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
@@ -72,8 +72,15 @@
                                     <a href="usuarios.html"> <i class="fa fa-group"></i> Gestión de usuarios</a>
                                 </li>
                                 <li>
+                                    <a href="404.html"> <i class="fa fa-circle"></i> 404</a>
+                                </li>
+                                <li>
+                                    <a href="500.html"> <i class="fa fa-circle-thin"></i> 500</a>
+                                </li>
+                                <li>
                                     <a href="home.html"> <i class="fa fa-sign-out"></i> Cerrar sesión</a>
                                 </li>
+
                             </ul>
                         </div>
                     </div>
@@ -81,7 +88,7 @@
                 </div>
             </div>
 
-             <!-- HEADER -->
+            <!-- HEADER -->
             <div class="top_nav">
                 <div class="nav_menu">
                     <div class="nav toggle">
@@ -90,11 +97,14 @@
                     <nav class="nav navbar-nav">
                         <ul class=" navbar-right">
                             <li class="nav-item dropdown open" style="padding-left: 15px;">
-                                <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
+                                <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true"
+                                    id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
                                     <img src="../images/user.png" alt="">Administrador
                                 </a>
-                                <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="login.html"><i class="fa fa-sign-out pull-right"></i>Cerrar sesión</a>
+                                <div class="dropdown-menu dropdown-usermenu pull-right"
+                                    aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="login.html"><i
+                                            class="fa fa-sign-out pull-right"></i>Cerrar sesión</a>
                                 </div>
                             </li>
                         </ul>
@@ -128,6 +138,16 @@
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="x_content">
+                                    <div class="container mb-4">
+                                        <div class="row">
+                                            <div class="col-12 text-left">
+                                                <button type="button" class="button-add position-static"
+                                                    data-toggle="modal" data-target="#CalenderModalNew"><i
+                                                        class="fa fa-plus-square pr-3"></i>Crear
+                                                    evento de clase</button>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <!-- CALENDARIO -->
                                     <div id='calendar'></div>
                                     <!-- CALENDARIO -->
@@ -143,7 +163,7 @@
             <footer class="section-footer bg-copyright">
                 <div class="container">
                     <div class="row m-0">
-              
+
                         <div class="col-md-12 p-0">
                             <div class="d-block">
                                 <div class="caption-copyright text-center">
@@ -160,69 +180,203 @@
     </div>
 
     <!-- MODAL NUEVA ENTRADA -->
-    <div id="CalenderModalNew" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div id="CalenderModalNew" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-
                 <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel">Nueva entrada</h4>
+                    <h4 class="modal-title" id="myModalLabel">Crear evento de clase</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-
                 </div>
                 <div class="modal-body">
                     <div id="testmodal" style="padding: 5px 20px;">
                         <form id="antoform" class="form-horizontal calender" role="form">
                             <div class="form-group col-md-12">
-                                <label class="col-sm-3 control-label">Título</label>
-
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="title" name="title">
-                                </div>
+                                <input type="text" class="form-control" id="title" name="title" placeholder="Nombre"
+                                    autofocus required>
                             </div>
                             <div class="form-group col-md-12">
-                                <label class="col-sm-3 control-label">Descripción</label>
-                                <div class="col-sm-9">
-                                    <textarea class="form-control" style="height:55px;" id="descr" name="descr"></textarea>
+                                <select class="form-control" id="area">
+                                    <option>Asignatura</option>
+                                    <option>--</option>
+                                    <option>--</option>
+                                    <option>--</option>
+                                    <option>--</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-12 mb-4">
+                                <select class="form-control" id="area">
+                                    <option>Grado</option>
+                                    <option>--</option>
+                                    <option>--</option>
+                                    <option>--</option>
+                                    <option>--</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-md-12 px-1">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label class="control-label p-0 ">Hora de inicio</label>
+                                        <input type="time" class="form-control" id="hora-inicio"
+                                            placeholder="Hora de inicio">
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="control-label p-0">Hora de fin</label>
+                                        <input type="time" class="form-control" id="hora-fin" placeholder="Hora de fin">
+                                    </div>
                                 </div>
+                            </div>
+
+                            <div class="form-group col-md-12">
+                                <textarea class="form-control" id="" name="" rows="3" placeholder="Temas"></textarea>
+                            </div>
+                            <div class="row">
+                                <div class="col-4 m-0">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="c-regular" value="option1">
+                                        <label class="form-check-label" for="c-regular">Regular</label>
+                                    </div>
+                                </div>
+                                <div class="col-4 m-0">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="c-bilingue" value="option2">
+                                        <label class="form-check-label" for="c-bilingue">Bilingue</label>
+                                    </div>
+                                </div>
+                                <div class="col-4 m-0">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="c-d-f" value="option2">
+                                        <label class="form-check-label" for="c-d-f">Domingo / Festivo</label>
+                                    </div>
+                                </div>
+                                <div class="col-4 m-0">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="c-virtual" value="option1">
+                                        <label class="form-check-label" for="c-virtual">Virtual</label>
+                                    </div>
+                                </div>
+                                <div class="col-4 m-0">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="c-bogota" value="option2">
+                                        <label class="form-check-label" for="c-bogota">Fuera de Bogotá</label>
+                                    </div>
+                                </div>
+                                <div class="col-4 m-0">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="c-transporte"
+                                            value="option2">
+                                        <label class="form-check-label" for="c-transporte">Transporte</label>
+                                    </div>
+                                </div>
+
                             </div>
                         </form>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default antoclose" data-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary antosubmit">Guardar cambios</button>
+                    <button type="button" class="btn btn-primary antosubmit" data-dismiss="modal">Guardar
+                        cambios</button>
                 </div>
             </div>
         </div>
     </div>
     <!-- /MODAL NUEVA ENTRADA -->
     <!-- MODAL EDITAR ENTRADA -->
-    <div id="CalenderModalEdit" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div id="CalenderModalEdit" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-
                 <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel2">Editar entrada</h4>
+                    <h4 class="modal-title" id="myModalLabel2">Editar evento de clase</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-
                 </div>
                 <div class="modal-body">
-
                     <div id="testmodal2" style="padding: 5px 20px;">
                         <form id="antoform2" class="form-horizontal calender" role="form">
                             <div class="form-group col-md-12">
-                                <label class="col-sm-3 control-label">Título</label>
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="title2" name="title2">
-                                </div>
+                                <input type="text" class="form-control" id="title2" name="title2" placeholder="Nombre"
+                                    autofocus required>
                             </div>
+
                             <div class="form-group col-md-12">
-                                <label class="col-sm-3 control-label">Descripción</label>
-                                <div class="col-sm-9">
-                                    <textarea class="form-control" style="height:55px;" id="descr2" name="descr"></textarea>
+                                <select class="form-control" id="area">
+                                    <option>Asignatura</option>
+                                    <option>--</option>
+                                    <option>--</option>
+                                    <option>--</option>
+                                    <option>--</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-md-12 mb-4">
+                                <select class="form-control" id="area">
+                                    <option>Grado</option>
+                                    <option>--</option>
+                                    <option>--</option>
+                                    <option>--</option>
+                                    <option>--</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-md-12 px-1">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label class="control-label p-0 ">Hora de inicio</label>
+                                        <input type="time" class="form-control" id="hora-inicio"
+                                            placeholder="Hora de inicio">
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="control-label p-0">Hora de fin</label>
+                                        <input type="time" class="form-control" id="hora-fin" placeholder="Hora de fin">
+                                    </div>
                                 </div>
                             </div>
 
+                            <div class="form-group col-md-12">
+                                <textarea class="form-control" id="" name="" rows="3" placeholder="Temas" id="descr2"
+                                    name="descr"></textarea>
+                            </div>
+                            <div class="row">
+                                <div class="col-4 m-0">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="c-regular" value="option1">
+                                        <label class="form-check-label" for="c-regular">Regular</label>
+                                    </div>
+                                </div>
+                                <div class="col-4 m-0">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="c-bilingue" value="option2">
+                                        <label class="form-check-label" for="c-bilingue">Bilingue</label>
+                                    </div>
+                                </div>
+                                <div class="col-4 m-0">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="c-d-f" value="option2">
+                                        <label class="form-check-label" for="c-d-f">Domingo / Festivo</label>
+                                    </div>
+                                </div>
+                                <div class="col-4 m-0">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="c-virtual" value="option1">
+                                        <label class="form-check-label" for="c-virtual">Virtual</label>
+                                    </div>
+                                </div>
+                                <div class="col-4 m-0">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="c-bogota" value="option2">
+                                        <label class="form-check-label" for="c-bogota">Fuera de Bogotá</label>
+                                    </div>
+                                </div>
+                                <div class="col-4 m-0">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="c-transporte"
+                                            value="option2">
+                                        <label class="form-check-label" for="c-transporte">Transporte</label>
+                                    </div>
+                                </div>
+                            </div>
                         </form>
                     </div>
                 </div>

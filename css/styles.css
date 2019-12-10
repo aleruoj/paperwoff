@@ -442,14 +442,14 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th:first-child:before {
 .right-form {
   box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.75);
 }
-.hero h5, 
+.hero h5,
 .hero h2,
 .hero h3,
 .hero h4,
-.hero p{
+.hero p {
   color: white;
 }
- 
+
 .hero {
   background-image: url("../images/b-hero.png");
   background-size: cover;
@@ -465,4 +465,15 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th:first-child:before {
 .fondo-op {
   margin: auto;
   background: #000000ab;
+}
+@media (min-width: 576px) {
+  .modal-dialog {
+    max-width: 610px;
+  }
+}
+
+#l-calendar input[type="checkbox"] + label:before {
+  width: 20px;
+  height: 20px;
+  border: 0.1em solid #0e65b2;
 }
