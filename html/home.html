@@ -113,55 +113,58 @@
                         </div>
                     </div>
                     <div class="card-body px-0">
-                        <form action="">
+                        <form id="formSusc" action="">
                             <div class="form-group">
-                                <input type="text" class="form-control" id="nombre" required=""
+                                <input type="text" class="form-control" id="nombre" required
                                     aria-describedby="emailHelp" placeholder="Nombre completo">
                             </div>
                             <div class="form-group">
-                                <input type="number" class="form-control" id="tlf" required="" placeholder="Teléfono">
+                                <input type=" number" class="form-control" id="tlf" required
+                                    placeholder="Teléfono móvil" pattern="\d*" minlength="10" maxlength="10">
                             </div>
 
                             <div class="form-group">
-                                <input type="email" class="form-control" id="email" required=""
+                                <input type="email" class="form-control" id="email" required
                                     aria-describedby="emailHelp" placeholder="Correo electrónico">
                             </div>
                             <div class="form-group">
-                                <select class="form-control" id="area">
-                                    <option>País</option>
-                                    <option>Brasil</option>
-                                    <option>Chile</option>
-                                    <option>Colombia</option>
-                                    <option>Venezuela</option>
+                                <select class="form-control" id="area" required>
+                                    <option value="">País</option>
+                                    <option value="Brasil">Brasil</option>
+                                    <option value="Chile">Chile</option>
+                                    <option value="Colombia">Colombia</option>
+                                    <option value="Venezuela">Venezuela</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" id="nombre" required=""
+                                <input type="text" class="form-control" id="nombre" required
                                     aria-describedby="emailHelp" placeholder="Nombre de tu empresa">
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" id="nombre" required=""
+                                <input type="text" class="form-control" id="nombre" required
                                     aria-describedby="emailHelp" placeholder="Área de tu empresa">
                             </div>
 
                             <div class="form-group">
-                                <select class="form-control" id="empleados">
-                                    <option>Número de empleados</option>
-                                    <option>1 - 50</option>
-                                    <option>51 - 100</option>
-                                    <option>101 - 250</option>
-                                    <option>251 - 500</option>
-                                    <option>501 - 1000</option>
+                                <select class="form-control" id="empleados" required>
+                                    <option value="">Número de empleados</option>
+                                    <option value="1-50">1 - 50</option>
+                                    <option value="51-100">51 - 100</option>
+                                    <option value="101-250">101 - 250</option>
+                                    <option value="251-500">251 - 500</option>
+                                    <option value="501-1000">501 - 1000</option>
                                 </select>
                             </div>
                             <div class="form-check form-check-inline ">
-                                <input type="checkbox" class="form-check-input" id="politicas" required="">
+                                <input type="checkbox" class="form-check-input" id="politicas" required>
                                 <label class="form-check-label check-mobile " for="politicas">Acepto las políticas de
                                     tratamiento de datos
                                     y el envío de información</label>
                             </div>
-                            <button type="submit" class="btn btn-light w-100 pt-2 mt-2">Suscribirme</button>
+                            <button type="submit" id=""
+                                class="btn btn-light w-100 pt-2 mt-2 ">Suscribirme</button>
                         </form>
+                        <!-- data-toggle="modal" data-target="#suscrip" -->
 
                     </div>
 
@@ -215,7 +218,7 @@
                     <div class="col-md-12">
                         <div class="d-block">
                             <div class="caption-copyright text-center">
-                                <p>© 2019 PAPERWOFF S.A.S – TODOS LOS DERECHOS RESERVADOS</p>
+                                <p>© 2020 PAPERWOFF S.A.S – TODOS LOS DERECHOS RESERVADOS</p>
                             </div>
                         </div>
                     </div>
@@ -224,8 +227,29 @@
         </section>
     </footer>
 
-
+    <!-- Modal Suscripcion-->
+    <div class="modal fade" id="suscrip" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">¡Gracias por suscribirte!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p> Nuestros asesores te contactarán en las próximas horas para brindarte tu asesoría personalizada
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Empieza JS de Bootstrap -->
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -235,6 +259,20 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+    <script>
+
+        $(document).ready(function () {
+            $('#formSusc').on('submit', function (e) {
+
+                $('#suscrip').modal('show');
+                e.preventDefault();
+                $("#formSusc")[0].reset();
+                
+            });
+
+        });
+    </script>
+
     <!-- Termina JS de bootstrap -->
 </body>
 

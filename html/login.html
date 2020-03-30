@@ -60,14 +60,14 @@
                             <h2>Iniciar sesión</h2>
                         </div>
                     </div>
-                    <form action="">
+                    <form action="dashboard.html" method="POST">
                         <div class="form-row px-4">
                             <div class="input-primary col-md-12">
-                                <input class="form-control" type="email" placeholder="Correo electrónico">
+                                <input class="form-control" type="email" placeholder="Correo electrónico" required>
                             </div>
                             <div class="input-group col-md-12" id="show_hide_password-7">
                                 <div class="input-primary input-password input-group" id="show_hide_password-7">
-                                    <input class="form-control" type="password" placeholder="Contraseña">
+                                    <input class="form-control" type="password" placeholder="Contraseña" required>
                                 </div>
                             </div>
                             <div class="form-check form-check-inline col-md-12 mt-4 mb-3">
@@ -81,13 +81,13 @@
                                     </div>
                                     <div class="col-md-5 col-6 p-0">
                                         <p class="legal-form text-right m-0 olvide-pass">
-                                            <a href="">Olvidé mi contraseña</a>
+                                            <a href="" data-toggle="modal" data-target="#recuperarpassword">Olvidé mi contraseña</a>
                                         </p>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group col-md-12">
-                                <a href="dashboard.html" class="btn btn-default button-primary my-4 m-0">Ingresar</a>
+                                <button type="submit" class="btn btn-default button-primary my-4 m-0">Ingresar</button>
                             </div>
 
                         </div>
@@ -110,7 +110,42 @@
             </div>
         </div>
     </footer>
+<!-- Modal recuperarpassword -->
+<div class="modal fade" id="recuperarpassword" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Recupera tu cuenta</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Ingresa tu correo electrónico</p>
+          
+          
+          
+          <form>
+            <div class="form-group">
+              <input type="email" class="form-control" id="exampleInputEmail1" required aria-describedby="emailHelp" placeholder="Correo electrónico">
+            
+            </div>
+           
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+              </div>
+          </form>
 
+
+
+
+
+        </div>
+       
+      </div>
+    </div>
+  </div>
 
     <!-- Empieza JS de Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
