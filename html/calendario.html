@@ -22,6 +22,7 @@
 
     <!-- Custom styling plus plugins -->
     <link href="../css/custom.css" rel="stylesheet">
+    <link href="../css/bootstrap-timepicker.min.css" rel="stylesheet">
 
     <!-- Mis estilos-->
     <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900&display=swap" rel="stylesheet">
@@ -145,7 +146,7 @@
                                         <div class="row">
                                             <div class="col-md-6 col-12 text-center">
                                                 <button type="button" class="button-add position-static"
-                                                    data-toggle="modal" data-target="#CalenderModalNew"><i
+                                                    data-toggle="modal" data-target="#ModalCrearEvento"><i
                                                         class="fa fa-plus-square pr-3"></i>Crear
                                                     evento de clase</button>
                                             </div>
@@ -177,7 +178,7 @@
                         <div class="col-md-12 p-0">
                             <div class="d-block">
                                 <div class="caption-copyright text-center">
-                                    <p>© 2019 PAPERWOFF S.A.S – TODOS LOS DERECHOS RESERVADOS</p>
+                                    <p>© 2020 PAPERWOFF S.A.S – TODOS LOS DERECHOS RESERVADOS</p>
                                 </div>
                             </div>
                         </div>
@@ -190,7 +191,7 @@
     </div>
 
     <!-- MODAL NUEVA ENTRADA -->
-    <div id="CalenderModalNew" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    <div id="ModalCrearEvento" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
         aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -202,18 +203,28 @@
                     <div id="testmodal" style="padding: 5px 20px;">
                         <form id="antoform" class="form-horizontal calender" role="form">
                             <div class="form-group col-md-12">
-                                <input type="text" class="form-control" id="title" name="title" placeholder="Nombre"
-                                    autofocus required>
-                            </div>
-                            <div class="form-group col-md-12">
-                                <select class="form-control" id="area">
-                                    <option>Asignatura</option>
-                                    <option>--</option>
-                                    <option>--</option>
-                                    <option>--</option>
+                                <select class="form-control" id="asignatura" required>
+                                    <option value="">Asignatura</option>
+                                    <option value="Matematica">Matematica</option>
+                                    <option value="Ingles">Ingles</option>
+                                    <option value="Español">Español</option>
                                     <option>--</option>
                                 </select>
                             </div>
+                            <div class="form-group col-md-12">
+                                <input type="date" class="form-control" id="fecha" name="fecha" onload="getDate()"
+                                    placeholder="" required>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <select class="form-control" id="tutores" required>
+                                    <option value="">Tutores disponibles</option>
+                                    <option value="Matematica">Pedro Perez</option>
+                                    <option value="Ingles">Maria Sanchez</option>
+                                    <option value="Español">Mayra Ojeda</option>
+                                    <option>--</option>
+                                </select>
+                            </div>
+                           
                             <div class="form-group col-md-12 mb-4">
                                 <select class="form-control" id="area">
                                     <option>Grado</option>
@@ -223,17 +234,27 @@
                                     <option>--</option>
                                 </select>
                             </div>
-
+                            <div class="form-group col-md-12">
+                                <label class="control-label p-0 ">Horas disponibles:</label>   
+                                <label class="control-label p-0 ">8:00 AM - 12:00 PM</label>  
+                            </div>
                             <div class="form-group col-md-12 px-1">
                                 <div class="row">
                                     <div class="col-6">
-                                        <label class="control-label p-0 ">Hora de inicio</label>
-                                        <input type="time" class="form-control" id="hora-inicio"
-                                            placeholder="Hora de inicio">
+                                        <div class=" input-group bootstrap-timepicker timepicker">
+                                            <label class="control-label p-0 ">Hora de inicio</label>
+                                            <input id="hora-inicio" type="text" class="form-control input-small">
+                                            <span class="input-group-addon"><i
+                                                    class="glyphicon glyphicon-time"></i></span>
+                                        </div>
                                     </div>
                                     <div class="col-6">
-                                        <label class="control-label p-0">Hora de fin</label>
-                                        <input type="time" class="form-control" id="hora-fin" placeholder="Hora de fin">
+                                        <div class=" input-group bootstrap-timepicker timepicker">
+                                            <label class="control-label p-0 ">Hora de fin</label>
+                                            <input id="hora-fin" type="text" class="form-control input-small">
+                                            <span class="input-group-addon"><i
+                                                    class="glyphicon glyphicon-time"></i></span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -399,7 +420,7 @@
     </div>
     <!-- /MODAL EDITAR ENTRADA -->
 
-    <div id="fc_create" data-toggle="modal" data-target="#CalenderModalNew"></div>
+    <div id="fc_create" data-toggle="modal" data-target="#ModalCrearEvento"></div>
     <div id="fc_edit" data-toggle="modal" data-target="#CalenderModalEdit"></div>
 
     <!-- jQuery -->
@@ -413,11 +434,15 @@
     <!-- FullCalendar -->
     <script src="../vendors/moment/min/moment.min.js"></script>
     <script src="../vendors/fullcalendar/dist/fullcalendar.js"></script>
-
+    <script src="../js/bootstrap-timepicker.min.js"></script>
     <!-- Custom Theme Scripts -->
     <script src="../js/custom.js"></script>
 
-
+    <script src="../js/main.js"></script>
+    <script type="text/javascript">
+        $('#hora-inicio').timepicker();
+        $('#hora-fin').timepicker();
+    </script>
 
 
 
