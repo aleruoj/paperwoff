@@ -11117,7 +11117,7 @@ Calendar.defaults = {
 	},
 	weekends: true,
 	weekNumbers: false,
-	firstDay: 1,
+	firstDay: 1, 
 	weekNumberTitle: 'W',
 	weekNumberCalculation: 'local',
 	

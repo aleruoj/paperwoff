@@ -203,11 +203,11 @@
                     <div id="testmodal" style="padding: 5px 20px;">
                         <form id="crearForm" class="form-horizontal calender" role="form">
                             <div class="form-group col-md-12">
-                                <select class="form-control" id="title" name="title" required>
-                                    <option value="">Asignatura</option>
-                                    <option value="Matematica">Matematica</option>
-                                    <option value="Ingles">Ingles</option>
-                                    <option value="Español">Español</option>
+                                <select class="form-control" id="title" name="title" required onchange="changeAsignatura()">
+                                    <option value="" disabled>Asignatura</option>
+                                    <option value="matematica">Matemática</option>
+                                    <option value="ingles">Inglés</option>
+                                    <option value="español">Español</option>
                                     <option>--</option>
                                 </select>
                             </div>
@@ -217,7 +217,7 @@
                             </div>
                             <div class="form-group col-md-12">
                                 <select class="form-control" id="tutores" onchange="changeLabeltext()" required>
-                                    <option value="">Tutores disponibles</option>
+                                    <option value="" disabled>Tutores disponibles</option>
                                     <option value="pedro">Pedro Perez</option>
                                     <option value="maria">Maria Sanchez</option>
                                     <option value="mayra">Mayra Ojeda</option>
@@ -236,13 +236,13 @@
                             </div>
                             <div class="form-group col-md-12">
                                 <label class="control-label p-0 ">Horas disponibles:</label>
-                                <label id="horario1" class="control-label p-0 ">8:00 AM - 12:00 PM</label>
+                                <label id="horario1" class="control-label p-0 "></label>
                             </div>
                             <div class="form-group col-md-12 px-1">
                                 <div class="row">
                                     <div class="col-6">
                                         <div class=" input-group bootstrap-timepicker timepicker">
-                                            <label class="control-label p-0 ">Hora de inicio</label>
+                                            <label class="control-label">Hora de inicio</label>
                                             <input id="hora-inicio" type="text" name="time_start"
                                                 class="form-control input-small">
                                             <span class="input-group-addon"><i
@@ -251,7 +251,7 @@
                                     </div>
                                     <div class="col-6">
                                         <div class=" input-group bootstrap-timepicker timepicker">
-                                            <label class="control-label p-0 ">Hora de fin</label>
+                                            <label class="control-label ">Hora de fin</label>
                                             <input id="hora-fin" type="text" class="form-control input-small">
                                             <span class="input-group-addon"><i
                                                     class="glyphicon glyphicon-time"></i></span>
@@ -450,9 +450,21 @@
         function changeLabeltext() {
             var e = document.getElementById("tutores");
             var tutor = e.options[e.selectedIndex].value;
-            console.log(tutor);
-            if(tutor=="mayra")
+            if(tutor!="")
             document.getElementById('horario1').innerHTML = '09:00 AM - 10:00 AM <br> 11:00 AM - 12:00 PM';
+            else
+            document.getElementById('horario1').innerHTML = 'N/A';
+
+        }
+        document.getElementById("tutores").disabled = true;
+        function changeAsignatura() {
+            var e = document.getElementById("title");
+            var asignatura = e.options[e.selectedIndex].value;
+            if(asignatura!="")
+            document.getElementById("tutores").disabled = false;
+            else
+            document.getElementById("tutores").disabled = true;
+
         }
     </script>
 
