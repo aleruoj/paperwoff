@@ -37,7 +37,7 @@
       <div class="col-md-3 left_col" style="min-height: auto;">
         <div class="left_col scroll-view">
           <div class="navbar nav_title" style="border: 0;">
-            <a href="home.html" class="site_title"><i class="fa fa-paw"></i> <span>Paperwoff</span></a>
+            <a href="home.html" class="site_title"><i class="fa fa-cog"></i> <span>Paperwoff</span></a>
           </div>
 
           <div class="clearfix"></div>
@@ -552,6 +552,28 @@
   <script src="../vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
   <!-- Custom Theme Scripts -->
   <script src="../js/custom.js"></script>
+
+  <script>
+    function changeLabeltext() {
+        var e = document.getElementById("tutores");
+        var tutor = e.options[e.selectedIndex].value;
+        if(tutor!="")
+        document.getElementById('horario1').innerHTML = '09:00 AM - 10:00 AM <br> 11:00 AM - 12:00 PM';
+        else
+        document.getElementById('horario1').innerHTML = 'N/A';
+
+    }
+    document.getElementById("tutores").disabled = true;
+    function changeAsignatura() {
+        var e = document.getElementById("title");
+        var asignatura = e.options[e.selectedIndex].value;
+        if(asignatura!="")
+        document.getElementById("tutores").disabled = false;
+        else
+        document.getElementById("tutores").disabled = true;
+
+    }
+</script>
 </body>
 
 </html>

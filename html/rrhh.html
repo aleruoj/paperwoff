@@ -37,7 +37,7 @@
             <div class="col-md-3 left_col" style="min-height: auto;">
                 <div class="left_col scroll-view">
                     <div class="navbar nav_title" style="border: 0;">
-                        <a href="home.html" class="site_title"><i class="fa fa-gear"></i> <span>Paperwoff</span></a>
+                        <a href="home.html" class="site_title"><i class="fa fa-cog"></i> <span>Paperwoff</span></a>
                     </div>
 
                     <div class="clearfix"></div>
@@ -154,8 +154,8 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col-12">
-                                        <button type="button" class="button-add"><i
-                                                class="fa fa-plus-square pr-3"></i>Crear
+                                        <button type="button" class="button-add" data-toggle="modal"
+                                            data-target="#crearUsuario"><i class="fa fa-plus-square pr-3"></i>Crear
                                             perfil</button>
                                     </div>
                                 </div>
@@ -188,64 +188,65 @@
                                                 </thead>
                                                 <tbody>
                                                     <tr class="even pointer">
-                                                        <td class=" ">10014556</td>
-                                                        <td class=" ">Jhosmary Andreina Alarcon Duarte</td>
+                                                        <td class="" > 10014556 </td>
+                                                        <td class=" " id="1-nombre">Jhosmary Andreina Alarcon Duarte</td>
                                                         <td class=" ">Licenciado en Matemáticas</td>
                                                         <td class=" "> <button type="button"
-                                                                class="btn btn-success btn-xs">Ver</button>
+                                                                class="btn btn-success btn-xs"
+                                                                onclick="cargarPerfil()">Ver</button>
                                                         </td>
                                                     </tr>
                                                     <tr class="odd pointer">
-                                                        <td class=" ">26133767</td>
-                                                        <td class=" ">Pedro Alfonso Pérez Sánchez</td>
+                                                        <td class="">26133767</td>
+                                                        <td class=" "id="2-nombre">Pedro Alfonso Pérez Sánchez</td>
                                                         <td class=" ">Licenciado en lenguajes</td>
                                                         <td class=" "> <button type="button"
                                                                 class="btn btn-success btn-xs">Ver</button>
                                                         </td>
                                                     </tr>
                                                     <tr class="even pointer">
-                                                        <td class=" ">68287755</td>
-                                                        <td class=" ">Luz Marina Duarte Gonzalez</td>
+                                                        <td class="  ">68287755</td>
+                                                        <td class="  ">Luz Marina Duarte Gonzalez</td>
                                                         <td class=" ">Licenciado en idiomas</td>
                                                         <td class=" "> <button type="button"
                                                                 class="btn btn-success btn-xs">Ver</button>
                                                         </td>
                                                     </tr>
                                                     <tr class="odd pointer">
-                                                        <td class=" ">68547921</td>
-                                                        <td class=" ">Andres Alejando Toro</td>
+                                                        <td class="  ">68547921</td>
+                                                        <td class="  ">Andres Alejando Toro</td>
                                                         <td class=" ">Ingeniero en sistemas</td>
                                                         <td class=" "> <button type="button"
                                                                 class="btn btn-success btn-xs">Ver</button>
                                                         </td>
                                                     </tr>
                                                     <tr class="even pointer">
-                                                        <td class=" ">68754923</td>
-                                                        <td class=" ">Roger David Lopez</td>
+                                                        <td class="  ">68754923</td>
+                                                        <td class="  ">Roger David Lopez</td>
                                                         <td class=" ">Licenciado en idiomas</td>
                                                         <td class=" "> <button type="button"
                                                                 class="btn btn-success btn-xs">Ver</button>
                                                         </td>
                                                     </tr>
                                                     <tr class="odd pointer">
-                                                        <td class=" ">1001205467</td>
-                                                        <td class=" ">Angie Carolina Hernandez</td>
+                                                        <td class="  ">1001205467</td>
+                                                        <td class="  ">Angie Carolina Hernandez</td>
                                                         <td class=" ">Ingeniero ambiental</td>
                                                         <td class=""> <button type="button"
                                                                 class="btn btn-success btn-xs">Ver</button>
                                                         </td>
                                                     </tr>
                                                     <tr class="even pointer">
-                                                        <td class=" ">1101256897</td>
-                                                        <td class=" ">Samuel Perdomo</td>
+                                                        <td class="  ">1101256897</td>
+                                                        <td class="  ">Samuel Perdomo</td>
                                                         <td class=" ">Ingeniero industrial</td>
                                                         <td class=""> <button type="button"
                                                                 class="btn btn-success btn-xs">Ver</button>
                                                         </td>
                                                     </tr>
                                                     <tr class="odd pointer">
-                                                        <td class=" ">1103523987</td>
-                                                        <td class=" ">Moises Alejandro Sanchez</td>
+                                                        <td class="  ">1103523987</td>
+                                                        <td class="  ">Moises Alejandro Sanchez</td>
                                                         <td class=" ">Licenciado en fisica</td>
                                                         <td class=""> <button type="button"
                                                                 class="btn btn-success btn-xs">Ver</button>
@@ -253,32 +254,32 @@
                                                     </tr>
 
                                                     <tr class="even pointer">
-                                                        <td class=" ">1113856983</td>
-                                                        <td class=" ">Jorge Alberto Ojeda Rueda</td>
+                                                        <td class="  ">1113856983</td>
+                                                        <td class="  ">Jorge Alberto Ojeda Rueda</td>
                                                         <td class=" ">Licenciado en ingles</td>
                                                         <td class=" "> <button type="button"
                                                                 class="btn btn-success btn-xs">Ver</button>
                                                         </td>
                                                     </tr>
                                                     <tr class="odd pointer">
-                                                        <td class=" ">1114796952</td>
-                                                        <td class=" ">Carmen Liliana Duarte</td>
+                                                        <td class="  ">1114796952</td>
+                                                        <td class="">Carmen Liliana Duarte</td>
                                                         <td class=" ">Licenciado en idiomas</td>
                                                         <td class=" "> <button type="button"
                                                                 class="btn btn-success btn-xs">Ver</button>
                                                         </td>
                                                     </tr>
                                                     <tr class="even pointer">
-                                                        <td class=" ">1116589467</td>
-                                                        <td class=" ">Ana Maria Soto</td>
+                                                        <td class="  ">1116589467</td>
+                                                        <td class="  ">Ana Maria Soto</td>
                                                         <td class=" ">Licenciado en español</td>
                                                         <td class=" "> <button type="button"
                                                                 class="btn btn-success btn-xs">Ver</button>
                                                         </td>
                                                     </tr>
                                                     <tr class="odd pointer">
-                                                        <td class=" ">1116796983</td>
-                                                        <td class=" ">Luis Alejandro Perdomo</td>
+                                                        <td class="  ">1116796983</td>
+                                                        <td class="  ">Luis Alejandro Perdomo</td>
                                                         <td class=" ">Licenciado en Matemáticas</td>
                                                         <td class=" "> <button type="button"
                                                                 class="btn btn-success btn-xs">Ver</button>
@@ -318,18 +319,19 @@
                                             <form>
                                                 <div class="form-group">
                                                     <input type="text" class="form-control"
-                                                        placeholder="Nombres y apellidos">
+                                                        placeholder="Nombre completo" id="nombre-completo">
                                                 </div>
                                                 <div class="form-group">
                                                     <input type="email" class="form-control"
-                                                        placeholder="Correo electrónico">
+                                                        placeholder="Correo electrónico" id="correo">
                                                 </div>
                                                 <div class="form-group ">
-                                                    <input type="number" class="form-control" placeholder="Teléfono">
-
+                                                    <input type="number" class="form-control" placeholder="Teléfono móvil"
+                                                        id="telefono">
                                                 </div>
                                                 <div class="form-group ">
-                                                    <input type="text" class="form-control" placeholder="Otro">
+                                                    <input type="text" class="form-control" placeholder="Otro"
+                                                        id="otro">
 
                                                 </div>
                                                 <div class="row">
@@ -337,8 +339,9 @@
                                                     <div class="col-md-4 col-12"><button type="submit"
                                                             class="btn btn-info w-100 b-profile">Resultados de
                                                             pruebas</button></div>
-                                                    <div class="col-md-4 col-12"><button type="submit"
-                                                            class="btn btn-success w-100 b-profile">Enviar
+                                                    <div class="col-md-4 col-12"><button type="button"
+                                                            class="btn btn-success w-100 b-profile" data-toggle="modal"
+                                                            data-target="#enviarPruebas">Enviar
                                                             pruebas</button></div>
                                                     <div class="col-md-4 col-12"><button type="submit"
                                                             class="btn btn-dark w-100 b-profile">CV</button></div>
@@ -376,6 +379,100 @@
             <!-- /COPYRIGHT-->
         </div>
     </div>
+
+    <!-- MODAL CREAR USUARIO -->
+    <div class="modal fade" id="crearUsuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Crear perfil de usuario</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-md-12">
+                        <div class="row">
+
+
+                            <div class="x_content">
+                                <div class="row">
+                                    <div class="col-12 text-center my-4">
+                                        <img src="../images/user.png" alt="">
+                                    </div>
+                                    <div class="col-12 ">
+                                        <form>
+                                            <div class="form-group">
+                                                <input type="number" class="form-control"
+                                                    placeholder="Identificación" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control"
+                                                    placeholder="Nombre completo" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control"
+                                                    placeholder="Dirección de residencia" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="email" class="form-control"
+                                                    placeholder="Correo electrónico" required>
+                                            </div>
+                                            <div class="form-group ">
+                                                <input type="number" class="form-control" placeholder="Teléfono móvil"
+                                                    required>
+                                            </div>
+                                            <div class="form-group ">
+                                                <input type="text" class="form-control" placeholder="Titulación" required>
+
+                                            </div>
+                                            <div class="modal-footer px-0">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">Cancelar</button>
+                                                <button type="submit" class="btn btn-info">Guardar cambios</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!--/MODAL CREAR USUARIO -->
+
+
+
+    <!-- Modal Suscripcion-->
+    <div class="modal fade" id="enviarPruebas" tabindex="-1" role="dialog" aria-labelledby="examplesModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Pruebas enviadas</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p> Las pruebas fueron enviadas al correo <strong>correodeprueba@paperwoff.com</strong>.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <!-- LIBRERIAS JAVASCRIPT -->
     <!-- jQuery -->
     <script src="../vendors/jquery/dist/jquery.min.js"></script>
@@ -400,6 +497,22 @@
         $('#datatable-responsive').dataTable({
             "pageLength": 6
         });
+    </script>
+
+
+    <script>
+        function cargarPerfil() {
+            
+            $('#1-nombre').each(function () {
+                var cellText = $(this).html();
+                nombre = cellText.split(" ", 1);
+                document.getElementById('nombre-completo').value = cellText;
+                document.getElementById('correo').value = "correodeprueba@paperwoff.com"
+                document.getElementById('telefono').value = "1234567890"
+              
+            });
+        }
+
     </script>
     <!-- /LIBRERIAS JAVASCRIPT -->
 </body>
