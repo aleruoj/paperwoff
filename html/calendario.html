@@ -201,9 +201,9 @@
                 </div>
                 <div class="modal-body">
                     <div id="testmodal" style="padding: 5px 20px;">
-                        <form id="antoform" class="form-horizontal calender" role="form">
+                        <form id="crearForm" class="form-horizontal calender" role="form">
                             <div class="form-group col-md-12">
-                                <select class="form-control" id="asignatura" required>
+                                <select class="form-control" id="title" name="title" required>
                                     <option value="">Asignatura</option>
                                     <option value="Matematica">Matematica</option>
                                     <option value="Ingles">Ingles</option>
@@ -224,7 +224,7 @@
                                     <option>--</option>
                                 </select>
                             </div>
-                           
+
                             <div class="form-group col-md-12 mb-4">
                                 <select class="form-control" id="area">
                                     <option>Grado</option>
@@ -235,15 +235,16 @@
                                 </select>
                             </div>
                             <div class="form-group col-md-12">
-                                <label class="control-label p-0 ">Horas disponibles:</label>   
-                                <label class="control-label p-0 ">8:00 AM - 12:00 PM</label>  
+                                <label class="control-label p-0 ">Horas disponibles:</label>
+                                <label class="control-label p-0 ">8:00 AM - 12:00 PM</label>
                             </div>
                             <div class="form-group col-md-12 px-1">
                                 <div class="row">
                                     <div class="col-6">
                                         <div class=" input-group bootstrap-timepicker timepicker">
                                             <label class="control-label p-0 ">Hora de inicio</label>
-                                            <input id="hora-inicio" type="text" class="form-control input-small">
+                                            <input id="hora-inicio" type="text" name="time_start"
+                                                class="form-control input-small">
                                             <span class="input-group-addon"><i
                                                     class="glyphicon glyphicon-time"></i></span>
                                         </div>
@@ -442,6 +443,13 @@
     <script type="text/javascript">
         $('#hora-inicio').timepicker();
         $('#hora-fin').timepicker();
+    </script>
+
+    <script src="../vendors/fullcalendar/dist/locales-all.js"></script>
+
+    <script>
+   
+
     </script>
 
 

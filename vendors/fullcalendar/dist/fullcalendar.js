@@ -11117,7 +11117,7 @@ Calendar.defaults = {
 	},
 	weekends: true,
 	weekNumbers: false,
-
+	firstDay: 1,
 	weekNumberTitle: 'W',
 	weekNumberCalculation: 'local',
 	
@@ -11145,10 +11145,10 @@ Calendar.defaults = {
 		prevYear: "prev year",
 		nextYear: "next year",
 		year: 'year', // TODO: locale files need to specify this
-		today: 'today',
-		month: 'month',
-		week: 'week',
-		day: 'day'
+		today: 'Hoy',
+		month: 'Mes',
+		week: 'Semana',
+		day: 'Dia'
 	},
 
 	buttonIcons: {
