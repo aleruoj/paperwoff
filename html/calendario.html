@@ -216,11 +216,11 @@
                                     placeholder="" required>
                             </div>
                             <div class="form-group col-md-12">
-                                <select class="form-control" id="tutores" required>
+                                <select class="form-control" id="tutores" onchange="changeLabeltext()" required>
                                     <option value="">Tutores disponibles</option>
-                                    <option value="Matematica">Pedro Perez</option>
-                                    <option value="Ingles">Maria Sanchez</option>
-                                    <option value="Español">Mayra Ojeda</option>
+                                    <option value="pedro">Pedro Perez</option>
+                                    <option value="maria">Maria Sanchez</option>
+                                    <option value="mayra">Mayra Ojeda</option>
                                     <option>--</option>
                                 </select>
                             </div>
@@ -236,7 +236,7 @@
                             </div>
                             <div class="form-group col-md-12">
                                 <label class="control-label p-0 ">Horas disponibles:</label>
-                                <label class="control-label p-0 ">8:00 AM - 12:00 PM</label>
+                                <label id="horario1" class="control-label p-0 ">8:00 AM - 12:00 PM</label>
                             </div>
                             <div class="form-group col-md-12 px-1">
                                 <div class="row">
@@ -445,11 +445,15 @@
         $('#hora-fin').timepicker();
     </script>
 
-    <script src="../vendors/fullcalendar/dist/locales-all.js"></script>
 
     <script>
-   
-
+        function changeLabeltext() {
+            var e = document.getElementById("tutores");
+            var tutor = e.options[e.selectedIndex].value;
+            console.log(tutor);
+            if(tutor=="mayra")
+            document.getElementById('horario1').innerHTML = '09:00 AM - 10:00 AM <br> 11:00 AM - 12:00 PM';
+        }
     </script>
 
 
