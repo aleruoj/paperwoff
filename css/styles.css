@@ -515,3 +515,18 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th:first-child:before {
 .timepicker input{
   max-width: 90px;
 }
+#cc .title_left{
+  position: relative;
+    top: 50px;
+    left: 20px;
+}
+
+@media (max-width: 575px) {
+  #cc .title_left{
+    font-size: 24px;
+    margin-bottom: 40px;
+    text-align: center;
+    left: 0;
+  
+  }
+}
