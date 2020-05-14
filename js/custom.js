@@ -2450,10 +2450,10 @@ if (typeof NProgress != 'undefined') {
 				  },
 				  editable: true,
 				  events: [{
-					title: 'Matemáticas',
+					title: 'Maths',
 					start: new Date(y, m, 1)
 				  }, {
-					title: 'Idiomas: Inglés',
+					title: 'Languages: English',
 					start: new Date(y, m, d - 5),
 					end: new Date(y, m, d - 2)
 				  }, {
@@ -2461,7 +2461,7 @@ if (typeof NProgress != 'undefined') {
 					start: new Date(y, m, d, 10, 30),
 					allDay: false
 				  }, {
-					title: 'Química',
+					title: 'Chemistry',
 					start: new Date(y, m, d + 14, 12, 0),
 					end: new Date(y, m, d, 14, 0),
 					allDay: false
@@ -2471,7 +2471,7 @@ if (typeof NProgress != 'undefined') {
 					end: new Date(y, m, d + 1, 22, 30),
 					allDay: false
 				  }, {
-					title: 'Idiomas: Español',
+					title: 'Languages: Spanish',
 					start: new Date(y, m, 28),
 					end: new Date(y, m, 29),
 				  }]
