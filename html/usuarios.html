@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="../images/favicon.png" type="image/ico" />
 
-  <title>Gestión de usuarios | Paperwoff </title>
+  <title>User management | Paperwoff </title>
 
   <!-- Bootstrap -->
   <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -48,8 +48,8 @@
               <img src="../images/user.png" alt="..." class="img-circle profile_img">
             </div>
             <div class="profile_info">
-              <span>Bienvenido,</span>
-              <h2>Administrador</h2>
+              <span>Welcome,</span>
+              <h2>Administrator</h2>
             </div>
           </div>
           <!-- /SECCIÓN BIENVENIDO-->
@@ -63,19 +63,19 @@
                   <a href="dashboard.html"><i class="fa fa-home"></i> Dashboard</a>
                 </li>
                 <li>
-                  <a href="calendario.html"><i class="fa fa-calendar"></i> Calendario de clases</a>
+                  <a href="calendario.html"><i class="fa fa-calendar"></i> Calendar of classes</a>
                 </li>
                 <li>
-                    <a href="tutores.html"> <i class="fa fa-university"></i> Tutores</a>
+                    <a href="tutores.html"> <i class="fa fa-university"></i> Tutors</a>
                 </li>
                 <li>
-                  <a href="cuentas-de-cobro.html"> <i class="fa fa-table"></i> Cuentas de cobro</a>
+                  <a href="cuentas-de-cobro.html"> <i class="fa fa-table"></i> Account</a>
                 </li>
                 <li>
                   <a href="rrhh.html"> <i class="fa fa-child"></i> RRHH</a>
                 </li>
                 <li>
-                  <a href="usuarios.html"> <i class="fa fa-group"></i> Gestión de usuarios</a>
+                  <a href="usuarios.html"> <i class="fa fa-group"></i> User management</a>
                 </li>
                 <li>
                   <a href="404.html"> <i class="fa fa-circle"></i> 404</a>
@@ -84,7 +84,7 @@
                   <a href="500.html"> <i class="fa fa-circle-thin"></i> 500</a>
                 </li>
                 <li>
-                  <a href="home.html"> <i class="fa fa-sign-out"></i> Cerrar sesión</a>
+                  <a href="home.html"> <i class="fa fa-sign-out"></i> Log out</a>
                 </li>
 
               </ul>
@@ -105,10 +105,10 @@
               <li class="nav-item dropdown open" style="padding-left: 15px;">
                 <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown"
                   data-toggle="dropdown" aria-expanded="false">
-                  <img src="../images/user.png" alt="">Administrador
+                  <img src="../images/user.png" alt="">Administrator
                 </a>
                 <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="login.html"><i class="fa fa-sign-out pull-right"></i>Cerrar sesión</a>
+                  <a class="dropdown-item" href="login.html"><i class="fa fa-sign-out pull-right"></i>Log out</a>
                 </div>
               </li>
             </ul>
@@ -121,7 +121,7 @@
         <div class="">
           <div class="page-title">
             <div class="title_left">
-              <h3>Gestión de usuarios</h3>
+              <h3>User management</h3>
             </div>
           </div>
 
@@ -131,7 +131,7 @@
             <div class="col-md-12">
               <div class="x_panel">
                 <div class="x_title">
-                  <h2>Usuarios</h2>
+                  <h2>Users</h2>
                   <ul class="nav navbar-right panel_toolbox">
                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                     </li>
@@ -145,8 +145,7 @@
                   <div class="container">
                     <div class="row">
                       <div class="col-12 ml-2">
-                        <button type="button" class="button-add"><i class="fa fa-plus-square pr-3"></i>Crear
-                          usuario</button>
+                        <button type="button" class="button-add"><i class="fa fa-plus-square pr-3"></i>Create user</button>
                       </div>
                     </div>
                   </div>
@@ -155,11 +154,11 @@
                     <thead>
                       <tr>
                         <th style="width: 1%">#</th>
-                        <th style="width: 20%">Nombre</th>
-                        <th style="width: 7%;">Avatar</th>
-                        <th>Tutorias dictadas</th>
-                        <th style="width: 10%">Tipo</th>
-                        <th style="width: 20%">Opciones</th>
+                        <th style="width: 20%">Name</th>
+                        <th style="width: 7%;">Picture</th>
+                        <th>Classes taught</th>
+                        <th style="width: 10%">Tipe</th>
+                        <th style="width: 20%">Options</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -180,14 +179,14 @@
                           <small>57% Complete</small>
                         </td>
                         <td>
-                          <a>Administrador</a>
+                          <a>Administrator</a>
                         </td>
                         <td>
 
                           <button class="btn btn-info  btn-xs" data-toggle="modal" data-target="#editarusuario"><i
-                              class="fa fa-pencil"></i> Editar </button>
+                              class="fa fa-pencil"></i> Edit </button>
                           <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#eliminarusuario"><i
-                              class="fa fa-trash-o"></i> Eliminar </button>
+                              class="fa fa-trash-o"></i> Delete </button>
                         </td>
                       </tr>
                       <tr>
@@ -211,9 +210,9 @@
                         </td>
                         <td>
                           <button class="btn btn-info  btn-xs" data-toggle="modal" data-target="#editarusuario"><i
-                              class="fa fa-pencil"></i> Editar </button>
+                              class="fa fa-pencil"></i> Edit </button>
                           <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#eliminarusuario"><i
-                              class="fa fa-trash-o"></i> Eliminar </button>
+                              class="fa fa-trash-o"></i> Delete </button>
                         </td>
                       </tr>
                       <tr>
@@ -238,9 +237,9 @@
                         <td>
 
                           <button class="btn btn-info  btn-xs" data-toggle="modal" data-target="#editarusuario"><i
-                              class="fa fa-pencil"></i> Editar </button>
+                              class="fa fa-pencil"></i> Edit </button>
                           <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#eliminarusuario"><i
-                              class="fa fa-trash-o"></i> Eliminar </button>
+                              class="fa fa-trash-o"></i> Delete </button>
                         </td>
                       </tr>
                       <tr>
@@ -265,9 +264,9 @@
                         <td>
 
                           <button class="btn btn-info  btn-xs" data-toggle="modal" data-target="#editarusuario"><i
-                              class="fa fa-pencil"></i> Editar </button>
+                              class="fa fa-pencil"></i> Edit </button>
                           <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#eliminarusuario"><i
-                              class="fa fa-trash-o"></i> Eliminar </button>
+                              class="fa fa-trash-o"></i> Delete </button>
                         </td>
                       </tr>
                       <tr>
@@ -291,9 +290,9 @@
                         </td>
                         <td>
                           <button class="btn btn-info  btn-xs" data-toggle="modal" data-target="#editarusuario"><i
-                              class="fa fa-pencil"></i> Editar </button>
+                              class="fa fa-pencil"></i> Edit </button>
                           <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#eliminarusuario"><i
-                              class="fa fa-trash-o"></i> Eliminar </button>
+                              class="fa fa-trash-o"></i> Delete </button>
                         </td>
                       </tr>
                       <tr>
@@ -318,9 +317,9 @@
                         <td>
 
                           <button class="btn btn-info  btn-xs" data-toggle="modal" data-target="#editarusuario"><i
-                              class="fa fa-pencil"></i> Editar </button>
+                              class="fa fa-pencil"></i> Edit </button>
                           <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#eliminarusuario"><i
-                              class="fa fa-trash-o"></i> Eliminar </button>
+                              class="fa fa-trash-o"></i> Delete </button>
                         </td>
                       </tr>
                       <tr>
@@ -345,9 +344,9 @@
                         <td>
 
                           <button class="btn btn-info  btn-xs" data-toggle="modal" data-target="#editarusuario"><i
-                              class="fa fa-pencil"></i> Editar </button>
+                              class="fa fa-pencil"></i> Edit </button>
                           <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#eliminarusuario"><i
-                              class="fa fa-trash-o"></i> Eliminar </button>
+                              class="fa fa-trash-o"></i> Delete </button>
                         </td>
                       </tr>
                       <tr>
@@ -372,9 +371,9 @@
                         <td>
 
                           <button class="btn btn-info  btn-xs" data-toggle="modal" data-target="#editarusuario"><i
-                              class="fa fa-pencil"></i> Editar </button>
+                              class="fa fa-pencil"></i> Edit </button>
                           <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#eliminarusuario"><i
-                              class="fa fa-trash-o"></i> Eliminar </button>
+                              class="fa fa-trash-o"></i> Delete </button>
                         </td>
                       </tr>
                       <tr>
@@ -399,9 +398,9 @@
                         <td>
 
                           <button class="btn btn-info  btn-xs" data-toggle="modal" data-target="#editarusuario"><i
-                              class="fa fa-pencil"></i> Editar </button>
+                              class="fa fa-pencil"></i> Edit </button>
                           <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#eliminarusuario"><i
-                              class="fa fa-trash-o"></i> Eliminar </button>
+                              class="fa fa-trash-o"></i> Delete </button>
 
                         </td>
                       </tr>
@@ -422,15 +421,15 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header border-0">
-              <h5 class="modal-title" id="exampleModalLabel">¿Está seguro de eliminar este usuario?</h5>
+              <h5 class="modal-title" id="exampleModalLabel">Are you sure to delete this user?</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
 
             <div class="modal-footer border-0 justify-content-around">
-              <button type="button" class="btn w-100 btn-secondary" data-dismiss="modal">Cancelar</button>
-              <button type="button" class="btn w-100 btn-danger" data-dismiss="modal">Eliminar</button>
+              <button type="button" class="btn w-100 btn-secondary" data-dismiss="modal">Cancel</button>
+              <button type="button" class="btn w-100 btn-danger" data-dismiss="modal">Delete</button>
             </div>
           </div>
         </div>
@@ -442,7 +441,7 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header border-0">
-              <h5 class="modal-title" id="exampleModalLabel">Editar usuario</h5>
+              <h5 class="modal-title" id="exampleModalLabel">Edit user</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -459,13 +458,13 @@
                   <div class="col-md-12 personal-info">
                     <form class="form-horizontal" role="form">
                       <div class="form-group">
-                        <label class="col-lg-3 control-label">Nombres:</label>
+                        <label class="col-lg-3 control-label">Names:</label>
                         <div class="col-lg-8">
                           <input class="form-control" type="text" value="">
                         </div>
                       </div>
                       <div class="form-group">
-                        <label class="col-lg-3 control-label">Apellidos:</label>
+                        <label class="col-lg-3 control-label">Last names:</label>
                         <div class="col-lg-8">
                           <input class="form-control" type="text" value="">
                         </div>
@@ -478,26 +477,26 @@
                         </div>
                       </div>
                       <div class="form-group">
-                        <label class="col-lg-3 control-label">Tipo de usuario:</label>
+                        <label class="col-lg-3 control-label">Tipe of user:</label>
                         <div class="col-lg-8">
                           <div class="ui-select">
                             <select id="user" class="form-control">
                               <option value="">--</option>
-                              <option value="Administrador">Administrador</option>
-                              <option value="Nomina">Nomina</option>
+                              <option value="Administrador">Administrator</option>
+                              <option value="Nomina">Payroll</option>
                               <option value="Tutor">Tutor</option>
                             </select>
                           </div>
                         </div>
                       </div>
                       <div class="form-group">
-                        <label class="col-md-3 control-label">Contraseña:</label>
+                        <label class="col-md-3 control-label">Password:</label>
                         <div class="col-md-8">
                           <input class="form-control" type="password" value="11111122333">
                         </div>
                       </div>
                       <div class="form-group">
-                        <label class="col-md-3 control-label">Confirmar contraseña:</label>
+                        <label class="col-md-3 control-label">Repeat password:</label>
                         <div class="col-md-8">
                           <input class="form-control" type="password" value="11111122333">
                         </div>
@@ -508,8 +507,8 @@
               </div>
             </div>
             <div class="modal-footer border-0 justify-content-around">
-              <button type="button" class="btn w-100 btn-secondary" data-dismiss="modal">Cancelar</button>
-              <button type="button" class="btn w-100 btn-info" data-dismiss="modal">Guardar</button>
+              <button type="button" class="btn w-100 btn-secondary" data-dismiss="modal">Cancel</button>
+              <button type="button" class="btn w-100 btn-info" data-dismiss="modal">Save</button>
             </div>
           </div>
         </div>
@@ -522,7 +521,7 @@
             <div class="col-md-12">
               <div class="d-block">
                 <div class="caption-copyright text-center">
-                  <p>© 2019 PAPERWOFF S.A.S – TODOS LOS DERECHOS RESERVADOS</p>
+                  <p>© 2019 PAPERWOFF S.A.S – ALL RIGHTS RESERVED</p>
                 </div>
               </div>
             </div>
