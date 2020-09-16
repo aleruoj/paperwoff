@@ -9,7 +9,7 @@ if (!isset($_SESSION['tutor']))
     $usuario=$_SESSION['tutor'];
     //echo $usuario;
 }
-$conexion = mysqli_connect("localhost", "root", "", "tyt");
+include "conexion.php";
 $consulta = "SELECT * FROM users WHERE e_mail='$usuario'";
 $resultado= mysqli_query($conexion, $consulta);
 $row=mysqli_fetch_array($resultado);
@@ -72,7 +72,7 @@ $nombre=$row['Nombre'];
                                     <a href="dashboard.php"><i class="fa fa-home"></i> Dashboard</a>
                                 </li>
                                 <li>
-                                    <a href="calendario.html"><i class="fa fa-calendar"></i> Calendario de clases</a>
+                                    <a href="calendario-tutor.php"><i class="fa fa-calendar"></i> Calendario de clases</a>
                                 </li>
                                 <li>
                                     <a href="cuentas-de-cobro.html"> <i class="fa fa-table"></i> Cuentas de cobro</a>

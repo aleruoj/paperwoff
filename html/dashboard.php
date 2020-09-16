@@ -9,7 +9,7 @@ if (!isset($_SESSION['coordinador']))
     $usuario=$_SESSION['coordinador'];
     //echo $usuario;
 }
-$conexion = mysqli_connect("localhost", "root", "", "tyt");
+include "conexion.php";
 $consulta = "SELECT * FROM users WHERE e_mail='$usuario'";
 $resultado= mysqli_query($conexion, $consulta);
 $row=mysqli_fetch_array($resultado);

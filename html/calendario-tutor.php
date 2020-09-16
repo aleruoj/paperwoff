@@ -1,3 +1,27 @@
+<?php
+session_start();
+
+//Si la variable sesión está vacía
+if (!isset($_SESSION['tutor'])) {
+    header("location:../html/login.php");
+} else {
+    $usuario = $_SESSION['tutor'];
+    //echo $usuario;
+}
+include "conexion.php";
+$consulta = "SELECT * FROM asignatura";
+$resultado = mysqli_query($conexion, $consulta);
+
+$consulta_user = "SELECT * FROM users WHERE e_mail='$usuario'";
+$resultado_user = mysqli_query($conexion, $consulta_user);
+$row_user = mysqli_fetch_array($resultado_user);
+$nombre = $row_user['Nombre'];
+
+$id_user = $row_user['id_User'];
+//echo $id_user;
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -47,7 +71,7 @@
                         </div>
                         <div class="profile_info">
                             <span>Bienvenido,</span>
-                            <h2>Administrador</h2>
+                            <h2><?php echo $nombre ?></h2>
                         </div>
                     </div>
                     <!-- /SECCIÓN BIENVENIDO-->
@@ -58,31 +82,18 @@
                             <h3>General</h3>
                             <ul class="nav side-menu">
                                 <li>
-                                    <a href="dashnoard.php"><i class="fa fa-home"></i> Dashboard</a>
+                                    <a href="dashboard-tutor.php"><i class="fa fa-home"></i> Dashboard</a>
                                 </li>
                                 <li>
-                                    <a href="calendario.html"><i class="fa fa-calendar"></i> Calendario de clases</a>
+                                    <a href="calendario-tutor.php"><i class="fa fa-calendar"></i> Calendario de clases</a>
                                 </li>
-                                <li>
-                                    <a href="tutores.html"> <i class="fa fa-university"></i> Tutores</a>
-                                </li>
+
                                 <li>
                                     <a href="cuentas-de-cobro.html"> <i class="fa fa-table"></i> Cuentas de cobro</a>
                                 </li>
+
                                 <li>
-                                    <a href="rrhh.html"> <i class="fa fa-child"></i> RRHH</a>
-                                </li>
-                                <li>
-                                    <a href="usuarios.html"> <i class="fa fa-group"></i> Gestión de usuarios</a>
-                                </li>
-                                <li>
-                                    <a href="404.html"> <i class="fa fa-circle"></i> 404</a>
-                                </li>
-                                <li>
-                                    <a href="500.html"> <i class="fa fa-circle-thin"></i> 500</a>
-                                </li>
-                                <li>
-                                    <a href="login.php"> <i class="fa fa-sign-out"></i> Cerrar sesión</a>
+                                    <a href="cerrar-sesion.php"> <i class="fa fa-sign-out"></i> Cerrar sesión</a>
                                 </li>
 
                             </ul>
@@ -101,14 +112,11 @@
                     <nav class="nav navbar-nav">
                         <ul class=" navbar-right">
                             <li class="nav-item dropdown open" style="padding-left: 15px;">
-                                <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true"
-                                    id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                                    <img src="../images/user.png" alt="">Administrador
+                                <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
+                                    <img src="../images/user.png" alt=""><?php echo $nombre ?>
                                 </a>
-                                <div class="dropdown-menu dropdown-usermenu pull-right"
-                                    aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="login.php"><i
-                                            class="fa fa-sign-out pull-right"></i>Cerrar sesión</a>
+                                <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="cerrar-sesion.php"><i class="fa fa-sign-out pull-right"></i>Cerrar sesión</a>
                                 </div>
                             </li>
                         </ul>
@@ -144,19 +152,10 @@
                                 <div class="x_content">
                                     <div class="container mb-4">
                                         <div class="row">
-                                            <div class="col-md-6 col-12 text-center">
-                                                <button type="button" class="button-add position-static"
-                                                    data-toggle="modal" data-target="#ModalCrearEvento"><i
-                                                        class="fa fa-plus-square pr-3"></i>Crear
-                                                    evento de clase</button>
+                                            <div class="col-md-12 col-12 text-center">
+                                                <button type="button" class="button-add position-static" data-toggle="modal" data-target="#ModalCrearEvento"><i class="fa fa-plus-square pr-3"></i>Registrar disponibilidad</button>
                                             </div>
-                                            <div class="col-md-6 col-12  text-center">
-                                                <button type="button" onclick="window.location.href='tutores.html'"
-                                                    class="button-add position-static" data-toggle="modal"
-                                                    data-target="#"><i class="fa fa-search pr-3"></i>Consultar
-                                                    disponibilidad de
-                                                    tutores</button>
-                                            </div>
+
                                         </div>
                                     </div>
                                     <!-- CALENDARIO -->
@@ -191,133 +190,81 @@
     </div>
 
     <!-- MODAL NUEVA ENTRADA -->
-    <div id="ModalCrearEvento" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-        aria-hidden="true">
+    <div id="ModalCrearEvento" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel">Crear evento de clase</h4>
+                    <h4 class="modal-title" id="myModalLabel">Registrar Disponibilidad</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                 </div>
                 <div class="modal-body">
                     <div id="testmodal" style="padding: 5px 20px;">
-                        <form id="crearForm" class="form-horizontal calender" role="form">
+                        <form id="crearForm" class="form-horizontal calender" role="form" action="registrar-disponibilidad.php" method="post">
                             <div class="form-group col-md-12">
-                                <select class="form-control" id="title" name="title" required onchange="changeAsignatura()">
-                                    <option value="">Asignatura</option>
-                                    <option value="matematica">Matemática</option>
-                                    <option value="ingles">Inglés</option>
-                                    <option value="español">Español</option>
-                                    <option>--</option>
-                                </select>
-                            </div>
-                            <div class="form-group col-md-12">
-                                <input type="date" class="form-control" id="fecha" name="fecha" onload="getDate()"
-                                    placeholder="" required>
-                            </div>
-                            <div class="form-group col-md-12">
-                                <select class="form-control" id="tutores" onchange="changeLabeltext()" required>
-                                    <option value="">Tutores disponibles</option>
-                                    <option value="pedro">Pedro Perez</option>
-                                    <option value="maria">Maria Sanchez</option>
-                                    <option value="mayra">Mayra Ojeda</option>
-                                    <option>--</option>
-                                </select>
-                            </div>
+                                <select class="form-control" id="title" name="title" required onchange="">
+                                    <option value="">Seleccione..</option>
+                                    <?php
 
-                            <div class="form-group col-md-12 mb-4">
-                                <select class="form-control" id="area">
-                                    <option>Grado</option>
-                                    <option>--</option>
-                                    <option>--</option>
-                                    <option>--</option>
-                                    <option>--</option>
+                                    while ($row = mysqli_fetch_array($resultado)) {
+                                        echo '<option value="' . $row['id_Asignatura'] . '">' . $row['Nombre_Asignatura'] . '</option>';
+                                    }
+                                    ?>
                                 </select>
                             </div>
                             <div class="form-group col-md-12">
-                                <label class="control-label p-0 ">Horas disponibles:</label>
-                                <label id="horario1" class="control-label p-0 "></label>
+                                <input type="date" class="form-control" id="fecha" name="fecha" onload="getDate()" placeholder="" required>
+                                <input type="hidden" name="usuario" value=<?php echo $id_user ?> />
                             </div>
                             <div class="form-group col-md-12 px-1">
                                 <div class="row">
                                     <div class="col-6">
                                         <div class=" input-group bootstrap-timepicker timepicker">
                                             <label class="control-label">Hora de inicio</label>
-                                            <input id="hora-inicio" type="text" name="time_start"
-                                                class="form-control input-small">
-                                            <span class="input-group-addon"><i
-                                                    class="glyphicon glyphicon-time"></i></span>
+                                            <input id="hora-inicio" type="text" name="time_start" class="form-control input-small">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class=" input-group bootstrap-timepicker timepicker">
                                             <label class="control-label ">Hora de fin</label>
-                                            <input id="hora-fin" type="text" class="form-control input-small">
-                                            <span class="input-group-addon"><i
-                                                    class="glyphicon glyphicon-time"></i></span>
+                                            <input id="hora-fin" type="text" name="time_end" class="form-control input-small">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="form-group col-md-12">
-                                <textarea class="form-control" id="" name="" rows="3" placeholder="Temas"></textarea>
-                            </div>
-                            <div class="row">
-                                <div class="col-4 m-0">
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" id="c-regular" value="option1">
-                                        <label class="form-check-label" for="c-regular">Regular</label>
-                                    </div>
-                                </div>
-                                <div class="col-4 m-0">
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" id="c-bilingue" value="option2">
-                                        <label class="form-check-label" for="c-bilingue">Bilingue</label>
-                                    </div>
-                                </div>
-                                <div class="col-4 m-0">
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" id="c-d-f" value="option2">
-                                        <label class="form-check-label" for="c-d-f">Domingo / Festivo</label>
-                                    </div>
-                                </div>
-                                <div class="col-4 m-0">
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" id="c-virtual" value="option1">
-                                        <label class="form-check-label" for="c-virtual">Virtual</label>
-                                    </div>
-                                </div>
-                                <div class="col-4 m-0">
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" id="c-bogota" value="option2">
-                                        <label class="form-check-label" for="c-bogota">Fuera de Bogotá</label>
-                                    </div>
-                                </div>
-                                <div class="col-4 m-0">
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" id="c-transporte"
-                                            value="option2">
-                                        <label class="form-check-label" for="c-transporte">Transporte</label>
-                                    </div>
-                                </div>
-
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default antoclose" data-dismiss="modal">Cerrar</button>
+                                <button type="submit" class="btn btn-primary antosubmit">Guardar
+                                    cambios</button>
                             </div>
                         </form>
+
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default antoclose" data-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary antosubmit" data-dismiss="modal">Guardar
-                        cambios</button>
-                </div>
+
+
             </div>
         </div>
     </div>
     <!-- /MODAL NUEVA ENTRADA -->
+
+    <div id="registroExitoso" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="registroExitoso" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div id="testmodal2" style="padding: 5px 20px;">
+                    <h5>Su disponibilidad ha sido registrada exitosamente.</h5>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" onclick="window.location='calendario-tutor.php'" class="btn btn-primary antosubmit2" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- MODAL EDITAR ENTRADA -->
-    <div id="CalenderModalEdit" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-        aria-hidden="true">
+    <div id="CalenderModalEdit" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="registroExitoso" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -328,8 +275,7 @@
                     <div id="testmodal2" style="padding: 5px 20px;">
                         <form id="antoform2" class="form-horizontal calender" role="form">
                             <div class="form-group col-md-12">
-                                <input type="text" class="form-control" id="title2" name="title2" placeholder="Nombre"
-                                    autofocus required>
+                                <input type="text" class="form-control" id="title2" name="title2" placeholder="Nombre" autofocus required>
                             </div>
 
                             <div class="form-group col-md-12">
@@ -356,8 +302,7 @@
                                 <div class="row">
                                     <div class="col-6">
                                         <label class="control-label p-0 ">Hora de inicio</label>
-                                        <input type="time" class="form-control" id="hora-inicio"
-                                            placeholder="Hora de inicio">
+                                        <input type="time" class="form-control" id="hora-inicio" placeholder="Hora de inicio">
                                     </div>
                                     <div class="col-6">
                                         <label class="control-label p-0">Hora de fin</label>
@@ -367,8 +312,7 @@
                             </div>
 
                             <div class="form-group col-md-12">
-                                <textarea class="form-control" id="" name="" rows="3" placeholder="Temas" id="descr2"
-                                    name="descr"></textarea>
+                                <textarea class="form-control" id="" name="" rows="3" placeholder="Temas" id="descr2" name="descr"></textarea>
                             </div>
                             <div class="row">
                                 <div class="col-4 m-0">
@@ -403,8 +347,7 @@
                                 </div>
                                 <div class="col-4 m-0">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" id="c-transporte"
-                                            value="option2">
+                                        <input class="form-check-input" type="checkbox" id="c-transporte" value="option2">
                                         <label class="form-check-label" for="c-transporte">Transporte</label>
                                     </div>
                                 </div>
@@ -419,11 +362,13 @@
             </div>
         </div>
     </div>
+  
+    
     <!-- /MODAL EDITAR ENTRADA -->
 
     <div id="fc_create" data-toggle="modal" data-target="#ModalCrearEvento"></div>
     <div id="fc_edit" data-toggle="modal" data-target="#CalenderModalEdit"></div>
-
+    <div id="fc_reg" data-toggle="modal" data-target="#registroExitoso"></div>
     <!-- jQuery -->
     <script src="../vendors/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->
@@ -444,34 +389,14 @@
         $('#hora-inicio').timepicker();
         $('#hora-fin').timepicker();
     </script>
-
-
-    <script>
-        function changeLabeltext() {
-            var e = document.getElementById("tutores");
-            var tutor = e.options[e.selectedIndex].value;
-            if(tutor!="")
-            document.getElementById('horario1').innerHTML = '09:00 AM - 10:00 AM <br> 11:00 AM - 12:00 PM';
-            else
-            document.getElementById('horario1').innerHTML = 'N/A';
-
-        }
-        document.getElementById("tutores").disabled = true;
-        function changeAsignatura() {
-            var e = document.getElementById("title");
-            var asignatura = e.options[e.selectedIndex].value;
-            if(asignatura!="")
-            document.getElementById("tutores").disabled = false;
-            else
-            document.getElementById("tutores").disabled = true;
-
-        }
-    </script>
-
-
-
-
-
+<?php
+if (isset($_GET["registro"]) && $_GET["registro"] == 1) {
+    echo 
+                            "<script type='text/javascript'>$(document).ready(function(){
+                                $('#registroExitoso').modal('show');
+                                });</script>";
+}
+?>
 </body>
 
 </html>

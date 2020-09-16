@@ -41,7 +41,7 @@
                 </div>
                 <div class="container-fluid inicio-sesion m-0 py-1">
 
-                    <a href="login.html">
+                    <a href="login.php">
                         <button type="button" class="btn d-none btn-outline-secondary">Iniciar
                             sesión</button>
                     </a>
