@@ -1,6 +1,25 @@
+<?php
+session_start();
+ 
+//Si la variable sesión está vacía
+if (!isset($_SESSION['tutor'])) 
+{
+   header("location:../html/login.php"); 
+}else{
+    $usuario=$_SESSION['tutor'];
+    //echo $usuario;
+}
+$conexion = mysqli_connect("localhost", "root", "", "tyt");
+$consulta = "SELECT * FROM users WHERE e_mail='$usuario'";
+$resultado= mysqli_query($conexion, $consulta);
+$row=mysqli_fetch_array($resultado);
+
+$nombre=$row['Nombre'];
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Meta, title, CSS, favicons, etc. -->
@@ -39,7 +58,7 @@
                         </div>
                         <div class="profile_info">
                             <span>Bienvenido,</span>
-                            <h2>Administrador</h2>
+                            <h2><?php echo $nombre; ?></h2>
                         </div>
                     </div>
                     <!-- /SECCIÓN BIENVENIDO-->
@@ -50,31 +69,17 @@
                             <h3>General</h3>
                             <ul class="nav side-menu">
                                 <li>
-                                    <a href="dashboard.html"><i class="fa fa-home"></i> Dashboard</a>
+                                    <a href="dashboard.php"><i class="fa fa-home"></i> Dashboard</a>
                                 </li>
                                 <li>
                                     <a href="calendario.html"><i class="fa fa-calendar"></i> Calendario de clases</a>
                                 </li>
                                 <li>
-                                    <a href="tutores.html"> <i class="fa fa-university"></i> Tutores</a>
-                                </li>
-                                <li>
                                     <a href="cuentas-de-cobro.html"> <i class="fa fa-table"></i> Cuentas de cobro</a>
                                 </li>
+                               
                                 <li>
-                                    <a href="rrhh.html"> <i class="fa fa-child"></i> RRHH</a>
-                                </li>
-                                <li>
-                                    <a href="usuarios.html"> <i class="fa fa-group"></i> Gestión de usuarios</a>
-                                </li>
-                                <li>
-                                    <a href="404.html"> <i class="fa fa-circle"></i> 404</a>
-                                </li>
-                                <li>
-                                    <a href="500.html"> <i class="fa fa-circle-thin"></i> 500</a>
-                                </li>
-                                <li>
-                                    <a href="home.html"> <i class="fa fa-sign-out"></i> Cerrar sesión</a>
+                                    <a href="cerrar-sesion.php"> <i class="fa fa-sign-out"></i> Cerrar sesión</a>
                                 </li>
 
                             </ul>
@@ -95,11 +100,11 @@
                             <li class="nav-item dropdown open" style="padding-left: 15px;">
                                 <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true"
                                     id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                                    <img src="../images/user.png" alt="">Administrador
+                                    <img src="../images/user.png" alt=""><?php echo $nombre ?>
                                 </a>
                                 <div class="dropdown-menu dropdown-usermenu pull-right"
                                     aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="login.html"><i
+                                    <a class="dropdown-item" href="cerrar-sesion.php"><i
                                             class="fa fa-sign-out pull-right"></i>Cerrar sesión</a>
                                 </div>
                             </li>
