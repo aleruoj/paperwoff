@@ -1,3 +1,22 @@
+<?php
+session_start();
+ 
+//Si la variable sesión está vacía
+if (!isset($_SESSION['coordinador'])) 
+{
+   header("location:../html/login.php"); 
+}else{
+    $usuario=$_SESSION['coordinador'];
+    //echo $usuario;
+}
+include "conexion.php";
+$consulta = "SELECT * FROM users WHERE e_mail='$usuario'";
+$resultado= mysqli_query($conexion, $consulta);
+$row=mysqli_fetch_array($resultado);
+
+$nombre=$row['Nombre'];
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,7 +68,7 @@
             </div>
             <div class="profile_info">
               <span>Bienvenido,</span>
-              <h2>Administrador</h2>
+              <h2><?php echo $nombre ?></h2>
             </div>
           </div>
           <!-- /SECCIÓN BIENVENIDO-->
@@ -75,7 +94,7 @@
                   <a href="rrhh.html"> <i class="fa fa-child"></i> RRHH</a>
                 </li>
                 <li>
-                  <a href="usuarios.html"> <i class="fa fa-group"></i> Gestión de usuarios</a>
+                  <a href="usuarios.php"> <i class="fa fa-group"></i> Gestión de usuarios</a>
                 </li>
                 <li>
                   <a href="404.html"> <i class="fa fa-circle"></i> 404</a>
@@ -104,7 +123,7 @@
             <ul class=" navbar-right">
               <li class="nav-item dropdown open" style="padding-left: 15px;">
                 <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                  <img src="../images/user.png" alt="">Administrador
+                  <img src="../images/user.png" alt=""> <?php echo $nombre ?>
                 </a>
                 <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="login.php"><i class="fa fa-sign-out pull-right"></i>Cerrar sesión</a>
@@ -412,7 +431,7 @@
                 <div class="row">
 
                   <div class="col-md-12 personal-info">
-                    <form class="form-horizontal" role="form">
+                    <form class="form-horizontal" role="form" action="crear-usuario.php" method="post">
                       <div class="form-group d-flex">
                         <label class="col-lg-3 control-label">Documento:</label>
                         <div class="col-lg-8">
@@ -445,7 +464,7 @@
                         </div>
                       </div>
                       <div class="form-group d-flex">
-                        <label class="col-lg-3 control-label">Role:</label>
+                        <label class="col-lg-3 control-label">Rol:</label>
                         <div class="col-lg-8">
                           <div class="ui-select">
                             <select id="user" class="form-control">

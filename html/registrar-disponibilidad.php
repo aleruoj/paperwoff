@@ -25,8 +25,8 @@ echo $hora_fin;*/
 
 
 $sql = "INSERT INTO disponibilidad (Fecha,Hora_inicio, Hora_fin, Tutores_id_Tutores) VALUES ('$fecha','$hora_inicio','$hora_fin','$tutor')";  
-mysqli_query($conexion, $sql);
+mysqli_query($conexion, $sql)
 
-header("location:calendario-tutor.php?registro=1");
+header("location:login.php?error=1");
 
 ?>

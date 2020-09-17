@@ -84,7 +84,7 @@ $nombre=$row['Nombre'];
                                     <a href="rrhh.html"> <i class="fa fa-child"></i> RRHH</a>
                                 </li>
                                 <li>
-                                    <a href="usuarios.html"> <i class="fa fa-group"></i> Gestión de usuarios</a>
+                                    <a href="usuarios.php"> <i class="fa fa-group"></i> Gestión de usuarios</a>
                                 </li>
                                 <li>
                                     <a href="404.html"> <i class="fa fa-circle"></i> 404</a>
