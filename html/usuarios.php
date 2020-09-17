@@ -66,7 +66,7 @@
                   <a href="calendario.html"><i class="fa fa-calendar"></i> Calendario de clases</a>
                 </li>
                 <li>
-                    <a href="tutores.html"> <i class="fa fa-university"></i> Tutores</a>
+                  <a href="tutores.html"> <i class="fa fa-university"></i> Tutores</a>
                 </li>
                 <li>
                   <a href="cuentas-de-cobro.html"> <i class="fa fa-table"></i> Cuentas de cobro</a>
@@ -103,8 +103,7 @@
           <nav class="nav navbar-nav">
             <ul class=" navbar-right">
               <li class="nav-item dropdown open" style="padding-left: 15px;">
-                <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown"
-                  data-toggle="dropdown" aria-expanded="false">
+                <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
                   <img src="../images/user.png" alt="">Administrador
                 </a>
                 <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
@@ -145,7 +144,7 @@
                   <div class="container">
                     <div class="row">
                       <div class="col-12 ml-2">
-                        <button type="button" class="button-add"><i class="fa fa-plus-square pr-3"></i>Crear
+                        <button type="button" class="button-add" data-toggle="modal" data-target="#crearusuario"><i class="fa fa-plus-square pr-3"></i>Crear
                           usuario</button>
                       </div>
                     </div>
@@ -184,10 +183,8 @@
                         </td>
                         <td>
 
-                          <button class="btn btn-info  btn-xs" data-toggle="modal" data-target="#editarusuario"><i
-                              class="fa fa-pencil"></i> Editar </button>
-                          <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#eliminarusuario"><i
-                              class="fa fa-trash-o"></i> Eliminar </button>
+                          <button class="btn btn-info  btn-xs" data-toggle="modal" data-target="#editarusuario"><i class="fa fa-pencil"></i> Editar </button>
+                          <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#eliminarusuario"><i class="fa fa-trash-o"></i> Eliminar </button>
                         </td>
                       </tr>
                       <tr>
@@ -210,10 +207,8 @@
                           <a>Tutor</a>
                         </td>
                         <td>
-                          <button class="btn btn-info  btn-xs" data-toggle="modal" data-target="#editarusuario"><i
-                              class="fa fa-pencil"></i> Editar </button>
-                          <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#eliminarusuario"><i
-                              class="fa fa-trash-o"></i> Eliminar </button>
+                          <button class="btn btn-info  btn-xs" data-toggle="modal" data-target="#editarusuario"><i class="fa fa-pencil"></i> Editar </button>
+                          <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#eliminarusuario"><i class="fa fa-trash-o"></i> Eliminar </button>
                         </td>
                       </tr>
                       <tr>
@@ -237,10 +232,8 @@
                         </td>
                         <td>
 
-                          <button class="btn btn-info  btn-xs" data-toggle="modal" data-target="#editarusuario"><i
-                              class="fa fa-pencil"></i> Editar </button>
-                          <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#eliminarusuario"><i
-                              class="fa fa-trash-o"></i> Eliminar </button>
+                          <button class="btn btn-info  btn-xs" data-toggle="modal" data-target="#editarusuario"><i class="fa fa-pencil"></i> Editar </button>
+                          <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#eliminarusuario"><i class="fa fa-trash-o"></i> Eliminar </button>
                         </td>
                       </tr>
                       <tr>
@@ -264,10 +257,8 @@
                         </td>
                         <td>
 
-                          <button class="btn btn-info  btn-xs" data-toggle="modal" data-target="#editarusuario"><i
-                              class="fa fa-pencil"></i> Editar </button>
-                          <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#eliminarusuario"><i
-                              class="fa fa-trash-o"></i> Eliminar </button>
+                          <button class="btn btn-info  btn-xs" data-toggle="modal" data-target="#editarusuario"><i class="fa fa-pencil"></i> Editar </button>
+                          <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#eliminarusuario"><i class="fa fa-trash-o"></i> Eliminar </button>
                         </td>
                       </tr>
                       <tr>
@@ -290,10 +281,8 @@
                           <a>Tutor</a>
                         </td>
                         <td>
-                          <button class="btn btn-info  btn-xs" data-toggle="modal" data-target="#editarusuario"><i
-                              class="fa fa-pencil"></i> Editar </button>
-                          <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#eliminarusuario"><i
-                              class="fa fa-trash-o"></i> Eliminar </button>
+                          <button class="btn btn-info  btn-xs" data-toggle="modal" data-target="#editarusuario"><i class="fa fa-pencil"></i> Editar </button>
+                          <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#eliminarusuario"><i class="fa fa-trash-o"></i> Eliminar </button>
                         </td>
                       </tr>
                       <tr>
@@ -317,10 +306,8 @@
                         </td>
                         <td>
 
-                          <button class="btn btn-info  btn-xs" data-toggle="modal" data-target="#editarusuario"><i
-                              class="fa fa-pencil"></i> Editar </button>
-                          <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#eliminarusuario"><i
-                              class="fa fa-trash-o"></i> Eliminar </button>
+                          <button class="btn btn-info  btn-xs" data-toggle="modal" data-target="#editarusuario"><i class="fa fa-pencil"></i> Editar </button>
+                          <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#eliminarusuario"><i class="fa fa-trash-o"></i> Eliminar </button>
                         </td>
                       </tr>
                       <tr>
@@ -344,10 +331,8 @@
                         </td>
                         <td>
 
-                          <button class="btn btn-info  btn-xs" data-toggle="modal" data-target="#editarusuario"><i
-                              class="fa fa-pencil"></i> Editar </button>
-                          <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#eliminarusuario"><i
-                              class="fa fa-trash-o"></i> Eliminar </button>
+                          <button class="btn btn-info  btn-xs" data-toggle="modal" data-target="#editarusuario"><i class="fa fa-pencil"></i> Editar </button>
+                          <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#eliminarusuario"><i class="fa fa-trash-o"></i> Eliminar </button>
                         </td>
                       </tr>
                       <tr>
@@ -371,10 +356,8 @@
                         </td>
                         <td>
 
-                          <button class="btn btn-info  btn-xs" data-toggle="modal" data-target="#editarusuario"><i
-                              class="fa fa-pencil"></i> Editar </button>
-                          <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#eliminarusuario"><i
-                              class="fa fa-trash-o"></i> Eliminar </button>
+                          <button class="btn btn-info  btn-xs" data-toggle="modal" data-target="#editarusuario"><i class="fa fa-pencil"></i> Editar </button>
+                          <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#eliminarusuario"><i class="fa fa-trash-o"></i> Eliminar </button>
                         </td>
                       </tr>
                       <tr>
@@ -398,10 +381,8 @@
                         </td>
                         <td>
 
-                          <button class="btn btn-info  btn-xs" data-toggle="modal" data-target="#editarusuario"><i
-                              class="fa fa-pencil"></i> Editar </button>
-                          <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#eliminarusuario"><i
-                              class="fa fa-trash-o"></i> Eliminar </button>
+                          <button class="btn btn-info  btn-xs" data-toggle="modal" data-target="#editarusuario"><i class="fa fa-pencil"></i> Editar </button>
+                          <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#eliminarusuario"><i class="fa fa-trash-o"></i> Eliminar </button>
 
                         </td>
                       </tr>
@@ -416,9 +397,130 @@
         </div>
       </div>
       <!-- /CONTENIDO DE LA COLUMNA DERECHA-->
+      <!-- Modal crear-->
+      <div class="modal fade" id="crearusuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header border-0">
+              <h5 class="modal-title" id="exampleModalLabel">Crear usuario</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="container">
+                <div class="row">
+
+                  <div class="col-md-12 personal-info">
+                    <form class="form-horizontal" role="form">
+                      <div class="form-group d-flex">
+                        <label class="col-lg-3 control-label">Documento:</label>
+                        <div class="col-lg-8">
+                          <input class="form-control" name="documento" type="number">
+                        </div>
+                      </div>
+                      <div class="form-group d-flex">
+                        <label class="col-lg-3 control-label">Nombres:</label>
+                        <div class="col-lg-8">
+                          <input class="form-control" name="nombre" type="text">
+                        </div>
+                      </div>
+                      <div class="form-group d-flex">
+                        <label class="col-lg-3 control-label">Apellidos:</label>
+                        <div class="col-lg-8">
+                          <input class="form-control" name="apellidos" type="text">
+                        </div>
+                      </div>
+
+                      <div class="form-group d-flex" >
+                        <label class="col-lg-3 control-label">Email:</label>
+                        <div class="col-lg-8">
+                          <input class="form-control" type="email" name="email">
+                        </div>
+                      </div>
+                      <div class="form-group d-flex">
+                        <label class="col-lg-3 control-label">Celular:</label>
+                        <div class="col-lg-8">
+                          <input class="form-control" name="celular" type="number">
+                        </div>
+                      </div>
+                      <div class="form-group d-flex">
+                        <label class="col-lg-3 control-label">Role:</label>
+                        <div class="col-lg-8">
+                          <div class="ui-select">
+                            <select id="user" class="form-control">
+                              <option value="">Seleccione..</option>
+                              <option value="ADMINISTRADOR">Administrador</option>
+                              <option value="COORDINADOR">Coordinador</option>
+                              <option value="TUTOR">Tutor</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                     
+                      <div class="form-group d-flex" >
+                        <label class="col-lg-3 control-label">Direccioón:</label>
+                        <div class="col-lg-8">
+                          <input class="form-control" type="texto" name="direccion">
+                        </div>
+                      </div>
+                      <div class="form-group d-flex">
+                        <label class="col-lg-3 control-label">Cargo:</label>
+                        <div class="col-lg-8">
+                          <div class="ui-select">
+                            <select id="user" class="form-control">
+                              <option value="">Seleccione..</option>
+                              <option value="PROFESIONAL UNIVERSITARIO">Profesional universitario</option>
+                              <option value="TUTOR">Tutor</option>
+                              
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                       <div class="form-group d-flex">
+                        <label class="col-md-3 control-label">Contraseña:</label>
+                        <div class="col-md-8">
+                          <input class="form-control" type="password" name="contrasena">
+                        </div>
+                      </div>
+                      
+                      <!--  <div class="form-group">
+                        <label class="col-md-3 control-label">Confirmar contraseña:</label>
+                        <div class="col-md-8">
+                          <input class="form-control" type="password" value="11111122333">
+                        </div>
+                      </div> -->
+                      <div class="form-group d-flex">
+                        <label class="col-md-3 control-label">Estado:</label>
+                        <div class="col-md-8">
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="estado" id="activo" value="1" checked>
+                            <label class="form-check-label" for="activo">
+                              Activo
+                            </label>
+                          </div>
+                          <div class="form-check d-flex">
+                            <input class="form-check-input" type="radio" name="estado" id="inactivo" value="0">
+                            <label class="form-check-label" for="inactivo">
+                              Inactivo
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer border-0 justify-content-around">
+              <button type="button" class="btn w-100 btn-secondary" data-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn w-100 btn-info" data-dismiss="modal">Guardar</button>
+            </div>
+          </div>
+        </div>
+      </div>
       <!-- Modal ELIMINAR-->
-      <div class="modal fade" id="eliminarusuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
+      <div class="modal fade" id="eliminarusuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header border-0">
@@ -437,8 +539,7 @@
       </div>
       <!-- /Modal ELIMINAR-->
       <!-- Modal EDITAR-->
-      <div class="modal fade" id="editarusuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
+      <div class="modal fade" id="editarusuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header border-0">
@@ -522,7 +623,7 @@
             <div class="col-md-12">
               <div class="d-block">
                 <div class="caption-copyright text-center">
-                  <p>© 2019 PAPERWOFF S.A.S – TODOS LOS DERECHOS RESERVADOS</p>
+                  <p>© 2020 PAPERWOFF S.A.S – TODOS LOS DERECHOS RESERVADOS</p>
                 </div>
               </div>
             </div>
@@ -555,25 +656,26 @@
 
   <script>
     function changeLabeltext() {
-        var e = document.getElementById("tutores");
-        var tutor = e.options[e.selectedIndex].value;
-        if(tutor!="")
+      var e = document.getElementById("tutores");
+      var tutor = e.options[e.selectedIndex].value;
+      if (tutor != "")
         document.getElementById('horario1').innerHTML = '09:00 AM - 10:00 AM <br> 11:00 AM - 12:00 PM';
-        else
+      else
         document.getElementById('horario1').innerHTML = 'N/A';
 
     }
     document.getElementById("tutores").disabled = true;
+
     function changeAsignatura() {
-        var e = document.getElementById("title");
-        var asignatura = e.options[e.selectedIndex].value;
-        if(asignatura!="")
+      var e = document.getElementById("title");
+      var asignatura = e.options[e.selectedIndex].value;
+      if (asignatura != "")
         document.getElementById("tutores").disabled = false;
-        else
+      else
         document.getElementById("tutores").disabled = true;
 
     }
-</script>
+  </script>
 </body>
 
 </html>
