@@ -1,3 +1,9 @@
+<?php
+
+include "conexion.php";
+
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -51,7 +57,7 @@
                 </div>
                 <div class="container-fluid inicio-sesion m-0 py-1">
 
-                    <a href="login.php">
+                    <a href="login-ingles.php">
                         <button type="button" class="btn btn-outline-secondary">Login</button>
                     </a>
                 </div>
@@ -112,22 +118,22 @@
                         </div>
                     </div>
                     <div class="card-body px-0">
-                        <form id="formSusc" action="">
+                        <form  role='form' action="clientes_nuevos.php" method="post">
                             <div class="form-group">
-                                <input type="text" class="form-control" id="nombre" required
+                                <input type="text" class="form-control" name='nombre_1'  required
                                     aria-describedby="emailHelp" placeholder="Full name">
                             </div>
                             <div class="form-group">
-                                <input type=" number" class="form-control" id="tlf" required
+                                <input type=" number" class="form-control" name='celular_1' required
                                     placeholder="Cellphone" pattern="\d*" minlength="10" maxlength="10">
                             </div>
 
                             <div class="form-group">
-                                <input type="email" class="form-control" id="email" required
+                                <input type="email" class="form-control" name='email_1' required
                                     aria-describedby="emailHelp" placeholder="e-mail">
                             </div>
                             <div class="form-group">
-                                <select class="form-control" id="area" required>
+                                <select class="form-control" name='pais_1' id="area" required>
                                     <option value="">Country</option>
                                     <option value="Brasil">Brasil</option>
                                     <option value="Chile">Chile</option>
@@ -136,19 +142,20 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" id="nombre" required
+                                <input type="text" class="form-control" name='nombre_compa'id="nombre" required
                                     aria-describedby="emailHelp" placeholder="Name of your company">
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" id="nombre" required
+                                <input type="text" class="form-control" name='area_compa' id="nombre" required
                                     aria-describedby="emailHelp" placeholder="Area of your company">
                             </div>
 
                             <div class="form-group">
-                                <select class="form-control" id="empleados" required>
+                                <select class="form-control" name='numero_emple' id="empleados" required>
                                     <option value="">Number of employees</option>
                                     <option value="1-50">1 - 50</option>
                                     <option value="51-100">51 - 100</option>
+
                                     <option value="101-250">101 - 250</option>
                                     <option value="251-500">251 - 500</option>
                                     <option value="501-1000">501 - 1000</option>

@@ -22,7 +22,7 @@ $nombre=$row['Nombre'];
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <!-- Meta, title, CSS, favicons, etc. -->
+   <!--Meta, title, CSS, favicons, etc. -->
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -82,26 +82,21 @@ $nombre=$row['Nombre'];
                   <a href="dashboard.php"><i class="fa fa-home"></i> Dashboard</a>
                 </li>
                 <li>
-                  <a href="calendario.html"><i class="fa fa-calendar"></i> Calendario de clases</a>
+                  <a href="calendario.php"><i class="fa fa-calendar"></i> Calendario de clases</a>
                 </li>
                 <li>
-                  <a href="tutores.html"> <i class="fa fa-university"></i> Tutores</a>
+                  <a href="tutores.php"> <i class="fa fa-university"></i> Tutores</a>
                 </li>
                 <li>
-                  <a href="cuentas-de-cobro.html"> <i class="fa fa-table"></i> Cuentas de cobro</a>
+                  <a href="cuentas-de-cobro.php"> <i class="fa fa-table"></i> Cuentas de cobro</a>
                 </li>
                 <li>
-                  <a href="rrhh.html"> <i class="fa fa-child"></i> RRHH</a>
+                  <a href="rrhh.php"> <i class="fa fa-child"></i> RRHH</a>
                 </li>
                 <li>
                   <a href="usuarios.php"> <i class="fa fa-group"></i> Gestión de usuarios</a>
                 </li>
-                <li>
-                  <a href="404.html"> <i class="fa fa-circle"></i> 404</a>
-                </li>
-                <li>
-                  <a href="500.html"> <i class="fa fa-circle-thin"></i> 500</a>
-                </li>
+               
                 <li>
                   <a href="login.php"> <i class="fa fa-sign-out"></i> Cerrar sesión</a>
                 </li>
@@ -435,39 +430,39 @@ $nombre=$row['Nombre'];
                       <div class="form-group d-flex">
                         <label class="col-lg-3 control-label">Documento:</label>
                         <div class="col-lg-8">
-                          <input class="form-control" name="documento" type="number">
+                          <input class="form-control" name="documento" type="number" required>
                         </div>
                       </div>
                       <div class="form-group d-flex">
                         <label class="col-lg-3 control-label">Nombres:</label>
                         <div class="col-lg-8">
-                          <input class="form-control" name="nombre" type="text">
+                          <input class="form-control" name="nombre" type="text" required>
                         </div>
                       </div>
                       <div class="form-group d-flex">
                         <label class="col-lg-3 control-label">Apellidos:</label>
                         <div class="col-lg-8">
-                          <input class="form-control" name="apellidos" type="text">
+                          <input class="form-control" name="apellidos" type="text" required>
                         </div>
                       </div>
 
                       <div class="form-group d-flex" >
                         <label class="col-lg-3 control-label">Email:</label>
                         <div class="col-lg-8">
-                          <input class="form-control" type="email" name="email">
+                          <input class="form-control" type="email" name="email" required>
                         </div>
                       </div>
                       <div class="form-group d-flex">
                         <label class="col-lg-3 control-label">Celular:</label>
                         <div class="col-lg-8">
-                          <input class="form-control" name="celular" type="number">
+                          <input class="form-control" name="celular" type="number" required>
                         </div>
                       </div>
                       <div class="form-group d-flex">
                         <label class="col-lg-3 control-label">Rol:</label>
                         <div class="col-lg-8">
                           <div class="ui-select">
-                            <select id="user" class="form-control">
+                            <select id="user" class="form-control" name="role" required>
                               <option value="">Seleccione..</option>
                               <option value="ADMINISTRADOR">Administrador</option>
                               <option value="COORDINADOR">Coordinador</option>
@@ -480,14 +475,14 @@ $nombre=$row['Nombre'];
                       <div class="form-group d-flex" >
                         <label class="col-lg-3 control-label">Direccioón:</label>
                         <div class="col-lg-8">
-                          <input class="form-control" type="texto" name="direccion">
+                          <input class="form-control" type="tex" name="direccion" required>
                         </div>
                       </div>
                       <div class="form-group d-flex">
                         <label class="col-lg-3 control-label">Cargo:</label>
                         <div class="col-lg-8">
                           <div class="ui-select">
-                            <select id="user" class="form-control">
+                            <select id="user" class="form-control" name="cargo" required>
                               <option value="">Seleccione..</option>
                               <option value="PROFESIONAL UNIVERSITARIO">Profesional universitario</option>
                               <option value="TUTOR">Tutor</option>
@@ -499,7 +494,7 @@ $nombre=$row['Nombre'];
                        <div class="form-group d-flex">
                         <label class="col-md-3 control-label">Contraseña:</label>
                         <div class="col-md-8">
-                          <input class="form-control" type="password" name="contrasena">
+                          <input class="form-control" type="password" name="contrasena" required>
                         </div>
                       </div>
                       
@@ -513,28 +508,29 @@ $nombre=$row['Nombre'];
                         <label class="col-md-3 control-label">Estado:</label>
                         <div class="col-md-8">
                           <div class="form-check">
-                            <input class="form-check-input" type="radio" name="estado" id="activo" value="1" checked>
+                            <input class="form-check-input" type="radio" name="estado" id="activo" required value="1" checked>
                             <label class="form-check-label" for="activo">
                               Activo
                             </label>
                           </div>
                           <div class="form-check d-flex">
-                            <input class="form-check-input" type="radio" name="estado" id="inactivo" value="0">
+                            <input class="form-check-input" type="radio" name="estado" id="inactivo" required value="0">
                             <label class="form-check-label" for="inactivo">
                               Inactivo
                             </label>
                           </div>
                         </div>
                       </div>
-                    </form>
+                    
                   </div>
                 </div>
               </div>
             </div>
             <div class="modal-footer border-0 justify-content-around">
               <button type="button" class="btn w-100 btn-secondary" data-dismiss="modal">Cancelar</button>
-              <button type="button" class="btn w-100 btn-info" data-dismiss="modal">Guardar</button>
+              <button type="submit" class="btn w-100 btn-info" >Guardar</button>
             </div>
+            </form>
           </div>
         </div>
       </div>
@@ -622,7 +618,7 @@ $nombre=$row['Nombre'];
                           <input class="form-control" type="password" value="11111122333">
                         </div>
                       </div>
-                    </form>
+                    
                   </div>
                 </div>
               </div>
@@ -631,6 +627,7 @@ $nombre=$row['Nombre'];
               <button type="button" class="btn w-100 btn-secondary" data-dismiss="modal">Cancelar</button>
               <button type="button" class="btn w-100 btn-info" data-dismiss="modal">Guardar</button>
             </div>
+            </form>
           </div>
         </div>
       </div>

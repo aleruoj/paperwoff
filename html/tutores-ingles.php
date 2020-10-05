@@ -1,3 +1,22 @@
+<?php
+session_start();
+ 
+//Si la variable sesión está vacía
+if (!isset($_SESSION['coordinador'])) 
+{
+   header("location:../html/login.php"); 
+}else{
+    $usuario=$_SESSION['coordinador'];
+    //echo $usuario;
+}
+include "conexion.php";
+$consulta = "SELECT * FROM users WHERE e_mail='$usuario'";
+$resultado= mysqli_query($conexion, $consulta);
+$row=mysqli_fetch_array($resultado);
+
+$nombre=$row['Nombre'];
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -9,7 +28,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="../images/favicon.png" type="image/ico" />
 
-    <title>Tutores | Paperwoff</title>
+    <title>Tutors | Paperwoff</title>
 
     <!-- Bootstrap -->
     <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -39,7 +58,7 @@
             <div class="col-md-3 left_col" style="min-height: auto;">
                 <div class="left_col scroll-view">
                     <div class="navbar nav_title" style="border: 0;">
-                        <a href="home.html" class="site_title"><i class="fa fa-cog"></i> <span>Paperwoff</span></a>
+                        <a href="home-ingles.php" class="site_title"><i class="fa fa-cog"></i> <span>Paperwoff</span></a>
                     </div>
 
                     <div class="clearfix"></div>
@@ -50,8 +69,8 @@
                             <img src="../images/user.png" alt="..." class="img-circle profile_img">
                         </div>
                         <div class="profile_info">
-                            <span>Bienvenido,</span>
-                            <h2><?php echo $nombre ?></h2>
+                            <span>Welcome,</span>
+                           <h2><?php echo $nombre ?></h2>
                         </div>
                     </div>
                     <!-- /SECCIÓN BIENVENIDO-->
@@ -62,31 +81,26 @@
                             <h3>General</h3>
                             <ul class="nav side-menu">
                                 <li>
-                                    <a href="dashboard.php"><i class="fa fa-home"></i> Dashboard</a>
+                                    <a href="dashboard-ingles.php"><i class="fa fa-home"></i> Dashboard</a>
                                 </li>
                                 <li>
-                                    <a href="calendario.html"><i class="fa fa-calendar"></i> Calendario de clases</a>
+                                    <a href="calendario-ingles.php"><i class="fa fa-calendar"></i> Calendar classes</a>
                                 </li>
                                 <li>
-                                    <a href="tutores.html"> <i class="fa fa-university"></i> Tutores</a>
+                                    <a href="tutores-ingles.php"> <i class="fa fa-university"></i> Tutors</a>
                                 </li>
                                 <li>
-                                    <a href="cuentas-de-cobro.html"> <i class="fa fa-table"></i> Cuentas de cobro</a>
+                                    <a href="cuentas-de-cobro-ingles.php"> <i class="fa fa-table"></i> Collections Account</a>
                                 </li>
                                 <li>
-                                    <a href="rrhh.html"> <i class="fa fa-child"></i> RRHH</a>
+                                    <a href="rrhh-ingles.php"> <i class="fa fa-child"></i> RRHH</a>
                                 </li>
                                 <li>
-                                    <a href="usuarios.php"> <i class="fa fa-group"></i> Gestión de usuarios</a>
+                                    <a href="usuarios-ingles.php"> <i class="fa fa-group"></i> User management</a>
                                 </li>
+                               
                                 <li>
-                                    <a href="404.html"> <i class="fa fa-circle"></i> 404</a>
-                                </li>
-                                <li>
-                                    <a href="500.html"> <i class="fa fa-circle-thin"></i> 500</a>
-                                </li>
-                                <li>
-                                    <a href="login.php"> <i class="fa fa-sign-out"></i> Cerrar sesión</a>
+                                    <a href="login-ingles.php"> <i class="fa fa-sign-out"></i> Log out</a>
                                 </li>
 
                             </ul>
@@ -107,12 +121,12 @@
                             <li class="nav-item dropdown open" style="padding-left: 15px;">
                                 <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true"
                                     id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                                    <img src="../images/user.png" alt="">Administrador
+                                    <img src="../images/user.png" alt=""><?php echo $nombre ?>
                                 </a>
                                 <div class="dropdown-menu dropdown-usermenu pull-right"
                                     aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="login.php"><i
-                                            class="fa fa-sign-out pull-right"></i>Cerrar sesión</a>
+                                            class="fa fa-sign-out pull-right"></i>Log out</a>
                                 </div>
                             </li>
                         </ul>
@@ -140,7 +154,7 @@
                     <div class="col-md-6 col-12">
                         <div class="x_panel" >
                             <div class="x_title">
-                                <h2>Listado de tutores</h2>
+                                <h2>Tutors list</h2>
                                 <ul class="nav navbar-right panel_toolbox">
                                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                     </li>
@@ -160,11 +174,10 @@
                                                 <thead>
                                                     <tr class="headings">
                                                         <th class="column-title" style="width: 8%;">
-                                                            Documento </th>
-                                                        <th class="column-title" style="width: 25%;">Nombre
-                                                            completo </th>
+                                                            ID </th>
+                                                        <th class="column-title" style="width: 25%;">Full name</th>
                                                         <th class="column-title no-link " style="width: 10%;"><span
-                                                                class="nobr">Acción</span>
+                                                                class="nobr">Action</span>
                                                         </th>
                                                         <th class="bulk-actions" colspan="7">
                                                             <a class="antoo" style="color:#fff; font-weight:500;"><span
@@ -178,64 +191,56 @@
                                                         <td class=" ">26133767</td>
                                                         <td class=" ">Pedro Alfonso Pérez Sánchez</td>
                                                         <td class=" "> <button type="button"
-                                                                class="btn btn-success btn-xs">Ver
-                                                                disponibilidad</button>
+                                                                class="btn btn-success btn-xs">View availability</button>
                                                         </td>
                                                     </tr>
                                                     <tr class="odd pointer">
                                                         <td class=" ">68287755</td>
                                                         <td class=" ">Luz Marina Duarte Gonzalez</td>
                                                         <td class=" "> <button type="button"
-                                                                class="btn btn-success btn-xs">Ver
-                                                                disponibilidad</button>
+                                                                class="btn btn-success btn-xs">View availability</button>
                                                         </td>
                                                     </tr>
                                                     <tr class="even pointer">
                                                         <td class=" ">1116796983</td>
                                                         <td class=" ">Luis Alejandro Perdomo</td>
                                                         <td class=" "> <button type="button"
-                                                                class="btn btn-success btn-xs">Ver
-                                                                disponibilidad</button>
+                                                                class="btn btn-success btn-xs">View availability</button>
                                                         </td>
                                                     </tr>
                                                     <tr class="odd pointer">
                                                         <td class=" ">10014556</td>
                                                         <td class=" ">Jhosmary Andreina Alarcon Duarte</td>
                                                         <td class=" "> <button type="button"
-                                                                class="btn btn-success btn-xs">Ver
-                                                                disponibilidad</button>
+                                                                class="btn btn-success btn-xs">View availability</button>
                                                         </td>
                                                     </tr>
                                                     <tr class="even pointer">
                                                         <td class=" ">68547921</td>
                                                         <td class=" ">Andres Alejando Toro </td>
                                                         <td class=" "> <button type="button"
-                                                                class="btn btn-success btn-xs">Ver
-                                                                disponibilidad</button>
+                                                                class="btn btn-success btn-xs">View availability</button>
                                                         </td>
                                                     </tr>
                                                     <tr class="odd pointer">
                                                         <td class=" ">1114796952</td>
                                                         <td class=" ">Carmen Liliana Duarte</td>
                                                         <td class=""> <button type="button"
-                                                                class="btn btn-success btn-xs">Ver
-                                                                disponibilidad</button>
+                                                                class="btn btn-success btn-xs">View availability</button>
                                                         </td>
                                                     </tr>
                                                     <tr class="even pointer">
                                                         <td class=" ">1001205467</td>
                                                         <td class=" ">Angie Carolina Hernandez</td>
                                                         <td class=""> <button type="button"
-                                                                class="btn btn-success btn-xs">Ver
-                                                                disponibilidad</button>
+                                                                class="btn btn-success btn-xs">View availability</button>
                                                         </td>
                                                     </tr>
                                                     <tr class="odd pointer">
                                                         <td class=" ">1113856983</td>
                                                         <td class=" ">Jorge Alberto Ojeda Rueda</td>
                                                         <td class=""> <button type="button"
-                                                                class="btn btn-success btn-xs">Ver
-                                                                disponibilidad</button>
+                                                                class="btn btn-success btn-xs">View availability</button>
                                                         </td>
                                                     </tr>
 
@@ -243,32 +248,28 @@
                                                         <td class=" ">1103523987</td>
                                                         <td class=" ">Moises Alejandro Sanchez </td>
                                                         <td class=" "> <button type="button"
-                                                                class="btn btn-success btn-xs">Ver
-                                                                disponibilidad</button>
+                                                                class="btn btn-success btn-xs">View availability</button>
                                                         </td>
                                                     </tr>
                                                     <tr class="odd pointer">
                                                         <td class=" ">1116589467</td>
                                                         <td class=" ">Ana Maria Soto</td>
                                                         <td class=" "> <button type="button"
-                                                                class="btn btn-success btn-xs">Ver
-                                                                disponibilidad</button>
+                                                                class="btn btn-success btn-xs">View availability</button>
                                                         </td>
                                                     </tr>
                                                     <tr class="even pointer">
                                                         <td class=" ">1101256897</td>
                                                         <td class=" ">Samuel Perdomo</td>
                                                         <td class=" "> <button type="button"
-                                                                class="btn btn-success btn-xs">Ver
-                                                                disponibilidad</button>
+                                                                class="btn btn-success btn-xs">View availability</button>
                                                         </td>
                                                     </tr>
                                                     <tr class="odd pointer">
                                                         <td class=" ">68754923</td>
                                                         <td class=" ">Roger David Lopez</td>
                                                         <td class=" "> <button type="button"
-                                                                class="btn btn-success btn-xs">Ver
-                                                                disponibilidad</button>
+                                                                class="btn btn-success btn-xs">View availability</button>
                                                         </td>
                                                     </tr>
                                                 </tbody>
@@ -287,7 +288,7 @@
                         <div class="row">
                             <div class="x_panel" style="min-height: 700px;">
                                 <div class="x_title">
-                                    <h2>Disponibilidad</h2>
+                                    <h2>Availability</h2>
                                     <ul class="nav navbar-right panel_toolbox">
                                         <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                         </li>
@@ -319,7 +320,7 @@
                         <div class="col-md-12 p-0">
                             <div class="d-block">
                                 <div class="caption-copyright text-center">
-                                    <p>© 2020 PAPERWOFF S.A.S – TODOS LOS DERECHOS RESERVADOS</p>
+                                    <p>© 2020 PAPERWOFF S.A.S – ALL RIGHTS RESERVED</p>
                                 </div>
                             </div>
                         </div>
@@ -337,25 +338,25 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel">Agendar disponibilidad</h4>
+                    <h4 class="modal-title" id="myModalLabel">enter availability</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                 </div>
                 <div class="modal-body">
                     <div id="testmodal" style="padding: 5px 20px;">
                         <form id="antoform" class="form-horizontal calender" role="form">
                             <div class="form-group col-md-12">
-                                <input type="text" class="form-control" id="title" name="title" placeholder="Asignatura"
+                                <input type="text" class="form-control" id="title" name="title" placeholder="Subject"
                                     autofocus required>
                             </div>
                             <div class="form-group col-md-12 px-1">
                                 <div class="row">
                                     <div class="col-6">
-                                        <label class="control-label p-0 ">Fecha de inicio</label>
+                                        <label class="control-label p-0 ">start date</label>
                                         <input type="datetime-local" class="form-control" id="hora-inicio"
                                             placeholder="Hora de inicio">
                                     </div>
                                     <div class="col-6">
-                                        <label class="control-label p-0">Fecha de fin</label>
+                                        <label class="control-label p-0">end date</label>
                                         <input type="datetime-local" class="form-control" id="hora-fin"
                                             placeholder="Hora de fin">
                                     </div>
@@ -365,9 +366,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default antoclose" data-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary antosubmit" data-dismiss="modal">Guardar
-                        cambios</button>
+                    <button type="button" class="btn btn-default antoclose" data-dismiss="modal">close</button>
+                    <button type="button" class="btn btn-primary antosubmit" data-dismiss="modal">Save changes</button>
                 </div>
             </div>
         </div>
@@ -379,7 +379,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel2">Editar disponibilidad</h4>
+                    <h4 class="modal-title" id="myModalLabel2">Edit availability</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                 </div>
                 <div class="modal-body">
@@ -392,12 +392,12 @@
                             <div class="form-group col-md-12 px-1">
                                 <div class="row">
                                     <div class="col-6">
-                                        <label class="control-label p-0 ">Fecha de inicio</label>
+                                        <label class="control-label p-0 ">Start date</label>
                                         <input type="datetime-local" class="form-control" id="hora-inicio"
                                             placeholder="Hora de inicio">
                                     </div>
                                     <div class="col-6">
-                                        <label class="control-label p-0">Fecha de fin</label>
+                                        <label class="control-label p-0">End daten</label>
                                         <input type="datetime-local" class="form-control" id="hora-fin"
                                             placeholder="Hora de fin">
                                     </div>
@@ -407,8 +407,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default antoclose2" data-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary antosubmit2">Guardar cambios</button>
+                    <button type="button" class="btn btn-default antoclose2" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary antosubmit2">Save changes</button>
                 </div>
             </div>
         </div>

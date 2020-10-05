@@ -104,7 +104,7 @@
                 <div class="col-md-12 p-0">
                     <div class="d-block">
                         <div class="caption-copyright text-center">
-                            <p>© 2019 PAPERWOFF S.A.S – TODOS LOS DERECHOS RESERVADOS</p>
+                            <p>© 2020 PAPERWOFF S.A.S – TODOS LOS DERECHOS RESERVADOS</p>
                         </div>
                     </div>
                 </div>

@@ -72,26 +72,21 @@ $nombre=$row['Nombre'];
                                     <a href="dashboard.php"><i class="fa fa-home"></i> Dashboard</a>
                                 </li>
                                 <li>
-                                    <a href="calendario.html"><i class="fa fa-calendar"></i> Calendario de clases</a>
+                                    <a href="calendario.php"><i class="fa fa-calendar"></i> Calendario de clases</a>
                                 </li>
                                 <li>
-                                    <a href="tutores.html"> <i class="fa fa-university"></i> Tutores</a>
+                                    <a href="tutores.php"> <i class="fa fa-university"></i> Tutores</a>
                                 </li>
                                 <li>
-                                    <a href="cuentas-de-cobro.html"> <i class="fa fa-table"></i> Cuentas de cobro</a>
+                                    <a href="cuentas-de-cobro.php"> <i class="fa fa-table"></i> Cuentas de cobro</a>
                                 </li>
                                 <li>
-                                    <a href="rrhh.html"> <i class="fa fa-child"></i> RRHH</a>
+                                    <a href="rrhh.php"> <i class="fa fa-child"></i> RRHH</a>
                                 </li>
                                 <li>
                                     <a href="usuarios.php"> <i class="fa fa-group"></i> Gestión de usuarios</a>
                                 </li>
-                                <li>
-                                    <a href="404.html"> <i class="fa fa-circle"></i> 404</a>
-                                </li>
-                                <li>
-                                    <a href="500.html"> <i class="fa fa-circle-thin"></i> 500</a>
-                                </li>
+                                
                                 <li>
                                     <a href="cerrar-sesion.php"> <i class="fa fa-sign-out"></i> Cerrar sesión</a>
                                 </li>
@@ -360,10 +355,10 @@ $nombre=$row['Nombre'];
                             <div class="x_content">
                                 <div class="dashboard-widget-content">
                                     <ul class="quick-list">
-                                        <li><i class="fa fa-calendar-o"></i><a href="calendario.html">Crear evento de
+                                        <li><i class="fa fa-calendar-o"></i><a href="calendario.php">Crear evento de
                                                 tutoría</a>
                                         </li>
-                                        <li><i class="fa fa-bars"></i><a href="cuentas-de-cobro.html">Gestión de honorarios</a>
+                                        <li><i class="fa fa-bars"></i><a href="cuentas-de-cobro.php">Gestión de honorarios</a>
                                         </li>
                                         <li><i class="fa fa-bar-chart"></i><a href="#">Tutores disponibles</a> </li>
                                         <li><i class="fa fa-line-chart"></i><a href="#">Crear usuario</a>

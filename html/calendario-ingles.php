@@ -1,3 +1,31 @@
+<?php
+session_start();
+
+//Si la variable sesión está vacía
+if (!isset($_SESSION['coordinador'])) {
+    header("location:../html/login-ingles.php");
+} else {
+    $usuario = $_SESSION['coordinador'];
+    //echo $usuario;
+}
+include "conexion.php";
+$consulta = "SELECT * FROM asignatura";
+$resultado = mysqli_query($conexion, $consulta);
+
+$consulta_user= "SELECT * FROM users WHERE e_mail='$usuario'";
+$resultado_user = mysqli_query($conexion, $consulta_user);
+$row_user = mysqli_fetch_array($resultado_user);
+$nombre=$row_user['Nombre'];
+
+$consulta_disp= "SELECT * FROM asignatura asig
+join asignaturaxtutor asigtut on asig.id_Asignatura = asigtut.Asignatura_id_Asignatura
+join tutores tut on tut.id_Tutores = asigtut.Tutores_id_Tutores
+join disponibilidad d on tut.id_Tutores = d.Tutores_id_Tutores
+join users u on tut.Users_id_User = u.id_User
+where d.fecha='2020/09/19'";
+$resultado_disp = mysqli_query($conexion, $consulta_disp);
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -47,7 +75,7 @@
                         </div>
                         <div class="profile_info">
                             <span>Welcome,</span>
-                            <h2>Administrator</h2>
+                           <h2><?php echo $nombre ?></h2>
                         </div>
                     </div>
                     <!-- /SECCIÓN BIENVENIDO-->
@@ -58,31 +86,26 @@
                             <h3>General</h3>
                             <ul class="nav side-menu">
                                 <li>
-                                    <a href="dashboard.php"><i class="fa fa-home"></i> Dashboard</a>
+                                    <a href="dashboard-ingles.php"><i class="fa fa-home"></i> Dashboard</a>
                                 </li>
                                 <li>
-                                    <a href="calendario.html"><i class="fa fa-calendar"></i>Class calendar</a>
+                                    <a href="calendario-ingles.php"><i class="fa fa-calendar"></i>Class calendar</a>
                                 </li>
                                 <li>
-                                    <a href="tutores.html"> <i class="fa fa-university"></i> Tutors</a>
+                                    <a href="tutores-ingles.php"> <i class="fa fa-university"></i> Tutors</a>
                                 </li>
                                 <li>
-                                    <a href="cuentas-de-cobro.html"> <i class="fa fa-table"></i>Collection accounts</a>
+                                    <a href="cuentas-de-cobro-ingles.php"> <i class="fa fa-table"></i>Collection accounts</a>
                                 </li>
                                 <li>
-                                    <a href="rrhh.html"> <i class="fa fa-child"></i> Human Resources</a>
+                                    <a href="rrhh-ingles.php"> <i class="fa fa-child"></i> Human Resources</a>
                                 </li>
                                 <li>
-                                    <a href="usuarios.php"> <i class="fa fa-group"></i> Users management</a>
+                                    <a href="usuarios-ingles.php"> <i class="fa fa-group"></i> Users management</a>
                                 </li>
+                            
                                 <li>
-                                    <a href="404.html"> <i class="fa fa-circle"></i> 404</a>
-                                </li>
-                                <li>
-                                    <a href="500.html"> <i class="fa fa-circle-thin"></i> 500</a>
-                                </li>
-                                <li>
-                                    <a href="login.php"> <i class="fa fa-sign-out"></i> Logout</a>
+                                    <a href="login-ingles.php"> <i class="fa fa-sign-out"></i> Logout</a>
                                 </li>
 
                             </ul>
@@ -103,7 +126,7 @@
                             <li class="nav-item dropdown open" style="padding-left: 15px;">
                                 <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true"
                                     id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                                    <img src="../images/user.png" alt="">Administrator
+                                    <img src="../images/user.png" alt=""><?php echo $nombre ?>
                                 </a>
                                 <div class="dropdown-menu dropdown-usermenu pull-right"
                                     aria-labelledby="navbarDropdown">
@@ -132,7 +155,7 @@
                         <div class="col-md-12">
                             <div class="x_panel">
                                 <div class="x_title">
-                                    <h2>Calendario</h2>
+                                    <h2>Calendar</h2>
                                     <ul class="nav navbar-right panel_toolbox">
                                         <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                         </li>
@@ -151,7 +174,7 @@
                                           
                                             </div>
                                             <div class="col-md-6 col-12  text-center">
-                                                <button type="button" onclick="window.location.href='tutores.html'"
+                                                <button type="button" onclick="window.location.href='tutores-ingles.php'"
                                                     class="button-add position-static" data-toggle="modal"
                                                     data-target="#"><i class="fa fa-search pr-3"></i>Check Tutor's Availibity</button>
                                             </div>

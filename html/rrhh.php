@@ -1,3 +1,22 @@
+<?php
+session_start();
+ 
+//Si la variable sesión está vacía
+if (!isset($_SESSION['coordinador'])) 
+{
+   header("location:../html/login.php"); 
+}else{
+    $usuario=$_SESSION['coordinador'];
+    //echo $usuario;
+}
+include "conexion.php";
+$consulta = "SELECT * FROM users WHERE e_mail='$usuario'";
+$resultado= mysqli_query($conexion, $consulta);
+$row=mysqli_fetch_array($resultado);
+
+$nombre=$row['Nombre'];
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +28,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="../images/favicon.png" type="image/ico" />
 
-    <title>Human Resources | Paperwoff</title>
+    <title>Recursos humanos | Paperwoff</title>
 
     <!-- Bootstrap -->
     <link href="cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
@@ -48,8 +67,8 @@
                             <img src="../images/user.png" alt="..." class="img-circle profile_img">
                         </div>
                         <div class="profile_info">
-                            <span>Welcome,</span>
-                            <h2>Administrator</h2>
+                            <span>Bienvenido,</span>
+                            <h2><?php echo $nombre ?></h2>
                         </div>
                     </div>
                     <!-- /SECCIÓN BIENVENIDO-->
@@ -65,28 +84,23 @@
                                     <a href="dashboard.php"><i class="fa fa-home"></i> Dashboard</a>
                                 </li>
                                 <li>
-                                    <a href="calendario.html"><i class="fa fa-calendar"></i> Calendar of classes</a>
+                                    <a href="calendario.php"><i class="fa fa-calendar"></i> Calendario de clases</a>
                                 </li>
                                 <li>
-                                    <a href="tutores.html"> <i class="fa fa-university"></i> Tutors</a>
+                                    <a href="tutores.php"> <i class="fa fa-university"></i> Tutores</a>
                                 </li>
                                 <li>
-                                    <a href="cuentas-de-cobro.html"> <i class="fa fa-table"></i> Accounts</a>
+                                    <a href="cuentas-de-cobro.php"> <i class="fa fa-table"></i> Cuentas de cobro</a>
                                 </li>
                                 <li>
                                     <a href="rrhh.html"> <i class="fa fa-child"></i> RRHH</a>
                                 </li>
                                 <li>
-                                    <a href="usuarios.php"> <i class="fa fa-group"></i> User management</a>
+                                    <a href="usuarios.php"> <i class="fa fa-group"></i> Gestión de usuarios</a>
                                 </li>
+                                
                                 <li>
-                                    <a href="404.html"> <i class="fa fa-circle"></i> 404</a>
-                                </li>
-                                <li>
-                                    <a href="500.html"> <i class="fa fa-circle-thin"></i> 500</a>
-                                </li>
-                                <li>
-                                    <a href="login.php"> <i class="fa fa-sign-out"></i> Log out</a>
+                                    <a href="login.php"> <i class="fa fa-sign-out"></i> Cerrar sesión</a>
                                 </li>
 
                             </ul>
@@ -107,12 +121,12 @@
                             <li class="nav-item dropdown open" style="padding-left: 15px;">
                                 <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true"
                                     id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                                    <img src="../images/user.png" alt="">Administrator
+                                    <img src="../images/user.png" alt=""><?php echo $nombre ?>
                                 </a>
                                 <div class="dropdown-menu dropdown-usermenu pull-right"
                                     aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="login.php"><i
-                                            class="fa fa-sign-out pull-right"></i>Log out</a>
+                                            class="fa fa-sign-out pull-right"></i>Cerrar sesión</a>
                                 </div>
                             </li>
 
@@ -128,7 +142,7 @@
                 <!-- TÍTULO-->
                 <div class="page-title">
                     <div class="title_left">
-                        <h3>Human Resources</h3>
+                        <h3>Recursos humanos</h3>
                     </div>
                     <div class="title_right">
                         <div class="col-md-5 col-sm-5 col-xs-12 pull-right">
@@ -142,7 +156,7 @@
                     <div class="col-md-6 col-12">
                         <div class="x_panel" style="min-height: 700px;">
                             <div class="x_title">
-                                <h2>List of profiles</h2>
+                                <h2>Listado de perfiles</h2>
                                 <ul class="nav navbar-right panel_toolbox">
                                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                     </li>
@@ -155,7 +169,8 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <button type="button" class="button-add" data-toggle="modal"
-                                            data-target="#crearUsuario"><i class="fa fa-plus-square pr-3"></i>Create profile</button>
+                                            data-target="#crearUsuario"><i class="fa fa-plus-square pr-3"></i>Crear
+                                            perfil</button>
                                     </div>
                                 </div>
                             </div>
@@ -170,12 +185,13 @@
                                                 <thead>
                                                     <tr class="headings">
                                                         <th class="column-title" style="width: 8%;">
-                                                            ID </th>
-                                                        <th class="column-title" style="width: 25%;">Full name </th>
-                                                        <th class="column-title" style="width: 20%;">Degree
+                                                            Documento </th>
+                                                        <th class="column-title" style="width: 25%;">Nombre
+                                                            completo </th>
+                                                        <th class="column-title" style="width: 20%;">Titulación
                                                         </th>
                                                         <th class="column-title no-link " style="width: 10%;"><span
-                                                                class="nobr">Action</span>
+                                                                class="nobr">Acción</span>
                                                         </th>
                                                         <th class="bulk-actions" colspan="7">
                                                             <a class="antoo" style="color:#fff; font-weight:500;"><span
@@ -188,99 +204,99 @@
                                                     <tr class="even pointer">
                                                         <td class="" > 10014556 </td>
                                                         <td class=" " id="1-nombre">Jhosmary Andreina Alarcon Duarte</td>
-                                                        <td class=" ">Licensed in mathematics</td>
+                                                        <td class=" ">Licenciado en Matemáticas</td>
                                                         <td class=" "> <button type="button"
                                                                 class="btn btn-success btn-xs"
-                                                                onclick="cargarPerfil()">View</button>
+                                                                onclick="cargarPerfil()">Ver</button>
                                                         </td>
                                                     </tr>
                                                     <tr class="odd pointer">
                                                         <td class="">26133767</td>
                                                         <td class=" "id="2-nombre">Pedro Alfonso Pérez Sánchez</td>
-                                                        <td class=" ">Licensed in languages</td>
+                                                        <td class=" ">Licenciado en lenguajes</td>
                                                         <td class=" "> <button type="button"
-                                                                class="btn btn-success btn-xs">View</button>
+                                                                class="btn btn-success btn-xs">Ver</button>
                                                         </td>
                                                     </tr>
                                                     <tr class="even pointer">
                                                         <td class="  ">68287755</td>
                                                         <td class="  ">Luz Marina Duarte Gonzalez</td>
-                                                        <td class=" ">Licensed in languages</td>
+                                                        <td class=" ">Licenciado en idiomas</td>
                                                         <td class=" "> <button type="button"
-                                                                class="btn btn-success btn-xs">View</button>
+                                                                class="btn btn-success btn-xs">Ver</button>
                                                         </td>
                                                     </tr>
                                                     <tr class="odd pointer">
                                                         <td class="  ">68547921</td>
                                                         <td class="  ">Andres Alejando Toro</td>
-                                                        <td class=" ">Systems engineer</td>
+                                                        <td class=" ">Ingeniero en sistemas</td>
                                                         <td class=" "> <button type="button"
-                                                                class="btn btn-success btn-xs">View</button>
+                                                                class="btn btn-success btn-xs">Ver</button>
                                                         </td>
                                                     </tr>
                                                     <tr class="even pointer">
                                                         <td class="  ">68754923</td>
                                                         <td class="  ">Roger David Lopez</td>
-                                                        <td class=" ">Licensed in languages</td>
+                                                        <td class=" ">Licenciado en idiomas</td>
                                                         <td class=" "> <button type="button"
-                                                                class="btn btn-success btn-xs">View</button>
+                                                                class="btn btn-success btn-xs">Ver</button>
                                                         </td>
                                                     </tr>
                                                     <tr class="odd pointer">
                                                         <td class="  ">1001205467</td>
                                                         <td class="  ">Angie Carolina Hernandez</td>
-                                                        <td class=" ">Environmental engineer</td>
+                                                        <td class=" ">Ingeniero ambiental</td>
                                                         <td class=""> <button type="button"
-                                                                class="btn btn-success btn-xs">View</button>
+                                                                class="btn btn-success btn-xs">Ver</button>
                                                         </td>
                                                     </tr>
                                                     <tr class="even pointer">
                                                         <td class="  ">1101256897</td>
                                                         <td class="  ">Samuel Perdomo</td>
-                                                        <td class=" ">Industrial engineer</td>
+                                                        <td class=" ">Ingeniero industrial</td>
                                                         <td class=""> <button type="button"
-                                                                class="btn btn-success btn-xs">View</button>
+                                                                class="btn btn-success btn-xs">Ver</button>
                                                         </td>
                                                     </tr>
                                                     <tr class="odd pointer">
                                                         <td class="  ">1103523987</td>
                                                         <td class="  ">Moises Alejandro Sanchez</td>
-                                                        <td class=" ">Licensed in physics</td>
+                                                        <td class=" ">Licenciado en fisica</td>
                                                         <td class=""> <button type="button"
-                                                                class="btn btn-success btn-xs">View</button>
+                                                                class="btn btn-success btn-xs">Ver</button>
                                                         </td>
                                                     </tr>
 
                                                     <tr class="even pointer">
                                                         <td class="  ">1113856983</td>
                                                         <td class="  ">Jorge Alberto Ojeda Rueda</td>
-                                                        <td class=" ">Licensed in english</td>
+                                                        <td class=" ">Licenciado en ingles</td>
                                                         <td class=" "> <button type="button"
-                                                                class="btn btn-success btn-xs">View</button>
+                                                                class="btn btn-success btn-xs">Ver</button>
                                                         </td>
                                                     </tr>
                                                     <tr class="odd pointer">
                                                         <td class="  ">1114796952</td>
                                                         <td class="">Carmen Liliana Duarte</td>
-                                                        <td class=" ">Licensed in languages</td>
+                                                        <td class=" ">Licenciado en idiomas</td>
                                                         <td class=" "> <button type="button"
-                                                                class="btn btn-success btn-xs">View</button>
+                                                                class="btn btn-success btn-xs">Ver</button>
                                                         </td>
                                                     </tr>
                                                     <tr class="even pointer">
                                                         <td class="  ">1116589467</td>
                                                         <td class="  ">Ana Maria Soto</td>
-                                                        <td class=" ">Licensed in spanish</td>
+                                                        <td class=" ">Licenciado en español</td>
                                                         <td class=" "> <button type="button"
-                                                                class="btn btn-success btn-xs">View</button>
+                                                                class="btn btn-success btn-xs">Ver</button>
                                                         </td>
                                                     </tr>
                                                     <tr class="odd pointer">
                                                         <td class="  ">1116796983</td>
                                                         <td class="  ">Luis Alejandro Perdomo</td>
-                                                        <td class=" ">Licensed in mathematics</td>
+                                                        <td class=" ">Licenciado en Matemáticas</td>
                                                         <td class=" "> <button type="button"
-                                                                class="btn btn-success btn-xs">View</button>
+                                                                class="btn btn-success btn-xs">Ver</button>
                                                         </td>
                                                     </tr>
                                                 </tbody>
@@ -299,7 +315,7 @@
                         <div class="row">
                             <div class="x_panel" style="min-height: 700px;">
                                 <div class="x_title">
-                                    <h2>Information</h2>
+                                    <h2>Información del perfil</h2>
                                     <ul class="nav navbar-right panel_toolbox">
                                         <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                         </li>
@@ -317,28 +333,30 @@
                                             <form>
                                                 <div class="form-group">
                                                     <input type="text" class="form-control"
-                                                        placeholder="Full name" id="nombre-completo">
+                                                        placeholder="Nombre completo" id="nombre-completo">
                                                 </div>
                                                 <div class="form-group">
                                                     <input type="email" class="form-control"
-                                                        placeholder="E-mail" id="correo">
+                                                        placeholder="Correo electrónico" id="correo">
                                                 </div>
                                                 <div class="form-group ">
-                                                    <input type="number" class="form-control" placeholder="Cell phone"
+                                                    <input type="number" class="form-control" placeholder="Teléfono móvil"
                                                         id="telefono">
                                                 </div>
                                                 <div class="form-group ">
-                                                    <input type="text" class="form-control" placeholder="other"
+                                                    <input type="text" class="form-control" placeholder="Otro"
                                                         id="otro">
 
                                                 </div>
                                                 <div class="row">
                                                     <!-- BOTONES -->
                                                     <div class="col-md-4 col-12"><button type="submit"
-                                                            class="btn btn-info w-100 b-profile">Result of tests</button></div>
+                                                            class="btn btn-info w-100 b-profile">Resultados de
+                                                            pruebas</button></div>
                                                     <div class="col-md-4 col-12"><button type="button"
                                                             class="btn btn-success w-100 b-profile" data-toggle="modal"
-                                                            data-target="#enviarPruebas">Send test</button></div>
+                                                            data-target="#enviarPruebas">Enviar
+                                                            pruebas</button></div>
                                                     <div class="col-md-4 col-12"><button type="submit"
                                                             class="btn btn-dark w-100 b-profile">CV</button></div>
                                                     <!-- /BOTONES -->
@@ -364,7 +382,7 @@
                         <div class="col-md-12">
                             <div class="d-block">
                                 <div class="caption-copyright text-center">
-                                    <p>© 2019 PAPERWOFF S.A.S – ALL RIGHTS RESERVED</p>
+                                    <p>© 2019 PAPERWOFF S.A.S – TODOS LOS DERECHOS RESERVADOS</p>
                                 </div>
                             </div>
                         </div>
@@ -382,7 +400,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Create user profile</h5>
+                    <h5 class="modal-title" id="exampleModalLongTitle">Crear perfil de usuario</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -401,32 +419,32 @@
                                         <form>
                                             <div class="form-group">
                                                 <input type="number" class="form-control"
-                                                    placeholder="ID" required>
+                                                    placeholder="Identificación" required>
                                             </div>
                                             <div class="form-group">
                                                 <input type="text" class="form-control"
-                                                    placeholder="Full name" required>
+                                                    placeholder="Nombre completo" required>
                                             </div>
                                             <div class="form-group">
                                                 <input type="text" class="form-control"
-                                                    placeholder="Address of residence" required>
+                                                    placeholder="Dirección de residencia" required>
                                             </div>
                                             <div class="form-group">
                                                 <input type="email" class="form-control"
-                                                    placeholder="E-mail" required>
+                                                    placeholder="Correo electrónico" required>
                                             </div>
                                             <div class="form-group ">
-                                                <input type="number" class="form-control" placeholder="Cell phone"
+                                                <input type="number" class="form-control" placeholder="Teléfono móvil"
                                                     required>
                                             </div>
                                             <div class="form-group ">
-                                                <input type="text" class="form-control" placeholder="Degree" required>
+                                                <input type="text" class="form-control" placeholder="Titulación" required>
 
                                             </div>
                                             <div class="modal-footer px-0">
                                                 <button type="button" class="btn btn-secondary"
-                                                    data-dismiss="modal">Cancel</button>
-                                                <button type="submit" class="btn btn-info">Save</button>
+                                                    data-dismiss="modal">Cancelar</button>
+                                                <button type="submit" class="btn btn-info">Guardar cambios</button>
                                             </div>
                                         </form>
                                     </div>
@@ -452,17 +470,17 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle"> The test was sent</h5>
+                    <h5 class="modal-title" id="exampleModalLongTitle">Pruebas enviadas</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p> The test was sent to the e-mail<strong>noreply@paperwoff.com</strong>.
+                    <p> Las pruebas fueron enviadas al correo <strong>correodeprueba@paperwoff.com</strong>.
                     </p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                 </div>
             </div>
         </div>

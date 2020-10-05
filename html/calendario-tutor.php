@@ -89,7 +89,7 @@ $id_user = $row_user['id_User'];
                                 </li>
 
                                 <li>
-                                    <a href="cuentas-de-cobro.html"> <i class="fa fa-table"></i> Cuentas de cobro</a>
+                                    <a href="cuentas-de-cobro.php"> <i class="fa fa-table"></i> Cuentas de cobro</a>
                                 </li>
 
                                 <li>
