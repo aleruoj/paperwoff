@@ -1,3 +1,22 @@
+<?php
+session_start();
+ 
+//Si la variable sesión está vacía
+if (!isset($_SESSION[ 'tutor'])) 
+{
+   header("location:../html/login-ingles.php"); 
+}else{
+    $usuario=$_SESSION['tutor'];
+    //echo $usuario;
+}
+include "conexion.php";
+$consulta = "SELECT * FROM users WHERE e_mail='$usuario'";
+$resultado= mysqli_query($conexion, $consulta);
+$row=mysqli_fetch_array($resultado);
+
+$nombre=$row['Nombre'];
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -48,7 +67,7 @@
                         </div>
                         <div class="profile_info">
                             <span>Welcome,</span>
-                            <h2>Administrator</h2>
+                           <h2><?php echo $nombre ?></h2>
                         </div>
                     </div>
                     <!-- /SECCIÓN BIENVENIDO-->
@@ -59,31 +78,18 @@
                             <h3>General</h3>
                             <ul class="nav side-menu">
                                 <li>
-                                    <a href="dashboard.html"><i class="fa fa-home"></i> Dashboard</a>
+                                    <a href="dashboard.php"><i class="fa fa-home"></i> Dashboard</a>
                                 </li>
                                 <li>
-                                    <a href="calendario.html"><i class="fa fa-calendar"></i> Class Calendar</a>
+                                    <a href="calendario-ingles-tutor.php"><i class="fa fa-calendar"></i> Class Calendar</a>
                                 </li>
+                                
                                 <li>
-                                    <a href="tutores.html"> <i class="fa fa-university"></i> Tutors</a>
+                                    <a href="cuenta-cobro-tutor-ingles.php"> <i class="fa fa-table"></i> Billing records</a>
                                 </li>
+                             
                                 <li>
-                                    <a href="cuentas-de-cobro.html"> <i class="fa fa-table"></i> Billing records</a>
-                                </li>
-                                <li>
-                                    <a href="rrhh.html"> <i class="fa fa-child"></i> RRHH</a>
-                                </li>
-                                <li>
-                                    <a href="usuarios.html"> <i class="fa fa-group"></i> Users Management</a>
-                                </li>
-                                <li>
-                                    <a href="404.html"> <i class="fa fa-circle"></i> 404</a>
-                                </li>
-                                <li>
-                                    <a href="500.html"> <i class="fa fa-circle-thin"></i> 500</a>
-                                </li>
-                                <li>
-                                    <a href="home.html"> <i class="fa fa-sign-out"></i> Logout</a>
+                                    <a href="login.php"> <i class="fa fa-sign-out"></i> Logout</a>
                                 </li>
 
                             </ul>
@@ -104,11 +110,11 @@
                             <li class="nav-item dropdown open" style="padding-left: 15px;">
                                 <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true"
                                     id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                                    <img src="../images/user.png" alt="">Administrator
+                                    <img src="../images/user.png" alt=""><?php echo $nombre ?>
                                 </a>
                                 <div class="dropdown-menu dropdown-usermenu pull-right"
                                     aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="login.html"><i
+                                    <a class="dropdown-item" href="login.php"><i
                                             class="fa fa-sign-out pull-right"></i>Logout</a>
                                 </div>
                             </li>

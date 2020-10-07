@@ -4,7 +4,7 @@ session_start();
 //Si la variable sesión está vacía
 if (!isset($_SESSION['tutor'])) 
 {
-   header("location:../html/login.php"); 
+   header("location:../html/login-ingles.php"); 
 }else{
     $usuario=$_SESSION['tutor'];
     //echo $usuario;
@@ -17,9 +17,9 @@ $row=mysqli_fetch_array($resultado);
 $nombre=$row['Nombre'];
 
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Meta, title, CSS, favicons, etc. -->
@@ -57,8 +57,8 @@ $nombre=$row['Nombre'];
                             <img src="../images/user.png" alt="..." class="img-circle profile_img">
                         </div>
                         <div class="profile_info">
-                            <span>Bienvenido,</span>
-                            <h2><?php echo $nombre; ?></h2>
+                            <span>Welcome,</span>
+                           <h2><?php echo $nombre ?></h2>
                         </div>
                     </div>
                     <!-- /SECCIÓN BIENVENIDO-->
@@ -69,17 +69,18 @@ $nombre=$row['Nombre'];
                             <h3>General</h3>
                             <ul class="nav side-menu">
                                 <li>
-                                    <a href="dashboard.php"><i class="fa fa-home"></i> Dashboard</a>
+                                    <a href="dashboard-ingles.php"><i class="fa fa-home"></i> Dashboard</a>
                                 </li>
                                 <li>
-                                    <a href="calendario-tutor.php"><i class="fa fa-calendar"></i> Calendario de clases</a>
+                                    <a href="calendario-ingles-tutor.php"><i class="fa fa-calendar"></i> Class Calendar</a>
                                 </li>
+                                
                                 <li>
-                                    <a href="cuentas-de-cobro.php"> <i class="fa fa-table"></i> Cuentas de cobro</a>
+                                    <a href="cuenta-cobro-tutor-ingles.php"> <i class="fa fa-table"></i> Billing Records</a>
                                 </li>
-                               
+                                
                                 <li>
-                                    <a href="cerrar-sesion.php"> <i class="fa fa-sign-out"></i> Cerrar sesión</a>
+                                    <a href="login-ingles.php"> <i class="fa fa-sign-out"></i> Logout</a>
                                 </li>
 
                             </ul>
@@ -104,8 +105,8 @@ $nombre=$row['Nombre'];
                                 </a>
                                 <div class="dropdown-menu dropdown-usermenu pull-right"
                                     aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="cerrar-sesion.php"><i>
-                                            class="fa fa-sign-out pull-right"></i>Cerrar sesión</a>
+                                    <a class="dropdown-item" href="login.php"><i
+                                            class="fa fa-sign-out pull-right"></i>Logout</a>
                                 </div>
                             </li>
                         </ul>
@@ -120,27 +121,27 @@ $nombre=$row['Nombre'];
                 <div class="row mt-5">
                     <div class="tile_count w-100 mt-0 mt-md-4">
                         <div class="col-md-3   tile_stats_count text-center">
-                            <span class="count_top"><i class="fa fa-user"></i> Alumnos registrados</span>
+                            <span class="count_top"><i class="fa fa-user"></i> Registered students</span>
                             <div class="count ">20</div>
-                            <span class="count_bottom"><i class="green">4% </i> desde la última semana</span>
+                            <span class="count_bottom"><i class="green">4% </i> since last week</span>
                         </div>
                         <div class="col-md-3  tile_stats_count text-center">
-                            <span class="count_top"><i class="fa fa-clock-o"></i>Promedio de horas al día</span>
+                            <span class="count_top"><i class="fa fa-clock-o"></i>Average hours</span>
                             <div class="count ">13.50</div>
-                            <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>3% </i> desde la
-                                última semana</span>
+                            <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>3% </i> since last
+                            week</span>
                         </div>
                         <div class="col-md-3  tile_stats_count text-center">
-                            <span class="count_top"><i class="fa fa-user"></i> Total hombres</span>
+                            <span class="count_top"><i class="fa fa-user"></i> Total number of men</span>
                             <div class="count green">15</div>
-                            <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> desde la
-                                última semana</span>
+                            <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> since last
+                            week</span>
                         </div>
                         <div class="col-md-3  tile_stats_count text-center">
-                            <span class="count_top"><i class="fa fa-user"></i> Total mujeres</span>
+                            <span class="count_top"><i class="fa fa-user"></i> Total number of women</span>
                             <div class="count">5</div>
-                            <span class="count_bottom"><i class="red"><i class="fa fa-sort-desc"></i>12% </i> desde la
-                                última semana</span>
+                            <span class="count_bottom"><i class="red"><i class="fa fa-sort-desc"></i>12% </i> since last
+                            week</span>
                         </div>
 
 
@@ -163,10 +164,10 @@ $nombre=$row['Nombre'];
                                 <div class="clearfix"></div>
                             </div>
                             <div class="x_content">
-                                <h4 class="mb-4">Horas de clases dictadas en el mes</h4>
+                                <h4 class="mb-4">Teaching hours this month</h4>
                                 <div class="widget_summary">
                                     <div class="w_left w_25">
-                                        <span>Matemática</span>
+                                        <span>Mathematics</span>
                                     </div>
                                     <div class=" ml-3 w_center w_55">
                                         <div class="progress">
@@ -184,7 +185,7 @@ $nombre=$row['Nombre'];
 
                                 <div class="widget_summary">
                                     <div class="w_left w_25">
-                                        <span>Física</span>
+                                        <span>Physics</span>
                                     </div>
                                     <div class="ml-3 w_center w_55">
                                         <div class="progress">
@@ -201,7 +202,7 @@ $nombre=$row['Nombre'];
                                 </div>
                                 <div class="widget_summary">
                                     <div class=" w_left w_25">
-                                        <span>Inglés</span>
+                                        <span>English</span>
                                     </div>
                                     <div class="ml-3 w_center w_55">
                                         <div class="progress">
@@ -218,7 +219,7 @@ $nombre=$row['Nombre'];
                                 </div>
                                 <div class="widget_summary">
                                     <div class="w_left w_25">
-                                        <span>Química</span>
+                                        <span>Chemistry</span>
                                     </div>
                                     <div class="ml-3  w_center w_55">
                                         <div class="progress">
@@ -235,7 +236,7 @@ $nombre=$row['Nombre'];
                                 </div>
                                 <div class="widget_summary">
                                     <div class="w_left w_25">
-                                        <span>Esp. para ext..</span>
+                                        <span>Spanish for outsiders</span>
                                     </div>
                                     <div class="ml-3  w_center w_55">
                                         <div class="progress">
@@ -259,7 +260,7 @@ $nombre=$row['Nombre'];
                     <div class="col-md-4 col-sm-4 ">
                         <div class="x_panel tile fixed_height_320 overflow_hidden">
                             <div class="x_title">
-                                <h2>Demanda de tutorías</h2>
+                                <h2>Requests for tutoring</h2>
                                 <ul class="nav navbar-right panel_toolbox">
                                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                     </li>
@@ -276,10 +277,10 @@ $nombre=$row['Nombre'];
                                         </th>
                                         <th>
                                             <div class="col-lg-7 col-md-7 col-sm-7 ">
-                                                <p class="">Clase</p>
+                                                <p class="">Class</p>
                                             </div>
                                             <div class="col-lg-5 col-md-5 col-sm-5 p-0">
-                                                <p class="text-right">% Horas</p>
+                                                <p class="text-right">% Hours</p>
                                             </div>
                                         </th>
                                     </tr>
@@ -299,26 +300,26 @@ $nombre=$row['Nombre'];
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <p><i class="fa fa-square red"></i>Matemáticas </p>
+                                                        <p><i class="fa fa-square red"></i>Mathematics </p>
                                                     </td>
                                                     <td>30%</td>
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <p><i class="fa fa-square purple"></i>Español para extranjeros
+                                                        <p><i class="fa fa-square purple"></i>Spanish for outsiders
                                                         </p>
                                                     </td>
                                                     <td>20%</td>
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <p><i class="fa fa-square aero"></i>Tutorías externas </p>
+                                                        <p><i class="fa fa-square aero"></i>External tutoring </p>
                                                     </td>
                                                     <td>15%</td>
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <p><i class="fa fa-square green"></i>Otras </p>
+                                                        <p><i class="fa fa-square green"></i>Others </p>
                                                     </td>
                                                     <td>5%</td>
                                                 </tr>
@@ -334,7 +335,7 @@ $nombre=$row['Nombre'];
                     <div class="col-md-4 col-sm-4 ">
                         <div class="x_panel tile fixed_height_320">
                             <div class="x_title">
-                                <h2>Accesos rápidos</h2>
+                                <h2>Quick access</h2>
                                 <ul class="nav navbar-right panel_toolbox">
                                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                     </li>
@@ -346,21 +347,21 @@ $nombre=$row['Nombre'];
                             <div class="x_content">
                                 <div class="dashboard-widget-content">
                                     <ul class="quick-list">
-                                        <li><i class="fa fa-calendar-o"></i><a href="calendario.php">Crear evento de
-                                                tutoría</a>
+                                        <li><i class="fa fa-calendar-o"></i><a href="calendario.php">Create tutoring
+                                                event</a>
                                         </li>
-                                        <li><i class="fa fa-bars"></i><a href="cuentas-de-cobro.php">Gestión de honorarios</a>
+                                        <li><i class="fa fa-bars"></i><a href="cuentas-de-cobro.php">Management fees</a>
                                         </li>
-                                        <li><i class="fa fa-bar-chart"></i><a href="#">Tutores disponibles</a> </li>
-                                        <li><i class="fa fa-line-chart"></i><a href="#">Crear usuario</a>
+                                        <li><i class="fa fa-bar-chart"></i><a href="#">Availaible tutors</a> </li>
+                                        <li><i class="fa fa-line-chart"></i><a href="#">Create user</a>
                                         </li>
 
-                                        <li><i class="fa fa-area-chart"></i><a href="#">Cerrar sesión</a>
+                                        <li><i class="fa fa-area-chart"></i><a href="#">Logout</a>
                                         </li>
                                     </ul>
 
                                     <div class="sidebar-widget">
-                                        <h4>Tutorías en el mes</h4>
+                                        <h4>Tutoring this month</h4>
                                         <canvas width="150" height="80" id="chart_gauge_01" class=""
                                             style="width: 160px; height: 100px;"></canvas>
                                         <div class="goal-wrapper">
@@ -383,7 +384,7 @@ $nombre=$row['Nombre'];
                     <div class="col-md-4">
                         <div class="x_panel">
                             <div class="x_title">
-                                <h2>Últimas tutorías<small></small></h2>
+                                <h2>Last tutoring<small></small></h2>
                                 <ul class="nav navbar-right panel_toolbox">
                                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                     </li>
@@ -399,36 +400,36 @@ $nombre=$row['Nombre'];
                                         <p class="day">02</p>
                                     </a>
                                     <div class="media-body m-auto">
-                                        <a class="title" href="#">Matemáticas</a>
-                                        <p class="p-date">Tema: Álgebra</p>
+                                        <a class="title" href="#">Mathematics</a>
+                                        <p class="p-date">Subject: Algebra</p>
                                         <p class="p-date">Tutor: Andrea Salome Garrido</p>
                                     </div>
                                 </article>
                                 <article class="media event my-2">
                                     <a class="pull-left date">
-                                        <p class="month">Dic</p>
+                                        <p class="month">Dec</p>
                                         <p class="day">03</p>
                                     </a>
                                     <div class="media-body m-auto">
-                                        <a class="title" href="#">Matemáticas</a>
-                                        <p class="p-date">Tema: Ecuaciones diferenciales</p>
-                                        <p class="p-date">Tutor: Bayron Gustavo Ortiz</p>
+                                        <a class="title" href="#">Mathematics</a>
+                                        <p class="p-date">Subject: Diferential Equations</p>
+                                        <p class="p-date">Subject: Bayron Gustavo Ortiz</p>
                                     </div>
                                 </article>
                                 <article class="media event my-2">
                                     <a class="pull-left date">
-                                        <p class="month">Dic</p>
+                                        <p class="month">Dec</p>
                                         <p class="day">04</p>
                                     </a>
                                     <div class="media-body m-auto">
-                                        <a class="title" href="#">Idiomas</a>
-                                        <p class="p-date">Italiano</p>
+                                        <a class="title" href="#">Languages</a>
+                                        <p class="p-date">Italian</p>
                                         <p class="p-date">Tutor: Yerson Alexander Toro</p>
                                     </div>
                                 </article>
                                 <article class="media event my-2">
                                     <a class="pull-left date">
-                                        <p class="month">Dic</p>
+                                        <p class="month">Dec</p>
                                         <p class="day">06</p>
                                     </a>
                                     <div class="media-body m-auto">
@@ -439,12 +440,12 @@ $nombre=$row['Nombre'];
                                 </article>
                                 <article class="media event my-2">
                                     <a class="pull-left date">
-                                        <p class="month">Dic</p>
+                                        <p class="month">Dec</p>
                                         <p class="day">09</p>
                                     </a>
                                     <div class="media-body m-auto">
-                                        <a class="title" href="#">Matemáticas</a>
-                                        <p class="p-date">Polinomios</p>
+                                        <a class="title" href="#">Mathematics</a>
+                                        <p class="p-date">Polynomics</p>
                                         <p class="p-date">Tutor: Alejandro Ruiz Cano</p>
                                     </div>
                                 </article>
@@ -456,7 +457,7 @@ $nombre=$row['Nombre'];
                     <div class="col-md-4">
                         <div class="x_panel">
                             <div class="x_title">
-                                <h2>Próximas tutorías </h2>
+                                <h2>Next tutoring </h2>
                                 <ul class="nav navbar-right panel_toolbox">
                                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                     </li>
@@ -472,25 +473,25 @@ $nombre=$row['Nombre'];
                                         <p class="day">12</p>
                                     </a>
                                     <div class="media-body m-auto">
-                                        <a class="title" href="#">Idiomas</a>
-                                        <p class="p-date">Inglés</p>
+                                        <a class="title" href="#">Languages</a>
+                                        <p class="p-date">English</p>
                                         <p class="p-date">Tutor: Andres Felipe Bermejo</p>                           
                                     </div>
                                 </article>
                                 <article class="media event my-2">
                                     <a class="pull-left date">
-                                        <p class="month">Dic</p>
+                                        <p class="month">Dec</p>
                                         <p class="day">13</p>
                                     </a>
                                     <div class="media-body m-auto">
-                                        <a class="title" href="#">Matemáticas</a>
-                                        <p class="p-date">Derivadas</p>
+                                        <a class="title" href="#">Mathematics</a>
+                                        <p class="p-date">Derivates</p>
                                         <p class="p-date">Tutor: Bayron Gustavo Ortiz</p>
                                     </div>
                                 </article>
                                 <article class="media event my-2">
                                     <a class="pull-left date">
-                                        <p class="month">Dic</p>
+                                        <p class="month">Dec</p>
                                         <p class="day">16</p>
                                     </a>
                                     <div class="media-body m-auto">
@@ -501,23 +502,23 @@ $nombre=$row['Nombre'];
                                 </article>
                                 <article class="media event my-2">
                                     <a class="pull-left date">
-                                        <p class="month">Dic</p>
+                                        <p class="month">Dec</p>
                                         <p class="day">17</p>
                                     </a>
                                     <div class="media-body m-auto">
-                                        <a class="title" href="#">Idiomas</a>
-                                        <p class="p-date">Mandarín</p>
+                                        <a class="title" href="#">Languages</a>
+                                        <p class="p-date">German</p>
                                         <p class="p-date">Tutor: Marco Antonio Parra</p>
                                     </div>
                                 </article>
                                 <article class="media event my-2">
                                     <a class="pull-left date">
-                                        <p class="month">Dic</p>
+                                        <p class="month">Dec</p>
                                         <p class="day">18</p>
                                     </a>
                                     <div class="media-body m-auto">
-                                        <a class="title" href="#">Computación</a>
-                                        <p class="p-date">Tema: Introducción a algoritmos</p>
+                                        <a class="title" href="#">Computational Themes</a>
+                                        <p class="p-date">Tema: Algoritms</p>
                                         <p class="p-date">Tutor: Carolina Amaya</p>
                                     </div>
                                 </article>
@@ -529,7 +530,7 @@ $nombre=$row['Nombre'];
                     <div class="col-md-4">
                         <div class="x_panel">
                             <div class="x_title">
-                                <h2>Próximos festivos<small>en Colombia</small></h2>
+                                <h2>Next holidays<small>in Colombia</small></h2>
                                 <ul class="nav navbar-right panel_toolbox">
                                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                     </li>
@@ -545,26 +546,26 @@ $nombre=$row['Nombre'];
                                         <p class="day">25</p>
                                     </a>
                                     <div class="media-body m-auto">
-                                        <a class="title" href="#">Navidad </a>
+                                        <a class="title" href="#">Christmas </a>
                                         <!-- <p class="p-date">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
                                     </div>
                                 </article>
                                 <article class="media event my-2">
                                     <a class="pull-left date">
-                                        <p class="month">Ene</p>
+                                        <p class="month">Jan</p>
                                         <p class="day">01</p>
                                     </a>
                                     <div class="media-body m-auto">
-                                        <a class="title" href="#">Año nuevo</a>
+                                        <a class="title" href="#">Next year</a>
                                     </div>
                                 </article>
                                 <article class="media event my-2">
                                     <a class="pull-left date">
-                                        <p class="month">Ene</p>
+                                        <p class="month">Jan</p>
                                         <p class="day">06</p>
                                     </a>
                                     <div class="media-body m-auto">
-                                        <a class="title" href="#">Día de los Reyes Magos</a>
+                                        <a class="title" href="#">Three Kings Day</a>
                                     </div>
                                 </article>
                                 <article class="media event my-2">
@@ -573,16 +574,16 @@ $nombre=$row['Nombre'];
                                         <p class="day">23</p>
                                     </a>
                                     <div class="media-body m-auto">
-                                        <a class="title" href="#">Día de San José</a>
+                                        <a class="title" href="#">Saint Jhosep's day</a>
                                     </div>
                                 </article>
                                 <article class="media event my-2">
                                     <a class="pull-left date">
-                                        <p class="month">Abr</p>
+                                        <p class="month">Apr</p>
                                         <p class="day">09</p>
                                     </a>
                                     <div class="media-body m-auto">
-                                        <a class="title" href="#">Jueves Santo</a>
+                                        <a class="title" href="#">Holy thursday</a>
                                     </div>
                                 </article>
                             </div>
@@ -604,7 +605,7 @@ $nombre=$row['Nombre'];
                         <div class="col-md-12 p-0">
                             <div class="d-block">
                                 <div class="caption-copyright text-center">
-                                    <p>© 2020 PAPERWOFF S.A.S – TODOS LOS DERECHOS RESERVADOS</p>
+                                    <p>© 2020 PAPERWOFF S.A.S – ALL RIGHTS RESERVED</p>
                                 </div>
                             </div>
                         </div>

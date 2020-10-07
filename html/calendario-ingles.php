@@ -3,7 +3,7 @@ session_start();
 
 //Si la variable sesión está vacía
 if (!isset($_SESSION['coordinador'])) {
-    header("location:../html/login.php");
+    header("location:../html/login-ingles.php");
 } else {
     $usuario = $_SESSION['coordinador'];
     //echo $usuario;
@@ -37,7 +37,7 @@ $resultado_disp = mysqli_query($conexion, $consulta_disp);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="../images/favicon.png" type="image/ico" />
 
-    <title>Calendars | Paperwoff</title>
+    <title>Calendario | Paperwoff</title>
 
     <!-- Bootstrap -->
     <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -74,65 +74,38 @@ $resultado_disp = mysqli_query($conexion, $consulta_disp);
                             <img src="../images/user.png" alt="..." class="img-circle profile_img">
                         </div>
                         <div class="profile_info">
-<<<<<<< HEAD:html/calendario-ingles.html
                             <span>Welcome,</span>
-                            <h2>Administrator</h2>
-=======
-                            <span>Bienvenido,</span>
-                            <h2><?php echo $nombre ?></h2>
->>>>>>> 8454e61f0ea2dcaeaf62c779a0d7eff8614d8eb8:html/calendario.php
+                           <h2><?php echo $nombre ?></h2>
                         </div>
                     </div>
                     <!-- /SECCIÓN BIENVENIDO-->
                     <br />
                     <!-- MENÚ LATERAL -->
                     <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
-                    <div class="menu_section">
+                        <div class="menu_section">
                             <h3>General</h3>
                             <ul class="nav side-menu">
                                 <li>
-                                    <a href="dashboard.html"><i class="fa fa-home"></i> Dashboard</a>
+                                    <a href="dashboard-ingles.php"><i class="fa fa-home"></i> Dashboard</a>
                                 </li>
                                 <li>
-<<<<<<< HEAD:html/calendario-ingles.html
-                                    <a href="calendario.html"><i class="fa fa-calendar"></i>Class calendar</a>
+                                    <a href="calendario-ingles.php"><i class="fa fa-calendar"></i>Class calendar</a>
                                 </li>
                                 <li>
-                                    <a href="tutores.html"> <i class="fa fa-university"></i> Tutors</a>
+                                    <a href="tutores-ingles.php"> <i class="fa fa-university"></i> Tutors</a>
                                 </li>
                                 <li>
-                                    <a href="cuentas-de-cobro.html"> <i class="fa fa-table"></i>Collection accounts</a>
+                                    <a href="cuentas-de-cobro-ingles.php"> <i class="fa fa-table"></i>Collection accounts</a>
                                 </li>
                                 <li>
-                                    <a href="rrhh.html"> <i class="fa fa-child"></i> Human Resources</a>
+                                    <a href="rrhh-ingles.php"> <i class="fa fa-child"></i> Human Resources</a>
                                 </li>
                                 <li>
-                                    <a href="usuarios.html"> <i class="fa fa-group"></i> Users management</a>
+                                    <a href="usuarios-ingles.php"> <i class="fa fa-group"></i> Users management</a>
                                 </li>
+                            
                                 <li>
-                                    <a href="404.html"> <i class="fa fa-circle"></i> 404</a>
-                                </li>
-                                <li>
-                                    <a href="500.html"> <i class="fa fa-circle-thin"></i> 500</a>
-=======
-                                    <a href="calendario.php"><i class="fa fa-calendar"></i> Calendario de clases</a>
-                                </li>
-                                <li>
-                                    <a href="tutores.php"> <i class="fa fa-university"></i> Tutores</a>
-                                </li>
-                                <li>
-                                    <a href="cuentas-de-cobro.php"> <i class="fa fa-table"></i> Cuentas de cobro</a>
-                                </li>
-                                <li>
-                                    <a href="rrhh.php"> <i class="fa fa-child"></i> RRHH</a>
-                                </li>
-                                <li>
-                                    <a href="usuarios.php"> <i class="fa fa-group"></i> Gestión de usuarios</a>
->>>>>>> 8454e61f0ea2dcaeaf62c779a0d7eff8614d8eb8:html/calendario.php
-                                </li>
-                              
-                                <li>
-                                    <a href="home.html"> <i class="fa fa-sign-out"></i> Logout</a>
+                                    <a href="login-ingles.php"> <i class="fa fa-sign-out"></i> Logout</a>
                                 </li>
 
                             </ul>
@@ -151,22 +124,14 @@ $resultado_disp = mysqli_query($conexion, $consulta_disp);
                     <nav class="nav navbar-nav">
                         <ul class=" navbar-right">
                             <li class="nav-item dropdown open" style="padding-left: 15px;">
-<<<<<<< HEAD:html/calendario-ingles.html
                                 <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true"
                                     id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                                    <img src="../images/user.png" alt="">Administrator
+                                    <img src="../images/user.png" alt=""><?php echo $nombre ?>
                                 </a>
                                 <div class="dropdown-menu dropdown-usermenu pull-right"
                                     aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="login.html"><i
+                                    <a class="dropdown-item" href="login.php"><i
                                             class="fa fa-sign-out pull-right"></i>Logout</a>
-=======
-                                <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                                    <img src="../images/user.png" alt=""><?php echo $nombre ?>
-                                </a>
-                                <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="login.php"><i class="fa fa-sign-out pull-right"></i>Cerrar sesión</a>
->>>>>>> 8454e61f0ea2dcaeaf62c779a0d7eff8614d8eb8:html/calendario.php
                                 </div>
                             </li>
                         </ul>
@@ -190,7 +155,7 @@ $resultado_disp = mysqli_query($conexion, $consulta_disp);
                         <div class="col-md-12">
                             <div class="x_panel">
                                 <div class="x_title">
-                                    <h2>Calendario</h2>
+                                    <h2>Calendar</h2>
                                     <ul class="nav navbar-right panel_toolbox">
                                         <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                         </li>
@@ -203,25 +168,17 @@ $resultado_disp = mysqli_query($conexion, $consulta_disp);
                                     <div class="container mb-4">
                                         <div class="row">
                                             <div class="col-md-6 col-12 text-center">
-<<<<<<< HEAD:html/calendario-ingles.html
-                                                    <button type="button" class="button-add position-static"
+                                                <button type="button" class="button-add position-static"
                                                     data-toggle="modal" data-target="#ModalCrearEvento"><i
-                                                        class="fa fa-plus-square pr-3"></i>Create class event</button>
-                                          
-                                            </div>
-                                            <div class="col-md-6 col-12  text-center">
-                                                <button type="button" onclick="window.location.href='tutores.html'"
-                                                    class="button-add position-static" data-toggle="modal"
-                                                    data-target="#"><i class="fa fa-search pr-3"></i>Check Tutor's Availibity</button>
-=======
-                                                <button type="button" class="button-add position-static" data-toggle="modal" data-target="#ModalCrearEvento"><i class="fa fa-plus-square pr-3"></i>Crear
+                                                        class="fa fa-plus-square pr-3"></i>Crear
                                                     evento de clase</button>
                                             </div>
                                             <div class="col-md-6 col-12  text-center">
-                                                <button type="button" onclick="window.location.href='tutores.php'" class="button-add position-static" data-toggle="modal" data-target="#"><i class="fa fa-search pr-3"></i>Consultar
+                                                <button type="button" onclick="window.location.href='tutores-ingles.php'"
+                                                    class="button-add position-static" data-toggle="modal"
+                                                    data-target="#"><i class="fa fa-search pr-3"></i>Consultar
                                                     disponibilidad de
                                                     tutores</button>
->>>>>>> 8454e61f0ea2dcaeaf62c779a0d7eff8614d8eb8:html/calendario.php
                                             </div>
                                         </div>
                                     </div>
@@ -244,7 +201,7 @@ $resultado_disp = mysqli_query($conexion, $consulta_disp);
                         <div class="col-md-12 p-0">
                             <div class="d-block">
                                 <div class="caption-copyright text-center">
-                                    <p>© 2020 PAPERWOFF S.A.S – ALL RIGHTS RESERVED</p>
+                                    <p>© 2020 PAPERWOFF S.A.S – TODOS LOS DERECHOS RESERVADOS</p>
                                 </div>
                             </div>
                         </div>
@@ -257,62 +214,43 @@ $resultado_disp = mysqli_query($conexion, $consulta_disp);
     </div>
 
     <!-- MODAL NUEVA ENTRADA -->
-    <div id="ModalCrearEvento" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div id="ModalCrearEvento" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel">Create class event</h4>
+                    <h4 class="modal-title" id="myModalLabel">Crear evento de clase</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                 </div>
                 <div class="modal-body">
                     <div id="testmodal" style="padding: 5px 20px;">
                         <form id="crearForm" class="form-horizontal calender" role="form">
                             <div class="form-group col-md-12">
-<<<<<<< HEAD:html/calendario-ingles.html
-                                <select class="form-control" id="title" name="title" required
-                                    onchange="changeAsignatura()">
-                                    <option value="">Subject</option>
-                                    <option value="matematica">Mathematics</option>
-                                    <option value="ingles">English</option>
-                                    <option value="español">Spanish</option>
-                                    <option>--</option>
-=======
                                 <select class="form-control" id="title" name="title" required onchange="changeAsignatura()">
-                                <option value="">Seleccione..</option>
-                                   <?php
-
-                                    while ($row = mysqli_fetch_array($resultado)) {
-                                        echo '<option value="' . $row['id_Asignatura'] . '">' . $row['Nombre_Asignatura'] . '</option>';
-                                    }
-                                    ?>
->>>>>>> 8454e61f0ea2dcaeaf62c779a0d7eff8614d8eb8:html/calendario.php
+                                    <option value="">Asignatura</option>
+                                    <option value="matematica">Matemática</option>
+                                    <option value="ingles">Inglés</option>
+                                    <option value="español">Español</option>
+                                    <option>--</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-12">
-                                <input type="date" class="form-control" id="fecha" name="fecha" onload="getDate()" placeholder="" required>
+                                <input type="date" class="form-control" id="fecha" name="fecha" onload="getDate()"
+                                    placeholder="" required>
                             </div>
                             <div class="form-group col-md-12">
                                 <select class="form-control" id="tutores" onchange="changeLabeltext()" required>
-<<<<<<< HEAD:html/calendario-ingles.html
-                                    <option value="">Available tutors</option>
+                                    <option value="">Tutores disponibles</option>
                                     <option value="pedro">Pedro Perez</option>
                                     <option value="maria">Maria Sanchez</option>
                                     <option value="mayra">Mayra Ojeda</option>
                                     <option>--</option>
-=======
-                                    <option value="">Seleccione..</option>
-                                    <?php
-                                    while ($row_disp = mysqli_fetch_array($resultado_disp)) {
-                                        echo '<option value="' . $row_disp['id_Tutores'] . '">' . $row_disp['Nombre'] . ' '. $row_disp['Apellidos'] . '</option>';
-                                    }
-                                    ?>
->>>>>>> 8454e61f0ea2dcaeaf62c779a0d7eff8614d8eb8:html/calendario.php
                                 </select>
                             </div>
 
                             <div class="form-group col-md-12 mb-4">
                                 <select class="form-control" id="area">
-                                    <option>Grade</option>
+                                    <option>Grado</option>
                                     <option>--</option>
                                     <option>--</option>
                                     <option>--</option>
@@ -320,38 +258,33 @@ $resultado_disp = mysqli_query($conexion, $consulta_disp);
                                 </select>
                             </div>
                             <div class="form-group col-md-12">
-                                <label class="control-label p-0 ">Available hours:</label>
+                                <label class="control-label p-0 ">Horas disponibles:</label>
                                 <label id="horario1" class="control-label p-0 "></label>
                             </div>
                             <div class="form-group col-md-12 px-1">
                                 <div class="row">
                                     <div class="col-6">
                                         <div class=" input-group bootstrap-timepicker timepicker">
-<<<<<<< HEAD:html/calendario-ingles.html
-                                            <label class="control-label">Start time:</label>
+                                            <label class="control-label">Hora de inicio</label>
                                             <input id="hora-inicio" type="text" name="time_start"
                                                 class="form-control input-small">
                                             <span class="input-group-addon"><i
                                                     class="glyphicon glyphicon-time"></i></span>
-=======
-                                            <label class="control-label">Hora de inicio</label>
-                                            <input id="hora-inicio" type="text" name="time_start" class="form-control input-small">
-                                            <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
->>>>>>> 8454e61f0ea2dcaeaf62c779a0d7eff8614d8eb8:html/calendario.php
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class=" input-group bootstrap-timepicker timepicker">
-                                            <label class="control-label ">End time:</label>
+                                            <label class="control-label ">Hora de fin</label>
                                             <input id="hora-fin" type="text" class="form-control input-small">
-                                            <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                                            <span class="input-group-addon"><i
+                                                    class="glyphicon glyphicon-time"></i></span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="form-group col-md-12">
-                                <textarea class="form-control" id="" name="" rows="3" placeholder="Description"></textarea>
+                                <textarea class="form-control" id="" name="" rows="3" placeholder="Temas"></textarea>
                             </div>
                             <div class="row">
                                 <div class="col-4 m-0">
@@ -363,13 +296,13 @@ $resultado_disp = mysqli_query($conexion, $consulta_disp);
                                 <div class="col-4 m-0">
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox" id="c-bilingue" value="option2">
-                                        <label class="form-check-label" for="c-bilingue">Bilingual</label>
+                                        <label class="form-check-label" for="c-bilingue">Bilingue</label>
                                     </div>
                                 </div>
                                 <div class="col-4 m-0">
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox" id="c-d-f" value="option2">
-                                        <label class="form-check-label" for="c-d-f">Sunday / Holiday</label>
+                                        <label class="form-check-label" for="c-d-f">Domingo / Festivo</label>
                                     </div>
                                 </div>
                                 <div class="col-4 m-0">
@@ -381,19 +314,14 @@ $resultado_disp = mysqli_query($conexion, $consulta_disp);
                                 <div class="col-4 m-0">
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox" id="c-bogota" value="option2">
-                                        <label class="form-check-label" for="c-bogota">Out of the city</label>
+                                        <label class="form-check-label" for="c-bogota">Fuera de Bogotá</label>
                                     </div>
                                 </div>
                                 <div class="col-4 m-0">
                                     <div class="form-check form-check-inline">
-<<<<<<< HEAD:html/calendario-ingles.html
                                         <input class="form-check-input" type="checkbox" id="c-transporte"
                                             value="option2">
-                                        <label class="form-check-label" for="c-transporte">Transport</label>
-=======
-                                        <input class="form-check-input" type="checkbox" id="c-transporte" value="option2">
                                         <label class="form-check-label" for="c-transporte">Transporte</label>
->>>>>>> 8454e61f0ea2dcaeaf62c779a0d7eff8614d8eb8:html/calendario.php
                                     </div>
                                 </div>
 
@@ -402,32 +330,34 @@ $resultado_disp = mysqli_query($conexion, $consulta_disp);
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default antoclose" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary antosubmit" data-dismiss="modal">Save
-                        </button>
+                    <button type="button" class="btn btn-default antoclose" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary antosubmit" data-dismiss="modal">Guardar
+                        cambios</button>
                 </div>
             </div>
         </div>
     </div>
     <!-- /MODAL NUEVA ENTRADA -->
     <!-- MODAL EDITAR ENTRADA -->
-    <div id="CalenderModalEdit" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div id="CalenderModalEdit" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel2">Edit class event</h4>
+                    <h4 class="modal-title" id="myModalLabel2">Editar evento de clase</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                 </div>
                 <div class="modal-body">
                     <div id="testmodal2" style="padding: 5px 20px;">
                         <form id="antoform2" class="form-horizontal calender" role="form">
                             <div class="form-group col-md-12">
-                                <input type="text" class="form-control" id="title2" name="title2" placeholder="Nombre" autofocus required>
+                                <input type="text" class="form-control" id="title2" name="title2" placeholder="Nombre"
+                                    autofocus required>
                             </div>
 
                             <div class="form-group col-md-12">
                                 <select class="form-control" id="area">
-                                    <option>Subject</option>
+                                    <option>Asignatura</option>
                                     <option>--</option>
                                     <option>--</option>
                                     <option>--</option>
@@ -437,7 +367,7 @@ $resultado_disp = mysqli_query($conexion, $consulta_disp);
 
                             <div class="form-group col-md-12 mb-4">
                                 <select class="form-control" id="area">
-                                    <option>Grade</option>
+                                    <option>Grado</option>
                                     <option>--</option>
                                     <option>--</option>
                                     <option>--</option>
@@ -448,29 +378,20 @@ $resultado_disp = mysqli_query($conexion, $consulta_disp);
                             <div class="form-group col-md-12 px-1">
                                 <div class="row">
                                     <div class="col-6">
-<<<<<<< HEAD:html/calendario-ingles.html
-                                        <label class="control-label p-0 ">Start time</label>
+                                        <label class="control-label p-0 ">Hora de inicio</label>
                                         <input type="time" class="form-control" id="hora-inicio"
                                             placeholder="Hora de inicio">
-=======
-                                        <label class="control-label p-0 ">Hora de inicio</label>
-                                        <input type="time" class="form-control" id="hora-inicio" placeholder="Hora de inicio">
->>>>>>> 8454e61f0ea2dcaeaf62c779a0d7eff8614d8eb8:html/calendario.php
                                     </div>
                                     <div class="col-6">
-                                        <label class="control-label p-0">End time</label>
+                                        <label class="control-label p-0">Hora de fin</label>
                                         <input type="time" class="form-control" id="hora-fin" placeholder="Hora de fin">
                                     </div>
                                 </div>
                             </div>
 
                             <div class="form-group col-md-12">
-<<<<<<< HEAD:html/calendario-ingles.html
-                                <textarea class="form-control" id="" name="" rows="3" placeholder="Description" id="descr2"
+                                <textarea class="form-control" id="" name="" rows="3" placeholder="Temas" id="descr2"
                                     name="descr"></textarea>
-=======
-                                <textarea class="form-control" id="" name="" rows="3" placeholder="Temas" id="descr2" name="descr"></textarea>
->>>>>>> 8454e61f0ea2dcaeaf62c779a0d7eff8614d8eb8:html/calendario.php
                             </div>
                             <div class="row">
                                 <div class="col-4 m-0">
@@ -482,13 +403,13 @@ $resultado_disp = mysqli_query($conexion, $consulta_disp);
                                 <div class="col-4 m-0">
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox" id="c-bilingue" value="option2">
-                                        <label class="form-check-label" for="c-bilingue">Bilingual</label>
+                                        <label class="form-check-label" for="c-bilingue">Bilingue</label>
                                     </div>
                                 </div>
                                 <div class="col-4 m-0">
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox" id="c-d-f" value="option2">
-                                        <label class="form-check-label" for="c-d-f">Sunday / Holiday</label>
+                                        <label class="form-check-label" for="c-d-f">Domingo / Festivo</label>
                                     </div>
                                 </div>
                                 <div class="col-4 m-0">
@@ -500,19 +421,14 @@ $resultado_disp = mysqli_query($conexion, $consulta_disp);
                                 <div class="col-4 m-0">
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox" id="c-bogota" value="option2">
-                                        <label class="form-check-label" for="c-bogota">Out of the city</label>
+                                        <label class="form-check-label" for="c-bogota">Fuera de Bogotá</label>
                                     </div>
                                 </div>
                                 <div class="col-4 m-0">
                                     <div class="form-check form-check-inline">
-<<<<<<< HEAD:html/calendario-ingles.html
                                         <input class="form-check-input" type="checkbox" id="c-transporte"
                                             value="option2">
-                                        <label class="form-check-label" for="c-transporte">Transport</label>
-=======
-                                        <input class="form-check-input" type="checkbox" id="c-transporte" value="option2">
                                         <label class="form-check-label" for="c-transporte">Transporte</label>
->>>>>>> 8454e61f0ea2dcaeaf62c779a0d7eff8614d8eb8:html/calendario.php
                                     </div>
                                 </div>
                             </div>
@@ -520,8 +436,8 @@ $resultado_disp = mysqli_query($conexion, $consulta_disp);
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default antoclose2" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary antosubmit2">Save</button>
+                    <button type="button" class="btn btn-default antoclose2" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary antosubmit2">Guardar cambios</button>
                 </div>
             </div>
         </div>
@@ -554,26 +470,25 @@ $resultado_disp = mysqli_query($conexion, $consulta_disp);
 
 
     <script>
-       /* function changeLabeltext() {
+        function changeLabeltext() {
             var e = document.getElementById("tutores");
             var tutor = e.options[e.selectedIndex].value;
-            if (tutor != "")
-                document.getElementById('horario1').innerHTML = '09:00 AM - 10:00 AM <br> 11:00 AM - 12:00 PM';
+            if(tutor!="")
+            document.getElementById('horario1').innerHTML = '09:00 AM - 10:00 AM <br> 11:00 AM - 12:00 PM';
             else
-                document.getElementById('horario1').innerHTML = 'N/A';
+            document.getElementById('horario1').innerHTML = 'N/A';
 
         }
         document.getElementById("tutores").disabled = true;
-
         function changeAsignatura() {
             var e = document.getElementById("title");
             var asignatura = e.options[e.selectedIndex].value;
-            if (asignatura != "")
-                document.getElementById("tutores").disabled = false;
+            if(asignatura!="")
+            document.getElementById("tutores").disabled = false;
             else
-                document.getElementById("tutores").disabled = true;
+            document.getElementById("tutores").disabled = true;
 
-        }*/
+        }
     </script>
 
 

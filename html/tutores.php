@@ -1,3 +1,26 @@
+<?php
+
+session_start();
+
+//Si la variable sesión está vacía
+if (!isset($_SESSION['coordinador'])) {
+    header("location:../html/login.php");
+} else {
+    $usuario = $_SESSION['coordinador'];
+    //echo $usuario;
+}
+include "conexion.php";
+$consulta = "SELECT * FROM asignatura";
+$resultado = mysqli_query($conexion, $consulta);
+
+$consulta_user= "SELECT * FROM users WHERE e_mail='$usuario'";
+$resultado_user = mysqli_query($conexion, $consulta_user);
+$row_user = mysqli_fetch_array($resultado_user);
+$nombre=$row_user['Nombre'];
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -51,7 +74,7 @@
                         </div>
                         <div class="profile_info">
                             <span>Bienvenido,</span>
-                            <h2>Administrador</h2>
+                            <h2><?php echo $nombre ?></h2>
                         </div>
                     </div>
                     <!-- /SECCIÓN BIENVENIDO-->
@@ -62,31 +85,26 @@
                             <h3>General</h3>
                             <ul class="nav side-menu">
                                 <li>
-                                    <a href="dashboard.html"><i class="fa fa-home"></i> Dashboard</a>
+                                    <a href="dashboard.php"><i class="fa fa-home"></i> Dashboard</a>
                                 </li>
                                 <li>
-                                    <a href="calendario.html"><i class="fa fa-calendar"></i> Calendario de clases</a>
+                                    <a href="calendario.php"><i class="fa fa-calendar"></i> Calendario de clases</a>
                                 </li>
                                 <li>
-                                    <a href="tutores.html"> <i class="fa fa-university"></i> Tutores</a>
+                                    <a href="tutores.php"> <i class="fa fa-university"></i> Tutores</a>
                                 </li>
                                 <li>
-                                    <a href="cuentas-de-cobro.html"> <i class="fa fa-table"></i> Cuentas de cobro</a>
+                                    <a href="cuentas-de-cobro.php"> <i class="fa fa-table"></i> Cuentas de cobro</a>
                                 </li>
                                 <li>
-                                    <a href="rrhh.html"> <i class="fa fa-child"></i> RRHH</a>
+                                    <a href="rrhh.php"> <i class="fa fa-child"></i> RRHH</a>
                                 </li>
                                 <li>
-                                    <a href="usuarios.html"> <i class="fa fa-group"></i> Gestión de usuarios</a>
+                                    <a href="usuarios.php"> <i class="fa fa-group"></i> Gestión de usuarios</a>
                                 </li>
+                                
                                 <li>
-                                    <a href="404.html"> <i class="fa fa-circle"></i> 404</a>
-                                </li>
-                                <li>
-                                    <a href="500.html"> <i class="fa fa-circle-thin"></i> 500</a>
-                                </li>
-                                <li>
-                                    <a href="home.html"> <i class="fa fa-sign-out"></i> Cerrar sesión</a>
+                                    <a href="login.php"> <i class="fa fa-sign-out"></i> Cerrar sesión</a>
                                 </li>
 
                             </ul>
@@ -111,7 +129,7 @@
                                 </a>
                                 <div class="dropdown-menu dropdown-usermenu pull-right"
                                     aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="login.html"><i
+                                    <a class="dropdown-item" href="login.php"><i
                                             class="fa fa-sign-out pull-right"></i>Cerrar sesión</a>
                                 </div>
                             </li>
@@ -150,7 +168,19 @@
                                 <div class="clearfix"></div>
                             </div>
                             <div class="x_content">
-                                <!-- TABLA -->
+                                
+                            <?php 
+                            $conexion = mysqli_connect("localhost", "root", "", "tyt");
+                           $sql=" SELECT id_User, Documento, 
+                                          Nombre, Apellidos  
+                                          from users "
+                                          ;
+
+                          $resultado=mysqli_query($conexion, $sql);
+                            ?>
+                            
+                            
+                            <!-- TABLA -->
                                 <div class="row">
                                     <div class="col-sm-12">
                                         <div class="card-box table-responsive">
@@ -173,16 +203,24 @@
                                                         </th>
                                                     </tr>
                                                 </thead>
+                                            
                                                 <tbody>
+                                                <?php 
+                                                while ($mostrar=mysqli_fetch_row($resultado)) {
+                                                ?>
                                                     <tr class="even pointer">
-                                                        <td class=" ">26133767</td>
-                                                        <td class=" ">Pedro Alfonso Pérez Sánchez</td>
+                                                        <td class=" "><?php echo $mostrar[1] ?></td>
+                                                        <td class=" "><?php echo $mostrar[2]?> </td>
                                                         <td class=" "> <button type="button"
                                                                 class="btn btn-success btn-xs">Ver
                                                                 disponibilidad</button>
                                                         </td>
                                                     </tr>
-                                                    <tr class="odd pointer">
+                                                    <?php 
+                                                         }
+                                                    ?>
+                                                     
+                                                   <!-- <tr class="odd pointer">
                                                         <td class=" ">68287755</td>
                                                         <td class=" ">Luz Marina Duarte Gonzalez</td>
                                                         <td class=" "> <button type="button"
@@ -269,8 +307,9 @@
                                                         <td class=" "> <button type="button"
                                                                 class="btn btn-success btn-xs">Ver
                                                                 disponibilidad</button>
-                                                        </td>
-                                                    </tr>
+                                                       </td>
+                                               
+                                                    </tr> -->
                                                 </tbody>
                                             </table>
                                         </div>

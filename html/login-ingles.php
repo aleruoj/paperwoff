@@ -43,7 +43,7 @@
                 </div>
                 <div class="container-fluid inicio-sesion m-0 py-1">
 
-                    <a href="login.html">
+                    <a href="login.php">
                         <button type="button" class="btn d-none btn-outline-secondary">Log in</button>
                     </a>
                 </div>
@@ -59,14 +59,14 @@
                             <h2>Sing In</h2>
                         </div>
                     </div>
-                    <form action="dashboard.html" method="POST">
+                    <form action="validar-ingles.php" method="post">
                         <div class="form-row px-4">
                             <div class="input-primary col-md-12">
-                                <input class="form-control" type="email" placeholder="E-mail" required>
+                                <input class="form-control" type="email" placeholder="E-mail" name='usuario' required>
                             </div>
                             <div class="input-group col-md-12" id="show_hide_password-7">
                                 <div class="input-primary input-password input-group" id="show_hide_password-7">
-                                    <input class="form-control" type="password" placeholder="Password" required>
+                                    <input class="form-control" type="password" placeholder="Password" name='clave'required>
                                 </div>
                             </div>
                             <div class="form-check form-check-inline col-md-12 mt-4 mb-3">
@@ -101,7 +101,7 @@
                 <div class="col-md-12 p-0">
                     <div class="d-block">
                         <div class="caption-copyright text-center">
-                            <p>© 2019 PAPERWOFF S.A.S – ALL RIGHTS RESERVED</p>
+                            <p>© 2020 PAPERWOFF S.A.S – ALL RIGHTS RESERVED</p>
                         </div>
                     </div>
                 </div>

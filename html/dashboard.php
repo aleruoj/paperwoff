@@ -1,3 +1,22 @@
+<?php
+session_start();
+ 
+//Si la variable sesión está vacía
+if (!isset($_SESSION['coordinador'])) 
+{
+   header("location:../html/login.php"); 
+}else{
+    $usuario=$_SESSION['coordinador'];
+    //echo $usuario;
+}
+include "conexion.php";
+$consulta = "SELECT * FROM users WHERE e_mail='$usuario'";
+$resultado= mysqli_query($conexion, $consulta);
+$row=mysqli_fetch_array($resultado);
+
+$nombre=$row['Nombre'];
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -39,7 +58,7 @@
                         </div>
                         <div class="profile_info">
                             <span>Bienvenido,</span>
-                            <h2>Administrador</h2>
+                            <h2><?php echo $nombre ?></h2>
                         </div>
                     </div>
                     <!-- /SECCIÓN BIENVENIDO-->
@@ -50,31 +69,26 @@
                             <h3>General</h3>
                             <ul class="nav side-menu">
                                 <li>
-                                    <a href="dashboard.html"><i class="fa fa-home"></i> Dashboard</a>
+                                    <a href="dashboard.php"><i class="fa fa-home"></i> Dashboard</a>
                                 </li>
                                 <li>
-                                    <a href="calendario.html"><i class="fa fa-calendar"></i> Calendario de clases</a>
+                                    <a href="calendario.php"><i class="fa fa-calendar"></i> Calendario de clases</a>
                                 </li>
                                 <li>
-                                    <a href="tutores.html"> <i class="fa fa-university"></i> Tutores</a>
+                                    <a href="tutores.php"> <i class="fa fa-university"></i> Tutores</a>
                                 </li>
                                 <li>
-                                    <a href="cuentas-de-cobro.html"> <i class="fa fa-table"></i> Cuentas de cobro</a>
+                                    <a href="cuentas-de-cobro.php"> <i class="fa fa-table"></i> Cuentas de cobro</a>
                                 </li>
                                 <li>
-                                    <a href="rrhh.html"> <i class="fa fa-child"></i> RRHH</a>
+                                    <a href="rrhh.php"> <i class="fa fa-child"></i> RRHH</a>
                                 </li>
                                 <li>
-                                    <a href="usuarios.html"> <i class="fa fa-group"></i> Gestión de usuarios</a>
+                                    <a href="usuarios.php"> <i class="fa fa-group"></i> Gestión de usuarios</a>
                                 </li>
+                                
                                 <li>
-                                    <a href="404.html"> <i class="fa fa-circle"></i> 404</a>
-                                </li>
-                                <li>
-                                    <a href="500.html"> <i class="fa fa-circle-thin"></i> 500</a>
-                                </li>
-                                <li>
-                                    <a href="home.html"> <i class="fa fa-sign-out"></i> Cerrar sesión</a>
+                                    <a href="cerrar-sesion.php"> <i class="fa fa-sign-out"></i> Cerrar sesión</a>
                                 </li>
 
                             </ul>
@@ -95,11 +109,11 @@
                             <li class="nav-item dropdown open" style="padding-left: 15px;">
                                 <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true"
                                     id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                                    <img src="../images/user.png" alt="">Administrador
+                                    <img src="../images/user.png" alt=""><?php echo $nombre ?>
                                 </a>
                                 <div class="dropdown-menu dropdown-usermenu pull-right"
                                     aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="login.html"><i
+                                    <a class="dropdown-item" href="cerrar-sesion.php"><i
                                             class="fa fa-sign-out pull-right"></i>Cerrar sesión</a>
                                 </div>
                             </li>
@@ -341,10 +355,10 @@
                             <div class="x_content">
                                 <div class="dashboard-widget-content">
                                     <ul class="quick-list">
-                                        <li><i class="fa fa-calendar-o"></i><a href="calendario.html">Crear evento de
+                                        <li><i class="fa fa-calendar-o"></i><a href="calendario.php">Crear evento de
                                                 tutoría</a>
                                         </li>
-                                        <li><i class="fa fa-bars"></i><a href="cuentas-de-cobro.html">Gestión de honorarios</a>
+                                        <li><i class="fa fa-bars"></i><a href="cuentas-de-cobro.php">Gestión de honorarios</a>
                                         </li>
                                         <li><i class="fa fa-bar-chart"></i><a href="#">Tutores disponibles</a> </li>
                                         <li><i class="fa fa-line-chart"></i><a href="#">Crear usuario</a>

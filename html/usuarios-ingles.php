@@ -1,3 +1,22 @@
+<?php
+session_start();
+ 
+//Si la variable sesión está vacía
+if (!isset($_SESSION[ 'coordinador'])) 
+{
+   header("location:../html/login-ingles.php"); 
+}else{
+    $usuario=$_SESSION['coordinador'];
+    //echo $usuario;
+}
+include "conexion.php";
+$consulta = "SELECT * FROM users WHERE e_mail='$usuario'";
+$resultado= mysqli_query($conexion, $consulta);
+$row=mysqli_fetch_array($resultado);
+
+$nombre=$row['Nombre'];
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,7 +56,7 @@
       <div class="col-md-3 left_col" style="min-height: auto;">
         <div class="left_col scroll-view">
           <div class="navbar nav_title" style="border: 0;">
-            <a href="home.html" class="site_title"><i class="fa fa-cog"></i> <span>Paperwoff</span></a>
+            <a href="home-ingles.php" class="site_title"><i class="fa fa-cog"></i> <span>Paperwoff</span></a>
           </div>
 
           <div class="clearfix"></div>
@@ -49,7 +68,7 @@
             </div>
             <div class="profile_info">
               <span>Welcome,</span>
-              <h2>Administrator</h2>
+             <h2><?php echo $nombre ?></h2>
             </div>
           </div>
           <!-- /SECCIÓN BIENVENIDO-->
@@ -60,31 +79,26 @@
               <h3>General</h3>
               <ul class="nav side-menu">
                 <li>
-                  <a href="dashboard.html"><i class="fa fa-home"></i> Dashboard</a>
+                  <a href="dashboard-ingles.php"><i class="fa fa-home"></i> Dashboard</a>
                 </li>
                 <li>
-                  <a href="calendario.html"><i class="fa fa-calendar"></i> Calendar of classes</a>
+                  <a href="calendario-ingles.php"><i class="fa fa-calendar"></i> Calendar of classes</a>
                 </li>
                 <li>
-                    <a href="tutores.html"> <i class="fa fa-university"></i> Tutors</a>
+                    <a href="tutores-ingles.php"> <i class="fa fa-university"></i> Tutors</a>
                 </li>
                 <li>
-                  <a href="cuentas-de-cobro.html"> <i class="fa fa-table"></i> Account</a>
+                  <a href="cuentas-de-cobro-ingles.php"> <i class="fa fa-table"></i> Account</a>
                 </li>
                 <li>
-                  <a href="rrhh.html"> <i class="fa fa-child"></i> RRHH</a>
+                  <a href="rrhh-ingles.php"> <i class="fa fa-child"></i> RRHH</a>
                 </li>
                 <li>
-                  <a href="usuarios.html"> <i class="fa fa-group"></i> User management</a>
+                  <a href="usuarios-ingles.php"> <i class="fa fa-group"></i> User management</a>
                 </li>
+              
                 <li>
-                  <a href="404.html"> <i class="fa fa-circle"></i> 404</a>
-                </li>
-                <li>
-                  <a href="500.html"> <i class="fa fa-circle-thin"></i> 500</a>
-                </li>
-                <li>
-                  <a href="home.html"> <i class="fa fa-sign-out"></i> Log out</a>
+                  <a href="login-ingles.php"> <i class="fa fa-sign-out"></i> Log out</a>
                 </li>
 
               </ul>
@@ -105,10 +119,10 @@
               <li class="nav-item dropdown open" style="padding-left: 15px;">
                 <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown"
                   data-toggle="dropdown" aria-expanded="false">
-                  <img src="../images/user.png" alt="">Administrator
+                  <img src="../images/user.png" alt=""><?php echo $nombre ?>
                 </a>
                 <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="login.html"><i class="fa fa-sign-out pull-right"></i>Log out</a>
+                  <a class="dropdown-item" href="login.php"><i class="fa fa-sign-out pull-right"></i>Log out</a>
                 </div>
               </li>
             </ul>
@@ -521,7 +535,7 @@
             <div class="col-md-12">
               <div class="d-block">
                 <div class="caption-copyright text-center">
-                  <p>© 2019 PAPERWOFF S.A.S – ALL RIGHTS RESERVED</p>
+                  <p>© 2020 PAPERWOFF S.A.S – ALL RIGHTS RESERVED</p>
                 </div>
               </div>
             </div>

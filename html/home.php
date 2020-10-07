@@ -39,20 +39,21 @@
                 <div class="container-fluid text-center mx-md-0 mx-sm-0 pt-3 pt-md-3 pt-lg-0">
                     <ul class="navbar-nav justify-content-center text-left">
                         <li class="nav-item mx-md-0 mx-sm-0 mx-lg-3">
-                            <a class="nav-link" href="#que-es">About us</a>
+                            <a class="nav-link" href="#que-es">¿Qué es Paperwoff?</a>
                         </li>
                         <li class="nav-item mx-md-0 mx-sm-0 mx-lg-3">
-                            <a class="nav-link" href="#">Services</a>
+                            <a class="nav-link" href="#">Servicios</a>
                         </li>
                         <li class="nav-item mx-md-0 mx-sm-0 mx-lg-3">
-                            <a class="nav-link" href="#">Contact us</a>
+                            <a class="nav-link" href="#">Contacto</a>
                         </li>
                     </ul>
                 </div>
                 <div class="container-fluid inicio-sesion m-0 py-1">
 
-                    <a href="login.html">
-                        <button type="button" class="btn btn-outline-secondary">Login</button>
+                    <a href="login.php">
+                        <button type="button" class="btn btn-outline-secondary">Iniciar
+                            sesión</button>
                     </a>
                 </div>
             </div>
@@ -68,7 +69,7 @@
                     <img src="../images/logo-blanco.png" width="300" alt="" class="py-4">
                 </div>
                 <div class="text-center py-4">
-                    <h3>Meet PAPERWOFF, Ideal Solution to Coordinate your TEAM and manage your Proyects.</h3>
+                    <h3>Conoce PAPERWOFF, la solución ideal para coordinar tu EQUIPO y manejar tus PROYECTOS.</h3>
                 </div>
                 <div>
                     <div class="row px-md-5 p-0">
@@ -76,26 +77,26 @@
                             <i class="fa fa-circle"></i>
                         </div>
                         <div class="col-11">
-                            <p><b>Easy</b> onboarding and to implement.</p>
+                            <p><b>Monitorea</b> tu progreso y tu equipo al instante.</p>
                         </div>
                         <div class="col-1">
                             <i class="fa fa-circle"></i>
                         </div>
                         <div class="col-11">
-                            <p><b>Track</b> progress and your team at a glance.</p>
+                            <p><b>Consigue</b> experiencia a través de procesos de consultoría y asesoría.</p>
                         </div>
                         <div class="col-1">
                             <i class="fa fa-circle"></i>
                         </div>
                         <div class="col-11">
-                            <p> <b>Pick</b> the best way to organize your work, easy to use, easy to follow.</p>
+                            <p> <b>Organiza</b> visual y dinámicamente tu trabajo.</p>
                         </div>
 
                     </div>
                     <div class="row my-5 text-center">
                         <div class="col-12">
-                            <h4>More information? <br> write to: <br> <span
-                                    class="font-weight-bold">contact@paperwoff.com</span></h4>
+                            <h4>¿Necesitas más información? <br> Escribenos a: <br> <span
+                                    class="font-weight-bold">contacto@paperwoff.com</span></h4>
                         </div>
                     </div>
                 </div>
@@ -106,29 +107,29 @@
                     <div class="hero-card d-flex">
                         <div class="fondo-op">
                             <h5 class="text-center m-auto p-3">
-                                your company's employees are more than 100?<br>
+                                ¿Tu empresa tiene más de 100 empleados?<br>
                                 <br>
-                                Request a <b>FREE</b> 20 minutes test with someone of our experts.</h5>
+                                Solicita <b>GRATIS</b> una asesoría de 20 minutos con uno de nuestros expertos.</h5>
                         </div>
                     </div>
                     <div class="card-body px-0">
                         <form id="formSusc" action="">
                             <div class="form-group">
                                 <input type="text" class="form-control" id="nombre" required
-                                    aria-describedby="emailHelp" placeholder="Full name">
+                                    aria-describedby="emailHelp" placeholder="Nombre completo">
                             </div>
                             <div class="form-group">
                                 <input type=" number" class="form-control" id="tlf" required
-                                    placeholder="Cellphone" pattern="\d*" minlength="10" maxlength="10">
+                                    placeholder="Teléfono móvil" pattern="\d*" minlength="10" maxlength="10">
                             </div>
 
                             <div class="form-group">
                                 <input type="email" class="form-control" id="email" required
-                                    aria-describedby="emailHelp" placeholder="e-mail">
+                                    aria-describedby="emailHelp" placeholder="Correo electrónico">
                             </div>
                             <div class="form-group">
                                 <select class="form-control" id="area" required>
-                                    <option value="">Country</option>
+                                    <option value="">País</option>
                                     <option value="Brasil">Brasil</option>
                                     <option value="Chile">Chile</option>
                                     <option value="Colombia">Colombia</option>
@@ -137,16 +138,16 @@
                             </div>
                             <div class="form-group">
                                 <input type="text" class="form-control" id="nombre" required
-                                    aria-describedby="emailHelp" placeholder="Name of your company">
+                                    aria-describedby="emailHelp" placeholder="Nombre de tu empresa">
                             </div>
                             <div class="form-group">
                                 <input type="text" class="form-control" id="nombre" required
-                                    aria-describedby="emailHelp" placeholder="Area of your company">
+                                    aria-describedby="emailHelp" placeholder="Área de tu empresa">
                             </div>
 
                             <div class="form-group">
                                 <select class="form-control" id="empleados" required>
-                                    <option value="">Number of employees</option>
+                                    <option value="">Número de empleados</option>
                                     <option value="1-50">1 - 50</option>
                                     <option value="51-100">51 - 100</option>
                                     <option value="101-250">101 - 250</option>
@@ -156,11 +157,12 @@
                             </div>
                             <div class="form-check form-check-inline ">
                                 <input type="checkbox" class="form-check-input" id="politicas" required>
-                                <label class="form-check-label check-mobile " for="politicas">I accept conditions
-                                     on my personal data handlin</label>
+                                <label class="form-check-label check-mobile " for="politicas">Acepto las políticas de
+                                    tratamiento de datos
+                                    y el envío de información</label>
                             </div>
                             <button type="submit" id=""
-                                class="btn btn-light w-100 pt-2 mt-2 ">Suscribe</button>
+                                class="btn btn-light w-100 pt-2 mt-2 ">Suscribirme</button>
                         </form>
                         <!-- data-toggle="modal" data-target="#suscrip" -->
 
@@ -185,7 +187,7 @@
             </div>
             <div class="row text-center pb-4">
                 <div class="col-md-12">
-                    <h5 class="font-weight-bold ">Your team in the best operability possible way
+                    <h5 class="font-weight-bold ">La mejor forma de optimizar la operatividad de tu equipo de trabajo
                     </h5>
                 </div>
             </div>
@@ -193,9 +195,9 @@
                 <div class="col-md-8 m-auto">
                     <div class="home-description">
                         <h4 class="pb-3">
-                            Organice your work team, you control the programming and scheduling asignments,
-                             all in a single reporting interface. 
-                             Calendar, currency control and other costumer features in one place.
+                            Te ayudamos a organizar tu equipo de trabajo, controlas la programación y asignación de
+                            tareas desde una sola interfaz, calendario, control monetario y otras características de tus
+                            clientes ¡todo en uno!
                         </h4>
                     </div>
                 </div>
@@ -216,7 +218,7 @@
                     <div class="col-md-12">
                         <div class="d-block">
                             <div class="caption-copyright text-center">
-                                <p>© 2020 PAPERWOFF S.A.S – ALL RIHGTS RESERVED</p>
+                                <p>© 2020 PAPERWOFF S.A.S – TODOS LOS DERECHOS RESERVADOS</p>
                             </div>
                         </div>
                     </div>
@@ -231,17 +233,17 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">¡Thanks for suscribe!</h5>
+                    <h5 class="modal-title" id="exampleModalLongTitle">¡Gracias por suscribirte!</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p> Our property consultants will get in contact with you in the next hours to provide you a personalized advice.
+                    <p> Nuestros asesores te contactarán en las próximas horas para brindarte tu asesoría personalizada
                     </p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                 </div>
             </div>
         </div>
