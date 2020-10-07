@@ -25,8 +25,7 @@ include "conexion.php";
 <body id=home>
     <!-- WHATSAPP -->
     <div class="cont-whatsapp-fixed">
-        <a href="https://api.whatsapp.com/send?phone=+573163187107&text=Hola,%20quisiera%20información%20de%20Paperwoff"
-            target="_blank"><i class="icon icon-whatsapp-msm"></i></a>
+        <a href="https://api.whatsapp.com/send?phone=+573163187107&text=Hola,%20quisiera%20información%20de%20Paperwoff" target="_blank"><i class="icon icon-whatsapp-msm"></i></a>
     </div>
     <!-- /WHATSAPP -->
 
@@ -36,8 +35,7 @@ include "conexion.php";
             <a href="home.html">
                 <img src="../images/logo.png" class="logo img-fluid">
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
-                aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class=""><i class="fa fa-bars"></i></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
@@ -100,8 +98,7 @@ include "conexion.php";
                     </div>
                     <div class="row my-5 text-center">
                         <div class="col-12">
-                            <h4>More information? <br> write to: <br> <span
-                                    class="font-weight-bold">contact@paperwoff.com</span></h4>
+                            <h4>More information? <br> write to: <br> <span class="font-weight-bold">contact@paperwoff.com</span></h4>
                         </div>
                     </div>
                 </div>
@@ -118,19 +115,16 @@ include "conexion.php";
                         </div>
                     </div>
                     <div class="card-body px-0">
-                        <form  role='form' action="clientes_nuevos.php" method="post">
+                        <form role='form' action="clientes_nuevos.php" method="post">
                             <div class="form-group">
-                                <input type="text" class="form-control" name='nombre_1'  required
-                                    aria-describedby="emailHelp" placeholder="Full name">
+                                <input type="text" class="form-control" name='nombre_1' required aria-describedby="emailHelp" placeholder="Full name">
                             </div>
                             <div class="form-group">
-                                <input type=" number" class="form-control" name='celular_1' required
-                                    placeholder="Cellphone" pattern="\d*" minlength="10" maxlength="10">
+                                <input type=" number" class="form-control" name='celular_1' required placeholder="Cellphone" pattern="\d*" minlength="10" maxlength="10">
                             </div>
 
                             <div class="form-group">
-                                <input type="email" class="form-control" name='email_1' required
-                                    aria-describedby="emailHelp" placeholder="e-mail">
+                                <input type="email" class="form-control" name='email_1' required aria-describedby="emailHelp" placeholder="e-mail">
                             </div>
                             <div class="form-group">
                                 <select class="form-control" name='pais_1' id="area" required>
@@ -142,12 +136,10 @@ include "conexion.php";
                                 </select>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" name='nombre_compa'id="nombre" required
-                                    aria-describedby="emailHelp" placeholder="Name of your company">
+                                <input type="text" class="form-control" name='nombre_compa' id="nombre" required aria-describedby="emailHelp" placeholder="Name of your company">
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" name='area_compa' id="nombre" required
-                                    aria-describedby="emailHelp" placeholder="Area of your company">
+                                <input type="text" class="form-control" name='area_compa' id="nombre" required aria-describedby="emailHelp" placeholder="Area of your company">
                             </div>
 
                             <div class="form-group">
@@ -164,10 +156,9 @@ include "conexion.php";
                             <div class="form-check form-check-inline ">
                                 <input type="checkbox" class="form-check-input" id="politicas" required>
                                 <label class="form-check-label check-mobile " for="politicas">I accept conditions
-                                     on my personal data handlin</label>
+                                    on my personal data handlin</label>
                             </div>
-                            <button type="submit" id=""
-                                class="btn btn-light w-100 pt-2 mt-2 ">Suscribe</button>
+                            <button type="submit" id="" class="btn btn-light w-100 pt-2 mt-2 ">Suscribe</button>
                         </form>
                         <!-- data-toggle="modal" data-target="#suscrip" -->
 
@@ -201,8 +192,8 @@ include "conexion.php";
                     <div class="home-description">
                         <h4 class="pb-3">
                             Organice your work team, you control the programming and scheduling asignments,
-                             all in a single reporting interface. 
-                             Calendar, currency control and other costumer features in one place.
+                            all in a single reporting interface.
+                            Calendar, currency control and other costumer features in one place.
                         </h4>
                     </div>
                 </div>
@@ -233,8 +224,7 @@ include "conexion.php";
     </footer>
 
     <!-- Modal Suscripcion-->
-    <div class="modal fade" id="suscrip" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-        aria-hidden="true">
+    <div class="modal fade" id="suscrip" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -255,24 +245,17 @@ include "conexion.php";
     </div>
     <!-- Empieza JS de Bootstrap -->
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script>
-
-        $(document).ready(function () {
-            $('#formSusc').on('submit', function (e) {
+        $(document).ready(function() {
+            $('#formSusc').on('submit', function(e) {
 
                 $('#suscrip').modal('show');
                 e.preventDefault();
                 $("#formSusc")[0].reset();
-                
+
             });
 
         });
