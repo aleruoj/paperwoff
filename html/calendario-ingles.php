@@ -37,7 +37,7 @@ $resultado_disp = mysqli_query($conexion, $consulta_disp);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="../images/favicon.png" type="image/ico" />
 
-    <title>Calendars | Paperwoff</title>
+    <title>Calendario | Paperwoff</title>
 
     <!-- Bootstrap -->
     <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -168,15 +168,17 @@ $resultado_disp = mysqli_query($conexion, $consulta_disp);
                                     <div class="container mb-4">
                                         <div class="row">
                                             <div class="col-md-6 col-12 text-center">
-                                                    <button type="button" class="button-add position-static"
+                                                <button type="button" class="button-add position-static"
                                                     data-toggle="modal" data-target="#ModalCrearEvento"><i
-                                                        class="fa fa-plus-square pr-3"></i>Create class event</button>
-                                          
+                                                        class="fa fa-plus-square pr-3"></i>Crear
+                                                    evento de clase</button>
                                             </div>
                                             <div class="col-md-6 col-12  text-center">
                                                 <button type="button" onclick="window.location.href='tutores-ingles.php'"
                                                     class="button-add position-static" data-toggle="modal"
-                                                    data-target="#"><i class="fa fa-search pr-3"></i>Check Tutor's Availibity</button>
+                                                    data-target="#"><i class="fa fa-search pr-3"></i>Consultar
+                                                    disponibilidad de
+                                                    tutores</button>
                                             </div>
                                         </div>
                                     </div>
@@ -199,7 +201,7 @@ $resultado_disp = mysqli_query($conexion, $consulta_disp);
                         <div class="col-md-12 p-0">
                             <div class="d-block">
                                 <div class="caption-copyright text-center">
-                                    <p>© 2020 PAPERWOFF S.A.S – ALL RIGHTS RESERVED</p>
+                                    <p>© 2020 PAPERWOFF S.A.S – TODOS LOS DERECHOS RESERVADOS</p>
                                 </div>
                             </div>
                         </div>
@@ -217,19 +219,18 @@ $resultado_disp = mysqli_query($conexion, $consulta_disp);
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel">Create class event</h4>
+                    <h4 class="modal-title" id="myModalLabel">Crear evento de clase</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                 </div>
                 <div class="modal-body">
                     <div id="testmodal" style="padding: 5px 20px;">
                         <form id="crearForm" class="form-horizontal calender" role="form">
                             <div class="form-group col-md-12">
-                                <select class="form-control" id="title" name="title" required
-                                    onchange="changeAsignatura()">
-                                    <option value="">Subject</option>
-                                    <option value="matematica">Mathematics</option>
-                                    <option value="ingles">English</option>
-                                    <option value="español">Spanish</option>
+                                <select class="form-control" id="title" name="title" required onchange="changeAsignatura()">
+                                    <option value="">Asignatura</option>
+                                    <option value="matematica">Matemática</option>
+                                    <option value="ingles">Inglés</option>
+                                    <option value="español">Español</option>
                                     <option>--</option>
                                 </select>
                             </div>
@@ -239,7 +240,7 @@ $resultado_disp = mysqli_query($conexion, $consulta_disp);
                             </div>
                             <div class="form-group col-md-12">
                                 <select class="form-control" id="tutores" onchange="changeLabeltext()" required>
-                                    <option value="">Available tutors</option>
+                                    <option value="">Tutores disponibles</option>
                                     <option value="pedro">Pedro Perez</option>
                                     <option value="maria">Maria Sanchez</option>
                                     <option value="mayra">Mayra Ojeda</option>
@@ -249,7 +250,7 @@ $resultado_disp = mysqli_query($conexion, $consulta_disp);
 
                             <div class="form-group col-md-12 mb-4">
                                 <select class="form-control" id="area">
-                                    <option>Grade</option>
+                                    <option>Grado</option>
                                     <option>--</option>
                                     <option>--</option>
                                     <option>--</option>
@@ -257,14 +258,14 @@ $resultado_disp = mysqli_query($conexion, $consulta_disp);
                                 </select>
                             </div>
                             <div class="form-group col-md-12">
-                                <label class="control-label p-0 ">Available hours:</label>
+                                <label class="control-label p-0 ">Horas disponibles:</label>
                                 <label id="horario1" class="control-label p-0 "></label>
                             </div>
                             <div class="form-group col-md-12 px-1">
                                 <div class="row">
                                     <div class="col-6">
                                         <div class=" input-group bootstrap-timepicker timepicker">
-                                            <label class="control-label">Start time:</label>
+                                            <label class="control-label">Hora de inicio</label>
                                             <input id="hora-inicio" type="text" name="time_start"
                                                 class="form-control input-small">
                                             <span class="input-group-addon"><i
@@ -273,7 +274,7 @@ $resultado_disp = mysqli_query($conexion, $consulta_disp);
                                     </div>
                                     <div class="col-6">
                                         <div class=" input-group bootstrap-timepicker timepicker">
-                                            <label class="control-label ">End time:</label>
+                                            <label class="control-label ">Hora de fin</label>
                                             <input id="hora-fin" type="text" class="form-control input-small">
                                             <span class="input-group-addon"><i
                                                     class="glyphicon glyphicon-time"></i></span>
@@ -283,7 +284,7 @@ $resultado_disp = mysqli_query($conexion, $consulta_disp);
                             </div>
 
                             <div class="form-group col-md-12">
-                                <textarea class="form-control" id="" name="" rows="3" placeholder="Description"></textarea>
+                                <textarea class="form-control" id="" name="" rows="3" placeholder="Temas"></textarea>
                             </div>
                             <div class="row">
                                 <div class="col-4 m-0">
@@ -295,13 +296,13 @@ $resultado_disp = mysqli_query($conexion, $consulta_disp);
                                 <div class="col-4 m-0">
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox" id="c-bilingue" value="option2">
-                                        <label class="form-check-label" for="c-bilingue">Bilingual</label>
+                                        <label class="form-check-label" for="c-bilingue">Bilingue</label>
                                     </div>
                                 </div>
                                 <div class="col-4 m-0">
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox" id="c-d-f" value="option2">
-                                        <label class="form-check-label" for="c-d-f">Sunday / Holiday</label>
+                                        <label class="form-check-label" for="c-d-f">Domingo / Festivo</label>
                                     </div>
                                 </div>
                                 <div class="col-4 m-0">
@@ -313,14 +314,14 @@ $resultado_disp = mysqli_query($conexion, $consulta_disp);
                                 <div class="col-4 m-0">
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox" id="c-bogota" value="option2">
-                                        <label class="form-check-label" for="c-bogota">Out of the city</label>
+                                        <label class="form-check-label" for="c-bogota">Fuera de Bogotá</label>
                                     </div>
                                 </div>
                                 <div class="col-4 m-0">
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox" id="c-transporte"
                                             value="option2">
-                                        <label class="form-check-label" for="c-transporte">Transport</label>
+                                        <label class="form-check-label" for="c-transporte">Transporte</label>
                                     </div>
                                 </div>
 
@@ -329,9 +330,9 @@ $resultado_disp = mysqli_query($conexion, $consulta_disp);
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default antoclose" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary antosubmit" data-dismiss="modal">Save
-                        </button>
+                    <button type="button" class="btn btn-default antoclose" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary antosubmit" data-dismiss="modal">Guardar
+                        cambios</button>
                 </div>
             </div>
         </div>
@@ -343,7 +344,7 @@ $resultado_disp = mysqli_query($conexion, $consulta_disp);
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel2">Edit class event</h4>
+                    <h4 class="modal-title" id="myModalLabel2">Editar evento de clase</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                 </div>
                 <div class="modal-body">
@@ -356,7 +357,7 @@ $resultado_disp = mysqli_query($conexion, $consulta_disp);
 
                             <div class="form-group col-md-12">
                                 <select class="form-control" id="area">
-                                    <option>Subject</option>
+                                    <option>Asignatura</option>
                                     <option>--</option>
                                     <option>--</option>
                                     <option>--</option>
@@ -366,7 +367,7 @@ $resultado_disp = mysqli_query($conexion, $consulta_disp);
 
                             <div class="form-group col-md-12 mb-4">
                                 <select class="form-control" id="area">
-                                    <option>Grade</option>
+                                    <option>Grado</option>
                                     <option>--</option>
                                     <option>--</option>
                                     <option>--</option>
@@ -377,19 +378,19 @@ $resultado_disp = mysqli_query($conexion, $consulta_disp);
                             <div class="form-group col-md-12 px-1">
                                 <div class="row">
                                     <div class="col-6">
-                                        <label class="control-label p-0 ">Start time</label>
+                                        <label class="control-label p-0 ">Hora de inicio</label>
                                         <input type="time" class="form-control" id="hora-inicio"
                                             placeholder="Hora de inicio">
                                     </div>
                                     <div class="col-6">
-                                        <label class="control-label p-0">End time</label>
+                                        <label class="control-label p-0">Hora de fin</label>
                                         <input type="time" class="form-control" id="hora-fin" placeholder="Hora de fin">
                                     </div>
                                 </div>
                             </div>
 
                             <div class="form-group col-md-12">
-                                <textarea class="form-control" id="" name="" rows="3" placeholder="Description" id="descr2"
+                                <textarea class="form-control" id="" name="" rows="3" placeholder="Temas" id="descr2"
                                     name="descr"></textarea>
                             </div>
                             <div class="row">
@@ -402,13 +403,13 @@ $resultado_disp = mysqli_query($conexion, $consulta_disp);
                                 <div class="col-4 m-0">
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox" id="c-bilingue" value="option2">
-                                        <label class="form-check-label" for="c-bilingue">Bilingual</label>
+                                        <label class="form-check-label" for="c-bilingue">Bilingue</label>
                                     </div>
                                 </div>
                                 <div class="col-4 m-0">
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox" id="c-d-f" value="option2">
-                                        <label class="form-check-label" for="c-d-f">Sunday / Holiday</label>
+                                        <label class="form-check-label" for="c-d-f">Domingo / Festivo</label>
                                     </div>
                                 </div>
                                 <div class="col-4 m-0">
@@ -420,14 +421,14 @@ $resultado_disp = mysqli_query($conexion, $consulta_disp);
                                 <div class="col-4 m-0">
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox" id="c-bogota" value="option2">
-                                        <label class="form-check-label" for="c-bogota">Out of the city</label>
+                                        <label class="form-check-label" for="c-bogota">Fuera de Bogotá</label>
                                     </div>
                                 </div>
                                 <div class="col-4 m-0">
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox" id="c-transporte"
                                             value="option2">
-                                        <label class="form-check-label" for="c-transporte">Transport</label>
+                                        <label class="form-check-label" for="c-transporte">Transporte</label>
                                     </div>
                                 </div>
                             </div>
@@ -435,8 +436,8 @@ $resultado_disp = mysqli_query($conexion, $consulta_disp);
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default antoclose2" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary antosubmit2">Save</button>
+                    <button type="button" class="btn btn-default antoclose2" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary antosubmit2">Guardar cambios</button>
                 </div>
             </div>
         </div>
@@ -472,20 +473,20 @@ $resultado_disp = mysqli_query($conexion, $consulta_disp);
         function changeLabeltext() {
             var e = document.getElementById("tutores");
             var tutor = e.options[e.selectedIndex].value;
-            if (tutor != "")
-                document.getElementById('horario1').innerHTML = '09:00 AM - 10:00 AM <br> 11:00 AM - 12:00 PM';
+            if(tutor!="")
+            document.getElementById('horario1').innerHTML = '09:00 AM - 10:00 AM <br> 11:00 AM - 12:00 PM';
             else
-                document.getElementById('horario1').innerHTML = 'N/A';
+            document.getElementById('horario1').innerHTML = 'N/A';
 
         }
         document.getElementById("tutores").disabled = true;
         function changeAsignatura() {
             var e = document.getElementById("title");
             var asignatura = e.options[e.selectedIndex].value;
-            if (asignatura != "")
-                document.getElementById("tutores").disabled = false;
+            if(asignatura!="")
+            document.getElementById("tutores").disabled = false;
             else
-                document.getElementById("tutores").disabled = true;
+            document.getElementById("tutores").disabled = true;
 
         }
     </script>

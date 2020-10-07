@@ -104,7 +104,7 @@ $nombre=$row['Nombre'];
                                 </a>
                                 <div class="dropdown-menu dropdown-usermenu pull-right"
                                     aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="cerrar-sesion.php"><i
+                                    <a class="dropdown-item" href="cerrar-sesion.php"><i>
                                             class="fa fa-sign-out pull-right"></i>Cerrar sesión</a>
                                 </div>
                             </li>
