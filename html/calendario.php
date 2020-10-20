@@ -74,13 +74,8 @@ $resultado_disp = mysqli_query($conexion, $consulta_disp);
                             <img src="../images/user.png" alt="..." class="img-circle profile_img">
                         </div>
                         <div class="profile_info">
-<<<<<<< HEAD:html/calendario-ingles.html
-                            <span>Welcome,</span>
-                            <h2>Administrator</h2>
-=======
                             <span>Bienvenido,</span>
                             <h2><?php echo $nombre ?></h2>
->>>>>>> 8454e61f0ea2dcaeaf62c779a0d7eff8614d8eb8:html/calendario.php
                         </div>
                     </div>
                     <!-- /SECCIÓN BIENVENIDO-->
@@ -94,27 +89,6 @@ $resultado_disp = mysqli_query($conexion, $consulta_disp);
                                     <a href="dashboard.html"><i class="fa fa-home"></i> Dashboard</a>
                                 </li>
                                 <li>
-<<<<<<< HEAD:html/calendario-ingles.html
-                                    <a href="calendario.html"><i class="fa fa-calendar"></i>Class calendar</a>
-                                </li>
-                                <li>
-                                    <a href="tutores.html"> <i class="fa fa-university"></i> Tutors</a>
-                                </li>
-                                <li>
-                                    <a href="cuentas-de-cobro.html"> <i class="fa fa-table"></i>Collection accounts</a>
-                                </li>
-                                <li>
-                                    <a href="rrhh.html"> <i class="fa fa-child"></i> Human Resources</a>
-                                </li>
-                                <li>
-                                    <a href="usuarios.html"> <i class="fa fa-group"></i> Users management</a>
-                                </li>
-                                <li>
-                                    <a href="404.html"> <i class="fa fa-circle"></i> 404</a>
-                                </li>
-                                <li>
-                                    <a href="500.html"> <i class="fa fa-circle-thin"></i> 500</a>
-=======
                                     <a href="calendario.php"><i class="fa fa-calendar"></i> Calendario de clases</a>
                                 </li>
                                 <li>
@@ -128,7 +102,6 @@ $resultado_disp = mysqli_query($conexion, $consulta_disp);
                                 </li>
                                 <li>
                                     <a href="usuarios.php"> <i class="fa fa-group"></i> Gestión de usuarios</a>
->>>>>>> 8454e61f0ea2dcaeaf62c779a0d7eff8614d8eb8:html/calendario.php
                                 </li>
                               
                                 <li>
@@ -151,22 +124,11 @@ $resultado_disp = mysqli_query($conexion, $consulta_disp);
                     <nav class="nav navbar-nav">
                         <ul class=" navbar-right">
                             <li class="nav-item dropdown open" style="padding-left: 15px;">
-<<<<<<< HEAD:html/calendario-ingles.html
-                                <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true"
-                                    id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                                    <img src="../images/user.png" alt="">Administrator
-                                </a>
-                                <div class="dropdown-menu dropdown-usermenu pull-right"
-                                    aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="login.html"><i
-                                            class="fa fa-sign-out pull-right"></i>Logout</a>
-=======
                                 <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
                                     <img src="../images/user.png" alt=""><?php echo $nombre ?>
                                 </a>
                                 <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="login.php"><i class="fa fa-sign-out pull-right"></i>Cerrar sesión</a>
->>>>>>> 8454e61f0ea2dcaeaf62c779a0d7eff8614d8eb8:html/calendario.php
                                 </div>
                             </li>
                         </ul>
@@ -203,17 +165,6 @@ $resultado_disp = mysqli_query($conexion, $consulta_disp);
                                     <div class="container mb-4">
                                         <div class="row">
                                             <div class="col-md-6 col-12 text-center">
-<<<<<<< HEAD:html/calendario-ingles.html
-                                                    <button type="button" class="button-add position-static"
-                                                    data-toggle="modal" data-target="#ModalCrearEvento"><i
-                                                        class="fa fa-plus-square pr-3"></i>Create class event</button>
-                                          
-                                            </div>
-                                            <div class="col-md-6 col-12  text-center">
-                                                <button type="button" onclick="window.location.href='tutores.html'"
-                                                    class="button-add position-static" data-toggle="modal"
-                                                    data-target="#"><i class="fa fa-search pr-3"></i>Check Tutor's Availibity</button>
-=======
                                                 <button type="button" class="button-add position-static" data-toggle="modal" data-target="#ModalCrearEvento"><i class="fa fa-plus-square pr-3"></i>Crear
                                                     evento de clase</button>
                                             </div>
@@ -221,7 +172,6 @@ $resultado_disp = mysqli_query($conexion, $consulta_disp);
                                                 <button type="button" onclick="window.location.href='tutores.php'" class="button-add position-static" data-toggle="modal" data-target="#"><i class="fa fa-search pr-3"></i>Consultar
                                                     disponibilidad de
                                                     tutores</button>
->>>>>>> 8454e61f0ea2dcaeaf62c779a0d7eff8614d8eb8:html/calendario.php
                                             </div>
                                         </div>
                                     </div>
@@ -268,15 +218,6 @@ $resultado_disp = mysqli_query($conexion, $consulta_disp);
                     <div id="testmodal" style="padding: 5px 20px;">
                         <form id="crearForm" class="form-horizontal calender" role="form">
                             <div class="form-group col-md-12">
-<<<<<<< HEAD:html/calendario-ingles.html
-                                <select class="form-control" id="title" name="title" required
-                                    onchange="changeAsignatura()">
-                                    <option value="">Subject</option>
-                                    <option value="matematica">Mathematics</option>
-                                    <option value="ingles">English</option>
-                                    <option value="español">Spanish</option>
-                                    <option>--</option>
-=======
                                 <select class="form-control" id="title" name="title" required onchange="changeAsignatura()">
                                 <option value="">Seleccione..</option>
                                    <?php
@@ -285,7 +226,6 @@ $resultado_disp = mysqli_query($conexion, $consulta_disp);
                                         echo '<option value="' . $row['id_Asignatura'] . '">' . $row['Nombre_Asignatura'] . '</option>';
                                     }
                                     ?>
->>>>>>> 8454e61f0ea2dcaeaf62c779a0d7eff8614d8eb8:html/calendario.php
                                 </select>
                             </div>
                             <div class="form-group col-md-12">
@@ -293,20 +233,12 @@ $resultado_disp = mysqli_query($conexion, $consulta_disp);
                             </div>
                             <div class="form-group col-md-12">
                                 <select class="form-control" id="tutores" onchange="changeLabeltext()" required>
-<<<<<<< HEAD:html/calendario-ingles.html
-                                    <option value="">Available tutors</option>
-                                    <option value="pedro">Pedro Perez</option>
-                                    <option value="maria">Maria Sanchez</option>
-                                    <option value="mayra">Mayra Ojeda</option>
-                                    <option>--</option>
-=======
                                     <option value="">Seleccione..</option>
                                     <?php
                                     while ($row_disp = mysqli_fetch_array($resultado_disp)) {
                                         echo '<option value="' . $row_disp['id_Tutores'] . '">' . $row_disp['Nombre'] . ' '. $row_disp['Apellidos'] . '</option>';
                                     }
                                     ?>
->>>>>>> 8454e61f0ea2dcaeaf62c779a0d7eff8614d8eb8:html/calendario.php
                                 </select>
                             </div>
 
@@ -327,17 +259,11 @@ $resultado_disp = mysqli_query($conexion, $consulta_disp);
                                 <div class="row">
                                     <div class="col-6">
                                         <div class=" input-group bootstrap-timepicker timepicker">
-<<<<<<< HEAD:html/calendario-ingles.html
                                             <label class="control-label">Start time:</label>
                                             <input id="hora-inicio" type="text" name="time_start"
                                                 class="form-control input-small">
                                             <span class="input-group-addon"><i
                                                     class="glyphicon glyphicon-time"></i></span>
-=======
-                                            <label class="control-label">Hora de inicio</label>
-                                            <input id="hora-inicio" type="text" name="time_start" class="form-control input-small">
-                                            <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
->>>>>>> 8454e61f0ea2dcaeaf62c779a0d7eff8614d8eb8:html/calendario.php
                                         </div>
                                     </div>
                                     <div class="col-6">
@@ -386,14 +312,8 @@ $resultado_disp = mysqli_query($conexion, $consulta_disp);
                                 </div>
                                 <div class="col-4 m-0">
                                     <div class="form-check form-check-inline">
-<<<<<<< HEAD:html/calendario-ingles.html
-                                        <input class="form-check-input" type="checkbox" id="c-transporte"
-                                            value="option2">
-                                        <label class="form-check-label" for="c-transporte">Transport</label>
-=======
                                         <input class="form-check-input" type="checkbox" id="c-transporte" value="option2">
                                         <label class="form-check-label" for="c-transporte">Transporte</label>
->>>>>>> 8454e61f0ea2dcaeaf62c779a0d7eff8614d8eb8:html/calendario.php
                                     </div>
                                 </div>
 
@@ -448,14 +368,8 @@ $resultado_disp = mysqli_query($conexion, $consulta_disp);
                             <div class="form-group col-md-12 px-1">
                                 <div class="row">
                                     <div class="col-6">
-<<<<<<< HEAD:html/calendario-ingles.html
-                                        <label class="control-label p-0 ">Start time</label>
-                                        <input type="time" class="form-control" id="hora-inicio"
-                                            placeholder="Hora de inicio">
-=======
                                         <label class="control-label p-0 ">Hora de inicio</label>
                                         <input type="time" class="form-control" id="hora-inicio" placeholder="Hora de inicio">
->>>>>>> 8454e61f0ea2dcaeaf62c779a0d7eff8614d8eb8:html/calendario.php
                                     </div>
                                     <div class="col-6">
                                         <label class="control-label p-0">End time</label>
@@ -465,12 +379,7 @@ $resultado_disp = mysqli_query($conexion, $consulta_disp);
                             </div>
 
                             <div class="form-group col-md-12">
-<<<<<<< HEAD:html/calendario-ingles.html
-                                <textarea class="form-control" id="" name="" rows="3" placeholder="Description" id="descr2"
-                                    name="descr"></textarea>
-=======
                                 <textarea class="form-control" id="" name="" rows="3" placeholder="Temas" id="descr2" name="descr"></textarea>
->>>>>>> 8454e61f0ea2dcaeaf62c779a0d7eff8614d8eb8:html/calendario.php
                             </div>
                             <div class="row">
                                 <div class="col-4 m-0">
@@ -505,14 +414,8 @@ $resultado_disp = mysqli_query($conexion, $consulta_disp);
                                 </div>
                                 <div class="col-4 m-0">
                                     <div class="form-check form-check-inline">
-<<<<<<< HEAD:html/calendario-ingles.html
-                                        <input class="form-check-input" type="checkbox" id="c-transporte"
-                                            value="option2">
-                                        <label class="form-check-label" for="c-transporte">Transport</label>
-=======
                                         <input class="form-check-input" type="checkbox" id="c-transporte" value="option2">
                                         <label class="form-check-label" for="c-transporte">Transporte</label>
->>>>>>> 8454e61f0ea2dcaeaf62c779a0d7eff8614d8eb8:html/calendario.php
                                     </div>
                                 </div>
                             </div>
